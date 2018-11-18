@@ -15,7 +15,7 @@
 </nav>
   <h1>Plenty Full</h1>
   <h2>You’re only here for the food,so let’s get it right.</h2>
-</body>
+
 <form action="process_plannersurvey.php" method="POST">
   <fieldset>
     <legend>Start Planning</legend>
@@ -54,6 +54,7 @@
     <input type="submit" value="Submit" />
   </fieldset>
 </form>
+</body>
 <footer>
   <a href="mailto:info@plentyfull.com">info@plentyfull.com</a>
   <br />
