@@ -41,7 +41,7 @@
       <input type="checkbox" name="allergies" value="peanuts" />Peanuts
       <input type="checkbox" name="allergies" value="lactoseIntolerant" />Lactose Intolerant
       <input type="checkbox" name="allergies" value="eggs" />Eggs
-      <input type="checkbox" name="allergies" value="wheat" />Wheat
+      <input type="checkbox" name="allergies" value="wheat" />wheat
       <input type="checkbox" name="allergies" value="soy" />Soy
       <input type="checkbox" name="allergies" value="fish" />Fish
       <input type="checkbox" name="allergies" value="shellfish" />Shellfish
