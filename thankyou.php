@@ -9,7 +9,7 @@
 <body>
 <nav>
   <a href="explore.php">Explore</a> |
-  <a href="process_inputcode.php">Input Code</a> |
+  <a href="inputCode.php">Input Code</a> |
   <a href="about.php">About</a> |
   <a href="login.php">Login</a>
 </nav>
