@@ -9,14 +9,14 @@
 <body>
   <nav>
   <a href="explore.php">Explore</a> |
-  <a href="process_inputcode.php">Input Code</a> |
+  <a href="inputCode.php">Input Code</a> |
   <a href="about.php">About</a> |
   <a href="login.php">Login</a>
 </nav>
   <h1>Input Code</h1>
   <form action="process_inputcode.php" method="POST">
     <fieldset>
-      
+
       Code:<input type="text" name="code" /><br />
       Email:<input type="email" name="email" /><br />
       <p>
