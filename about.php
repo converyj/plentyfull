@@ -8,15 +8,17 @@
 </head>
 <body>
 <nav>
-  <a href="explore.php">Explore</a> |
-  <a href="inputCode.php">Input Code</a> |
-  <a href="about.php">About</a> |
+  <!--  not proper <ul><li> -->
+  <!-- plentyfull link on nav -->
+  <a href="explore.php">Explore</a> 
+  <a href="inputCode.php">Input Code</a> 
+  <a href="about.php">About</a> 
   <a href="login.php">Login</a>
 </nav>
 
   <h1>About Us</h1>
   <p>
-    EJAX will be creating a web application called “Plenty Full”. Our application is used to help match people or organizations up with inclusive catering options close by that best suits the needs of everyone involved. Our goal is to make the catering options at events more inclusive no matter what the dietary or allergen restrictions are.
+    EJAX will be creating a web application called “Plenty Full”. Our application is used to help match people or organizations up with inclusive catering options close by that best suits the needs of everyone involved. Our goal is to make the catering options at events more inclusive no matter what the dietary or allergy restrictions are.
   </p>
   <h2>Amanda Goncalves</h2>
   <p>
@@ -45,6 +47,5 @@
   <a href="https://www.instagram.com/"><img src="images/instagram.png" alt="ins" /></a>
   <a href="https://www.facebook.com/"><img src="images/facebook.png" alt="facebook" /></a>
   <a href="https://www.twitter.com/"><img src="images/twitter.png" alt="twitter" /></a>
-
 </footer>
 </html>
