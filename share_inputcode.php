@@ -5,9 +5,47 @@ session_start();
 // get the surveyid from SESSION to concatenate to link
 $surveyid = $_SESSION['surveyid'];
 
-// build link by concatenating the surveyid (Concatenate surveyid in HTML document or put in variable)
-$link = 'www.plentyfull.com/' . $surveyid; 
-
 ?>
 
 <!-- HTML code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- plentyfull favicon -->
+  <title>Plenty Full - Thank you! Now share your code</title>
+</head>
+<body>
+  <nav>
+  	<!--  not proper <ul><li> -->
+    <!-- plentyfull link on nav -->
+	  <a href="explore.php">Explore</a> 
+	  <a href="inputCode.php">Input Code</a> 
+	  <a href="about.php">About</a> 
+	  <a href="login.php">Login</a>
+</nav>
+  <h2>Your unique code is: </h2>
+  <h2><?php echo($surveyid);?></h2>
+  <h3>When you're ready to view results you can input this code through the input code page in our menu.</h3>
+  <h3>Here is your survey link. Share this with your attendees !</h3>
+  <form>
+    <input type="text" name="link" value="http://plentyfull.com/<?php echo($surveyid);?>" disabled />
+  </form>
+    <!-- <a href="http://plentyfull.com/?id=<?php echo($surveyid);?>>http://plentyfull.com/<?php echo($surveyid);?></a> -->
+  <p>
+    <a href="register.php">Would you like to register for our site?</a>
+  </p>
+</body>
+
+
+<footer>
+  <a href="mailto:info@plentyfull.com">info@plentyfull.com</a>
+  <br />
+  <a href="https://www.instagram.com/"><img src="images/instagram.png" alt="ins" /></a>
+  <a href="https://www.facebook.com/"><img src="images/facebook.png" alt="facebook" /></a>
+  <a href="https://www.twitter.com/"><img src="images/twitter.png" alt="twitter" /></a>
+
+</footer>
+</html>
