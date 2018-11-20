@@ -2,18 +2,15 @@
 
 session_start(); 
 
-// get the surveyid from SESSION 
-$surveyid = $_SESSION['surveyid'];
-
 // check if user filled in all the fields
-if(!empty($_POST['code']) && !empty($_POST['choice']) && !empty($_POST['email']) {
+if(!empty($_POST['code']) && !empty($_POST['role']) && !empty($_POST['email'])) {
 
 		// get the form inputs 
 		$code = $_POST['code']; 
-		$choice = $_POST['choice']; 
+		$role = $_POST['role']; 
 		$email = $_POST['email']; 
 } else {
-	header("Location: code.html");
+	header("Location: inputCode.php");
 }
 
 $dsn = "mysql:host=localhost;dbname=converyj_plentyfull;charset=utf8mb4";
@@ -26,83 +23,103 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 $stmt = $pdo->prepare("
 						SELECT `surveyid` 
 						FROM `survey` 
-						WHERE `survey`.`surveyid` = $surveyid"); 
+						WHERE `survey`.`surveyid` = $code"); 
 $stmt->execute();
 
+// if input code exists, save the surveyid to use later
 if ($row = $stmt->fetch()) {
-	echo("Found"); 
+	$surveyid = $row['surveyid'];
 } else {
-	echo("Error: Incorrect Input Code");
+	$message = "Error: Incorrect Input Code";
+	header("Location: error.php?message= " . $message);
 } 
 
-// verify Answer 
+// get planner for survey with the surveyid
+$stmt = $pdo->prepare("
+						SELECT `userid` 
+						FROM `admin` 
+						WHERE `admin`.`userid` = 
+											(SELECT `userid` 
+											FROM `usersurvey` 
+											WHERE `usersurvey`.`surveyid` = $surveyid) "); 
+$stmt->execute();
 
-// if yes, check if user exists by their id and email
-if ($choice === 'Y') {
-	$stmt = $pdo->prepare("
-							SELECT `id` 
-							FROM `user` 
-							WHERE `user`.`email` = ‘$email’ "); 
-	$stmt->execute();
+// if found, save planner userid to use later, otherwise redirect to error page
+if ($row = $stmt->fetch()) {
+	$plannerUserid = $row['userid'];
+}
+else {
+	$message = "Error: Don't have a planner set";
+	header("Location: error.php?message= " . $message);
+}
 
-	// if found, check if they are planner by their userid in admin table 
-	if ($row = $stmt->fetch()) {
-		$stmt = $pdo->prepare("
-								SELECT `role` 
-								FROM `admin`
-								WHERE `admin`.`userid` = $userid"); 
-		$stmt->execute();
+// check user email, set flag to keep for later (may be a new attendee, a planner, or a returning attendee)
+$stmt = $pdo->prepare("
+						SELECT `userid` 
+						FROM `user` 
+						WHERE `user`.`email` = '$email' "); 
+$stmt->execute();
 
-		// row found 
-		if ($row = $stmt->fetch()) {
-			echo("You are the planner"); 
-			// header ("Location: results.php"); 
-		} else {
-			echo("Error: You are not the planner");
-		}
-	} else { // user does not exist 
-		echo("Error: We can't find your email in our system");
+// if found
+if ($row = $stmt->fetch()){
+	$emailFound = true; 
+	$userid = $row['userid'];
+
+} else { 
+	$emailFound = false; 
+	$userid = " ";
+}
+
+// check answer
+// - if yes - check userid against planner userid and save variables in SESSION to use later
+if ($role === 'yes') {
+	if ($userid === $plannerUserid) {
+		$_SESSION['email'] = $email; 
+		$_SESSION['userid'] = $userid; 
+		$_SESSION['surveyid'] = $surveyid; 
+		header ("Location: results.php"); 
+	} else {
+		$message = "Error: You are not registered as the planner. Try Again";
+		header("Location: error.php?message= " . $message);
 	}
+}
 
-// if no, check if user exists by their id and email		
-} else {
-	$stmt = $pdo->prepare("
-							SELECT `id` 
-							FROM `user` 
-							WHERE `user`.`email` = ‘$email’ "); 
-	$stmt->execute();
+// if no - check userid against planner userid
+if ($role === 'no') {
+	if ($userid === $plannerUserid) {
+		$message = "Error: You are registered as the planner. Try Again";
+		header("Location: error.php?message= " . $message); 
+	} else {
 
-	// if found, check if they are planner by their userid in admin table
-	if ($row = $stmt->fetch()) {
-		$stmt = $pdo->prepare("
-								SELECT `role` 
-								FROM `admin`
-								WHERE `admin`.`userid` = $userid"); 
-		$stmt->execute();
+			// if not match, check if the email was found and save variables in SESSION to use later, otherwise insert new user
+			if ($emailFound) {
+				$_SESSION['email'] = $email; 
+				$_SESSION['userid'] = $userid; 
+				$_SESSION['surveyid'] = $surveyid; 
+				header("Location: attendee_survey.php");
+			} else {
+				$stmt = $pdo->prepare("
+										INSERT INTO `user` (`email`)
+										VALUES ('$email') "); 
+				$i = $stmt->execute();
 
-		// row found
-		if ($row = $stmt->fetch()) {
-			echo("You are the planner"); 
-		} else {
-			echo("Error: You are an attendee");
-			// header ("Location: attendee_survey.php");
-		} 
-	} else { // user does not exist, insert user 
-		$stmt = $pdo->prepare("
-								INSERT INTO `user` (`email`)
-								VALUES (‘$email’) "); 
-		$i = $stmt->execute();
+			
 
-		// get the userid that was auto-generated and save in SESSION for later
-		$userid = $pdo->lastInsertId('id'); 
-		$_SESSION["userid"] = $userid;
+			// check whether insert was successful, otherwise redirect to error page
+			if ($i == 1) {
 
-		// check whether insert was successful
-		if ($i === 1) {
-			echo("Success"); 
-		} else {
-			echo("Error: Could not insert the record");
-		}		
+				// get the userid that was auto-generated and save in SESSION for later, otherwise redirect to error page
+				$userid = $pdo->lastInsertId('userid'); 
+				$_SESSION['email'] = $email; 
+				$_SESSION['userid'] = $userid; 
+				$_SESSION['surveyid'] = $surveyid;
+				header ("Location: attendee_survey.php");
+			} else {
+				$message = "Error: Could not insert record in user";
+				header("Location: error.php?message= " . $message); 
+			}		
+		}
+	}
 }
 
 ?>
