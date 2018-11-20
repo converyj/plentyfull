@@ -27,42 +27,37 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 // UPDATE row with their firstname, lastName into user table 
 $stmt = $pdo->prepare("
 						UPDATE `user` 
-						SET `firstName` = ‘$firstName’, 
-						     `lastName` = ‘$lastName’ 
-						WHERE `user`.`id` = $id"); 
+						SET `firstName` = '$firstName', 
+						     `lastName` = '$lastName' 
+						WHERE `user`.`userid` = $userid"); 
 $i = $stmt->execute();
 
-// check whether update was successful
-if ($i === 1) {
-	echo("Success"); 
-	// header ("Locaton: thankyou.html");
-} else {
-	echo("Error: Could not update the record");
+// check whether update was unsuccessful (redirect to error page), otherwise continue
+if ($i == 0) {
+	$message = "Error: Could not update the record in user";
+	header("Location: error.php?message= " . $message);
 }
 
 // INSERT dietary restrictions checkboxes into userdietary table
 
 // check if any checkboxes are checked
-if (!empty($_POST["dietary"])) {
-	$dietary = $_POST['dietary']; 
+if (!empty($_POST["dietaryRestrictions"])) {
+	$dietary = $_POST['dietaryRestrictions']; 
 
-	// if checkbox or more was checked, loop through checkboxes
+	// if one or more was checked, loop through checkboxes and insert row in userdietary
 	if(count($dietary > 0)) {
 
 		foreach ($dietary as $dietCode) {
-			echo($dietCode);
 			$stmt = $pdo->prepare("
 									INSERT INTO `userdietary` (`surveyid`, `userid`, `dietaryRestrictionCode`)
 									VALUES ($surveyid, $userid, $dietCode) "); 
 			$i = $stmt->execute();
 
-			// check whether insert was successful
-			if ($i === 1) {
-				echo("Success"); 
-			} else {
-				echo("Error: Could not insert the record");
+			// check whether insert was unsuccessful (redirect to error page), otherwise continue
+			if ($i == 0) {
+				$message = "Error: Could not insert the record in userdietary";
+				header("Location: error.php?message= " . $message);
 			} 
-
 		}
 	}
 }
@@ -70,31 +65,29 @@ if (!empty($_POST["dietary"])) {
 // INSERT allergy checkboxes into userallergy table 
 
 // check if any checkboxes are checked
-if (!empty($_POST["allergy"])) {
-	$allery = $_POST['allergy']; 
+if (!empty($_POST["allergies"])) {
+	$allergy = $_POST['allergies']; 
 
-	// if checkbox or more was checked, loop through checkboxes
+	// if one or more was checked, loop through checkboxes and insert row in userallergy
 	if(count($allergy > 0)) {
 
 		foreach ($allergy as $allergyCode) {
-			echo($allergyCode);
 			$stmt = $pdo->prepare("
 									INSERT INTO `userallergy` (`surveyid`, `userid`, `allergyCode`)
 									VALUES ($surveyid, $userid, $allergyCode) "); 
 			$i = $stmt->execute();
 
-			// check whether insert was successful
-			if ($i === 1) {
-				echo("Success"); 
-			} else {
-				echo("Error: Could not insert the record");
-			} 
-		}
+			// check whether insert was unsuccessful (redirect to error page), otherwise continue
+			if ($i == 0) {
+				$message = "Error: Could not insert the record in userallergy";
+				header("Location: error.php?message= " . $message);
+			}
+		} 
 	}
 }
 
 // get comment form input if they are any
-if(isset($_POST['comment']) {
+if(!empty($_POST['comment'])) {
 	$comment = $_POST['comment'];
 
 	// INSERT comments into the comment table with their userid 
@@ -103,11 +96,10 @@ if(isset($_POST['comment']) {
 							VALUES ($userid, `$comment`) "); 
 	$i = $stmt->execute();
 
-	// check whether insert was successful
-	if ($i === 1) {
-		echo("Success"); 
-	} else {
-		echo("Error: Could not insert the record");
+	// check whether insert was unsuccessful (redirect to error page), otherwise continue
+	if ($i == 0) {
+		$message = "Error: Could not insert the record in comment";
+		header("Location: error.php?message= " . $message);
 	} 
 }
 
@@ -117,11 +109,12 @@ $stmt = $pdo->prepare("
 						VALUES ($userid, $surveyid) "); 
 $i = $stmt->execute();
 
-// check whether insert was successful
-if ($i === 1) {
-	echo("Success"); 
+// check whether insert was successful, otherwise redirect to error page
+if ($i == 1) {
+	header ("Location: thankyou.php");
 } else {
-	echo("Error: Could not insert the record");
+	$message = "Error: Could not insert the record in usersurvey";
+	header("Location: error.php?message= " . $message);
 } 
 
 ?>
