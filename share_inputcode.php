@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-session_start(); 
+session_start();
 
 // get the surveyid from SESSION to concatenate to link
 $surveyid = $_SESSION['surveyid'];
@@ -18,14 +18,12 @@ $surveyid = $_SESSION['surveyid'];
   <title>Plenty Full - Thank you! Now share your code</title>
 </head>
 <body>
-  <nav>
-  	<!--  not proper <ul><li> -->
-    <!-- plentyfull link on nav -->
-	  <a href="explore.php">Explore</a> 
-	  <a href="inputCode.php">Input Code</a> 
-	  <a href="about.php">About</a> 
-	  <a href="login.php">Login</a>
-</nav>
+  <ul>
+    <li><a href="explore.php">Explore</a></li>
+    <li><a href="inputCode.php">Input Code</a></li>
+    <li><a href="about.php">About</a></li>
+    <li><a href="login.php">Login</a></li>
+  </ul>
   <h2>Your unique code is: </h2>
   <h2><?php echo($surveyid);?></h2>
   <h3>When you're ready to view results you can input this code through the input code page in our menu.</h3>

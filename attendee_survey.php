@@ -1,28 +1,28 @@
-<?php 
+<?php
 
-session_start(); 
+session_start();
 
-// get the email from SESSION 
-$email = $_SESSION['email']; 
+// get the email from SESSION
+$email = $_SESSION['email'];
 
 $dsn = "mysql:host=localhost;dbname=converyj_plentyfull;charset=utf8mb4";
 $dbusername = "converyj";
 $dbpassword = "HUgT86Fga#97";
 
-$pdo = new PDO($dsn, $dbusername, $dbpassword); 
+$pdo = new PDO($dsn, $dbusername, $dbpassword);
 
-// SELECT all the dietary images 
+// SELECT all the dietary images
 $stmt1 = $pdo->prepare("
                         SELECT `image`, `value`, `code`
                         FROM `dietallergyvalue`
-                        WHERE `dietallergyvalue`.`type` = 'D'"); 
+                        WHERE `dietallergyvalue`.`type` = 'D'");
 $stmt1->execute();
 
-// SELECT all the allergy images 
+// SELECT all the allergy images
 $stmt2 = $pdo->prepare("
                         SELECT `image`, `value`, `code`
                         FROM `dietallergyvalue`
-                        WHERE `dietallergyvalue`.`type` = 'A'"); 
+                        WHERE `dietallergyvalue`.`type` = 'A'");
 $stmt2->execute();
 
 ?>
@@ -37,14 +37,12 @@ $stmt2->execute();
   <title>Plenty Full - Attendee Survey</title>
 </head>
 <body>
-  <nav>
-	  <!--  not proper <ul><li> -->
-	  <!-- plentyfull link on nav -->
-	  <a href="explore.php">Explore</a> 
-	  <a href="process_inputcode.php">Input Code</a> 
-	  <a href="about.php">About</a> 
-	  <a href="login.php">Login</a>
-</nav>
+  <ul>
+    <li><a href="explore.php">Explore</a></li>
+    <li><a href="inputCode.php">Input Code</a></li>
+    <li><a href="about.php">About</a></li>
+    <li><a href="login.php">Login</a></li>
+  </ul>
   <h1>Just a few questions...</h1>
   <h2>Your going to an event! Lets make sure there’s lot’s to eat for you.</h2>
 
@@ -56,7 +54,7 @@ $stmt2->execute();
     <p>
       Dietary Restrictions:
       <br />
-      <?php 
+      <?php
       while ($row = $stmt1->fetch()) {
       ?>
         <input type="checkbox" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?> <?php echo($row['image']); ?>
@@ -89,5 +87,3 @@ $stmt2->execute();
 
 </footer>
 </html>
-
-

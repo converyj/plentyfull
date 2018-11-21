@@ -7,14 +7,12 @@
   <title>Plenty Full - Log In </title>
 </head>
 <body>
-<nav>
-  <!--  not proper <ul><li> -->
-  <!-- plentyfull link on nav -->
-  <a href="explore.php">Explore</a> 
-  <a href="inputCode.php">Input Code</a> 
-  <a href="about.php">About</a> 
-  <a href="login.php">Login</a>
-</nav>
+  <ul>
+    <li><a href="explore.php">Explore</a></li>
+    <li><a href="inputCode.php">Input Code</a></li>
+    <li><a href="about.php">About</a></li>
+    <li><a href="login.php">Login</a></li>
+  </ul>
 
 <form action="process_login.php" method="POST">
     <h1>Log In</h1>
