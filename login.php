@@ -7,12 +7,15 @@
   <title>Plenty Full - Log In </title>
 </head>
 <body>
+  <!-- <a href=""><img src="" alt="logo"></a> -->
+<nav>
   <ul>
     <li><a href="explore.php">Explore</a></li>
     <li><a href="inputCode.php">Input Code</a></li>
     <li><a href="about.php">About</a></li>
     <li><a href="login.php">Login</a></li>
   </ul>
+</nav>
 
 <form action="process_login.php" method="POST">
     <h1>Log In</h1>

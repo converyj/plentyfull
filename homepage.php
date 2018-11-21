@@ -34,13 +34,15 @@ $stmt2->execute();
   <title>Plenty Full - Home Page</title>
 </head>
 <body>
-
-<ul>
-  <li><a href="explore.php">Explore</a></li>
-  <li><a href="inputCode.php">Input Code</a></li>
-  <li><a href="about.php">About</a></li>
-  <li><a href="login.php">Login</a></li>
-</ul>
+  <!-- <a href=""><img src="" alt="logo"></a> -->
+<nav>
+  <ul>
+    <li><a href="explore.php">Explore</a></li>
+    <li><a href="inputCode.php">Input Code</a></li>
+    <li><a href="about.php">About</a></li>
+    <li><a href="login.php">Login</a></li>
+  </ul>
+</nav>
 
   <h1>Plenty Full</h1>
   <h2>You’re only here for the food, so let’s get it right.</h2>
@@ -51,14 +53,8 @@ $stmt2->execute();
     First Name:<input type="text" name="firstName" /><br />
     Last Name:<input type="text" name="lastName" /><br />
     Email:<input type="email" name="email" /><br />
-  <fieldset>
-      <legend>Address</legend>
-        Street:<input type="text" name="street" size="25" /><br />
-        City:<input type="text" name="city" size="25" /><br />
-        Country:<input type="text" name="country" size="25" /><br />
-        Postal Code:<input type="text" name="postal" size="6" /><br />
-  </fieldset>
-
+    City:<input type="text" name="city" size="25" /><br />
+    Country:<input type="text" name="country" size="25" /><br />
     <!-- Address:<input type="text" name="address" /><br /> -->
     When would you like your results?<input type="date" name="ddlDate" /><br />
     <p>
@@ -68,9 +64,7 @@ $stmt2->execute();
       <?php
       while ($row = $stmt1->fetch()) {
       ?>
-
-
-        <input type="checkbox" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?> <?php echo($row['image']); ?>
+        <input type="checkbox" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?> <img src="images/<?php echo($row['image']); ?>" alt="image" />
       <?php } ?>
     </p>
     <p>
@@ -80,7 +74,7 @@ $stmt2->execute();
       <?php
       while ($row = $stmt2->fetch()) {
       ?>
-        <input type="checkbox" name="allergies[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?> <?php echo($row['image']); ?>
+        <input type="checkbox" name="allergies[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?> <?php echo($row['image']); ?><img src="images/<?php echo($row['image']); ?>" alt="image" />
      <?php } ?>
     </p>
     <input type="submit" value="Submit" />

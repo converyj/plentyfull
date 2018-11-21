@@ -8,12 +8,15 @@
   <title>Plenty Full - Input Code</title>
 </head>
 <body>
+  <!-- <a href=""><img src="" alt="logo"></a> -->
+<nav>
   <ul>
     <li><a href="explore.php">Explore</a></li>
     <li><a href="inputCode.php">Input Code</a></li>
     <li><a href="about.php">About</a></li>
     <li><a href="login.php">Login</a></li>
   </ul>
+</nav>
   <h1>Input Code</h1>
   <form action="process_inputcode.php" method="POST">
       Code:<input type="text" name="code" /><br />

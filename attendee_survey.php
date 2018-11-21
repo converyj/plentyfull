@@ -37,12 +37,15 @@ $stmt2->execute();
   <title>Plenty Full - Attendee Survey</title>
 </head>
 <body>
+  <!-- <a href=""><img src="" alt="logo"></a> -->
+<nav>
   <ul>
     <li><a href="explore.php">Explore</a></li>
     <li><a href="inputCode.php">Input Code</a></li>
     <li><a href="about.php">About</a></li>
     <li><a href="login.php">Login</a></li>
   </ul>
+</nav>
   <h1>Just a few questions...</h1>
   <h2>Your going to an event! Lets make sure there’s lot’s to eat for you.</h2>
 
