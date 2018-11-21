@@ -8,14 +8,12 @@
   <title>Plenty Full - Input Code</title>
 </head>
 <body>
-  <nav>
-    <!--  not proper <ul><li> -->
-    <!-- plentyfull link on nav -->
-    <a href="explore.php">Explore</a> 
-    <a href="inputCode.php">Input Code</a> 
-    <a href="about.php">About</a> 
-    <a href="login.php">Login</a>
-  </nav>
+  <ul>
+    <li><a href="explore.php">Explore</a></li>
+    <li><a href="inputCode.php">Input Code</a></li>
+    <li><a href="about.php">About</a></li>
+    <li><a href="login.php">Login</a></li>
+  </ul>
   <h1>Input Code</h1>
   <form action="process_inputcode.php" method="POST">
       Code:<input type="text" name="code" /><br />

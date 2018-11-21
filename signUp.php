@@ -7,14 +7,12 @@
   <title>Plenty Full - Sign Up </title>
 </head>
 <body>
-<nav>
-  <!-- not proper nav <ul><li>-->
-  <!--Plentyfull link-->
-  <a href="explore.php">Explore</a> 
-  <a href="inputCode.php">Input Code</a> 
-  <a href="about.php">About</a> 
-  <a href="login.php">Login</a>
-</nav>
+  <ul>
+    <li><a href="explore.php">Explore</a></li>
+    <li><a href="inputCode.php">Input Code</a></li>
+    <li><a href="about.php">About</a></li>
+    <li><a href="login.php">Login</a></li>
+  </ul>
 
 <form action="process_signup.php" method="POST">
   <fieldset>
