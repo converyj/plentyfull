@@ -4,17 +4,14 @@ session_start();
 
 // check if user filled in all fields 
 if(!empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['email']) 
-	&& !empty($_POST['street']) && !empty($_POST['city']) && !empty($_POST['country']) 
-	&& !empty($_POST['postal']) && !empty($_POST['ddlDate'])) {
+	&& !empty($_POST['city']) && !empty($_POST['country']) && !empty($_POST['ddlDate'])) {
 	
 	// get the form inputs 
 	$firstName = $_POST['firstName']; 
 	$lastName = $_POST['lastName']; 
-	$email = $_POST['email']; 
-	$street = $_POST['street']; 
+	$email = $_POST['email'];  
 	$city = $_POST['city']; 
-	$country = $_POST['country'];
-	$postal = $_POST['postal'];  
+	$country = $_POST['country']; 
 	$deadline = $_POST['ddlDate']; 
 } else {
 	header("Location: homepage.php");
@@ -44,10 +41,10 @@ if ($i == 1) {
 		header("Location: error.php?message= " . $message);
 	} 
 
-// INSERT userid, role, city, country, street, postal code into admin table 
+// INSERT userid, role, city, country into admin table 
 $stmt = $pdo->prepare("
-						INSERT INTO `admin` (`userid`, `role`, `city`, `country`, `streetName`, `postalCode`) 
-						VALUES ($userid, 1, '$city', '$country', '$street', '$postal') "); 
+						INSERT INTO `admin` (`userid`, `role`, `city`, `country`) 
+						VALUES ($userid, 1, '$city', '$country') "); 
 $i = $stmt->execute();
 
 // check whether insert was unsuccessful (redirect to error page), otherwise continue
