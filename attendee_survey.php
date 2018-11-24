@@ -13,14 +13,14 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
 // SELECT all the dietary images
 $stmt1 = $pdo->prepare("
-                        SELECT `image`, `value`, `code`
+                        SELECT `greyImage`, `value`, `code`
                         FROM `dietallergyvalue`
                         WHERE `dietallergyvalue`.`type` = 'D'");
 $stmt1->execute();
 
 // SELECT all the allergy images
 $stmt2 = $pdo->prepare("
-                        SELECT `image`, `value`, `code`
+                        SELECT `greyImage`, `value`, `code`
                         FROM `dietallergyvalue`
                         WHERE `dietallergyvalue`.`type` = 'A'");
 $stmt2->execute();
@@ -60,7 +60,8 @@ $stmt2->execute();
       <?php
       while ($row = $stmt1->fetch()) {
       ?>
-        <input type="checkbox" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?> <?php echo($row['image']); ?> <img src="images/<?php echo($row['image']); ?>" alt="image" />
+        <input type="checkbox" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
+        <img src="images/<?php echo($row['image']); ?>" alt="image" />
       <?php } ?>
     </p>
     <p>
@@ -69,7 +70,8 @@ $stmt2->execute();
       <?php
       while ($row = $stmt2->fetch()) {
       ?>
-        <input type="checkbox" name="allergies[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?> <?php echo($row['image']); ?> <img src="images/<?php echo($row['image']); ?>" alt="image" />
+        <input type="checkbox" name="allergies[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
+        <img src="images/<?php echo($row['greyImage']); ?>" alt="image" />
      <?php } ?>
     </p>
     <p>
