@@ -23,13 +23,13 @@
       <h1>Sign Up</h1>
       <h2>Register with us to always keep your information saved</h2>
     </legend>
-    First Name:<input type="text" name="firstName" /><br />
-    Last Name:<input type="text" name="lastName" /><br />
-    Email:<input type="email" name="email" /><br />
-    Password:<input type="password" name="password" required="required" /><br />
+      <label>First Name:<input type="text" name="firstName" /></label><br />
+      <label>Last Name:<input type="text" name="lastName" /></label><br />
+      <label>Email:<input type="email" name="email" /></label><br />
+      <label>Password:<input type="password" name="password" required="required" /></label><br />
     <p>
-      <input type="checkbox" name="termOfUse" />
-      <a href="">I agree with the terms and conditions</a>
+      <input type="checkbox" name="termOfUse" id="terms" />
+      <label for="terms"><a href="">I agree with the terms and conditions</a></label>
     </p>
     <input type="submit" value="Go" />
 
