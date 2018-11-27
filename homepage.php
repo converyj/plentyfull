@@ -50,33 +50,33 @@ $stmt2->execute();
 <form action="process_plannersurvey.php" method="POST">
     Start Planning
     <br />
-    First Name:<input type="text" name="firstName" /><br />
-    Last Name:<input type="text" name="lastName" /><br />
-    Email:<input type="email" name="email" /><br />
-    City:<input type="text" name="city" size="25" /><br />
-    Country:<input type="text" name="country" size="25" /><br />
+    </label>
+    <label>First Name:</label><input type="text" name="firstName" /><br />
+    <label>Last Name:</label><input type="text" name="lastName" /><br />
+    <label>Email:</label><input type="email" name="email" /><br />
+    <label>City:</label><input type="text" name="city" size="25" /><br />
+    <label>Country:</label><input type="text" name="country" size="25" /><br />
     <!-- Address:<input type="text" name="address" /><br /> -->
-    When would you like your results?<input type="date" name="ddlDate" /><br />
+    <label>When would you like your results?</label><input type="date" name="ddlDate" /><br />
     <p>
       <!-- make the checkboxes images  -->
-      Dietary Restrictions:
+      <label>Dietary Restrictions:</label>
       <br />
       <?php
       while ($row = $stmt1->fetch()) {
       ?>
-        <input type="checkbox" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
-        <img src="images/<?php echo($row['greyImage']); ?>" alt="image" />
-      <?php } ?>
+        <label for="<?php echo($row['code']); ?>"><img src="images/<?php echo($row['greyImage']); ?>" alt="image" /></label><input type="checkbox" id="<?php echo($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
+       <?php } ?>
     </p>
     <p>
       <!-- make the checkboxes images  -->
-      Allergies:
+      <label>Allergies:</label>
       <br />
       <?php
       while ($row = $stmt2->fetch()) {
       ?>
-        <input type="checkbox" name="allergies[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?> 
-        <img src="images/<?php echo($row['greyImage']); ?>" alt="image" />
+        <label for="<?php echo($row['code']); ?>"><img src="images/<?php echo($row['greyImage']); ?>" alt="image" /></label><input type="checkbox" id="<?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
+
      <?php } ?>
     </p>
     <input type="submit" value="Submit" />
