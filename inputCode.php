@@ -19,12 +19,12 @@
 </nav>
   <h1>Input Code</h1>
   <form action="process_inputcode.php" method="POST">
-      Code:<input type="text" name="code" /><br />
-      Email:<input type="email" name="email" /><br />
+      <label>Code:<input type="text" name="code" /></label><br />
+      <label>Email:<input type="email" name="email" /></label><br />
       <p>
         Are you the event planner?
-          <input type="radio" name="role" value="yes" />Yes
-          <input type="radio" name="role" value="no" />No
+          <input id = yes type="radio" name="role" value="yes" /><label for="yes">Yes</label>
+          <input id = no type="radio" name="role" value="no" /><label for="no">No</label>
       </p>
       <input type="submit" value="Submit" />
 </body>
