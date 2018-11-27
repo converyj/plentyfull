@@ -19,8 +19,8 @@
 
 <form action="process_login.php" method="POST">
     <h1>Log In</h1>
-    Email:<input type="email" name="email" /><br />
-    Password:<input type="password" name="password" required="required" /><br />
+    <label>Email:<input type="email" name="email" /></label><br />
+    <label>Password:<input type="password" name="password" required="required" /></label><br />
     <input type="submit" value="Go" />
 </form>
 </body>
