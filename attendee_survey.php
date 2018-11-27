@@ -86,7 +86,7 @@ $stmt2->execute();
 <footer>
   <a href="mailto:info@plentyfull.com">info@plentyfull.com</a>
   <br />
-  <a href="https://www.instagram.com/"><img src="images/instagram.png" alt="ins" /></a>
+  <a href="https://www.instagram.com/"><img src="images/ig.png" alt="ins" /></a>
   <a href="https://www.facebook.com/"><img src="images/facebook.png" alt="facebook" /></a>
   <a href="https://www.twitter.com/"><img src="images/twitter.png" alt="twitter" /></a>
 
