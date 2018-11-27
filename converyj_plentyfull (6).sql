@@ -2,10 +2,10 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 27, 2018 at 05:47 PM
+-- Host: localhost
+-- Generation Time: Nov 27, 2018 at 06:46 PM
 -- Server version: 10.1.36-MariaDB
--- PHP Version: 5.6.38
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -125,13 +125,13 @@ INSERT INTO `dietallergyvalue` (`type`, `code`, `value`, `image`, `bigImage`, `g
 ('D', 4, 'Kosher', 'kosher-small.png', 'kosher-big.png', 'kosher-grey.png'),
 ('D', 5, 'Halal', 'halal-small.png', 'halal-big.png', 'halal-grey.png'),
 ('D', 6, 'Gluten Free', 'glutenFree.png', 'glutenFree-big.png', 'glutenFree-grey.png'),
-('A', 1, 'Peanuts', 'peanutFree.png', 'peanutFree-big.png', 'peanutFree-grey.png'),
-('A', 2, 'Lactose', 'lactose.png', 'lactose.big.png', 'lactose-grey.png'),
-('A', 3, 'Eggs', 'eggFree.png', 'eggFree-big.png', 'eggFree-grey.png'),
-('A', 4, 'Wheat', 'wheatFree.png', 'wheatFree-big.png', 'wheatFree-grey.png'),
-('A', 5, 'Soy', 'soyFree.png', 'soyFree-big.png', 'soyFree-grey.png'),
-('A', 6, 'Fish', 'fishFree.png', 'fishFree-big.png', 'fishFree-grey.png'),
-('A', 7, 'Shell Fish', 'shellFish.png', 'shellFish-big.png', 'shellFish-grey.png');
+('A', 7, 'Peanuts', 'peanutFree.png', 'peanutFree-big.png', 'peanutFree-grey.png'),
+('A', 8, 'Lactose', 'lactose.png', 'lactose.big.png', 'lactose-grey.png'),
+('A', 9, 'Eggs', 'eggFree.png', 'eggFree-big.png', 'eggFree-grey.png'),
+('A', 10, 'Wheat', 'wheatFree.png', 'wheatFree-big.png', 'wheatFree-grey.png'),
+('A', 11, 'Soy', 'soyFree.png', 'soyFree-big.png', 'soyFree-grey.png'),
+('A', 12, 'Fish', 'fishFree.png', 'fishFree-big.png', 'fishFree-grey.png'),
+('A', 13, 'Shell Fish', 'shellFish.png', 'shellFish-big.png', 'shellFish-grey.png');
 
 -- --------------------------------------------------------
 
