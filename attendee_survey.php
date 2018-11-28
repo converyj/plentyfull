@@ -33,27 +33,35 @@ $stmt2->execute();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
+  <link rel="stylesheet" type="text/css" href="css/main2.css">
+
 	<!-- Add website favicon -->
   <title>Plenty Full - Attendee Survey</title>
 </head>
 <body>
   <!-- <a href=""><img src="" alt="logo"></a> -->
 <nav>
+  <div class="at">
   <ul>
+  <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a>
     <li><a href="explore.php">Explore</a></li>
     <li><a href="inputCode.php">Input Code</a></li>
     <li><a href="about.php">About</a></li>
     <li><a href="login.php">Login</a></li>
   </ul>
+</div>
 </nav>
-  <h1>Just a few questions...</h1>
-  <h2>Your going to an event! Lets make sure there’s lot’s to eat for you.</h2>
+<div class="container">
+  <p class="start">Just a few questions...</p>
+  <p class="paragraph">You're going to an event! Let's make sure there’s lot’s to eat for you.</p>
 
 <form action="process_attendeesurvey.php" method="POST">
   <fieldset>
-    <label>First Name:<input type="text" name="firstName" /></label><br />
-    <label>Last Name:<input type="text" name="lastName" /></label><br />
-    <label>Email:<input type="email" name="email" value="<?php echo($email);?>" /></label><br />
+    First Name:<input type="text" name="firstName" /><br />
+    Last Name:<input type="text" name="lastName" /><br />
+    Email:<input type="email" name="email" value="<?php echo($email);?>" /><br />
     <p>
       Dietary Restrictions:
       <br />
@@ -76,19 +84,22 @@ $stmt2->execute();
     </p>
     <p>
       Other:
-      <br />
+     
       <textarea id="other"></textarea>
     </p>
-    <input type="submit" value="Submit" />
+    <input type="submit" class="button" value="Submit" />
   </fieldset>
 </form>
+ <script src="js/main.js"></script>
+</div>
 </body>
 <footer>
-  <a href="mailto:info@plentyfull.com">info@plentyfull.com</a>
+  <a href="mailto:info@plentyfull.com" class="email">info@plentyfull.com</a>
   <br />
-  <a href="https://www.instagram.com/"><img src="images/ig.png" alt="ins" /></a>
-  <a href="https://www.facebook.com/"><img src="images/facebook.png" alt="facebook" /></a>
-  <a href="https://www.twitter.com/"><img src="images/twitter.png" alt="twitter" /></a>
+  <a href="https://www.twitter.com/"><img src="images/twitter.png" width="3%" alt="twitter" /></a>
+  <a href="https://www.facebook.com/"><img src="images/facebook.png" width="3%" alt="facebook" /></a>
+  <a href="https://www.instagram.com/"><img src="images/ig.png" width="3%" alt="ins" /></a>
+  
 
 </footer>
 </html>
