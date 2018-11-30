@@ -71,7 +71,6 @@ $stmt2->execute();
       <label>Country</label><input type="text" name="country" size="25" /><br />
       <!-- Address:<input type="text" name="address" /><br /> -->
       <label>When would you like your results?</label><input type="date" class="dueDate" name="ddlDate" /><br />
-      <label>When would you like your results?</label><input type="date" name="ddlDate" /><br />
       <p>
         <!-- make the checkboxes images  -->
        <label class="dietLabel">Dietary Restrictions:</label>
@@ -101,8 +100,6 @@ $stmt2->execute();
         <div class="allergydiv">
           <label for="<?php echo($row['code']); ?>"><img class="img" src="images/<?php echo($row['greyImage']); ?>" alt="image" /></label><input type="checkbox"  id="<?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); ?>"/><?php echo($row['value']); ?>
         </div>  
-          <label for="<?php echo($row['code']); ?>"><img class="img" src="images/<?php echo($row['greyImage']); ?>" alt="image" /></label><input type="checkbox" id="<?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
-        </div>
        <?php } ?>
      </div>
       </p>
