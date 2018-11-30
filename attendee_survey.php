@@ -13,14 +13,14 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
 // SELECT all the dietary images
 $stmt1 = $pdo->prepare("
-                        SELECT `greyImage`, `value`, `code`
+                        SELECT `greyImage`, `value`, `code`, `type`
                         FROM `dietallergyvalue`
                         WHERE `dietallergyvalue`.`type` = 'D'");
 $stmt1->execute();
 
 // SELECT all the allergy images
 $stmt2 = $pdo->prepare("
-                        SELECT `greyImage`, `value`, `code`
+                        SELECT `greyImage`, `value`, `code`, `type`
                         FROM `dietallergyvalue`
                         WHERE `dietallergyvalue`.`type` = 'A'");
 $stmt2->execute();
@@ -70,10 +70,10 @@ $stmt2->execute();
         while ($row = $stmt1->fetch()) {
         ?>
         <div class="dietdiv">
-          <label for="<?php echo($row['code']); ?>">
+          <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
             <img src="images/<?php echo($row['greyImage']); ?>" class="image" alt="image" />
             </label>
-            <input type="checkbox" id="<?php echo($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
+            <input type="checkbox" class="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
           </div>
          <?php } ?>
        </div>
@@ -86,7 +86,10 @@ $stmt2->execute();
         while ($row = $stmt2->fetch()) {
         ?>
         <div class="allergydiv">
-          <label for="<?php echo($row['code']); ?>"><img class="img" src="images/<?php echo($row['greyImage']); ?>" alt="image" /></label><input type="checkbox"  id="<?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); ?>"/><?php echo($row['value']); ?>
+          <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
+            <img class="image img" src="images/<?php echo($row['greyImage']); ?>" alt="image" />
+          </label>
+            <input type="checkbox" class="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); ?>"/><?php echo($row['value']); ?>
         </div>  
        <?php } ?>
      </div>
