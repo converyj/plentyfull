@@ -63,24 +63,33 @@ $stmt2->execute();
     Last Name:<input type="text" name="lastName" /><br />
     Email:<input type="email" name="email" value="<?php echo($email);?>" /><br />
     <p>
-      Dietary Restrictions:
-      <br />
-      <?php
-      while ($row = $stmt1->fetch()) {
-      ?>
-        <input type="checkbox" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
-        <img src="images/<?php echo($row['image']); ?>" alt="image" />
-      <?php } ?>
-    </p>
-    <p>
-      Allergies:
-      <br />
-      <?php
-      while ($row = $stmt2->fetch()) {
-      ?>
-        <input type="checkbox" name="allergies[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
-        <img src="images/<?php echo($row['greyImage']); ?>" alt="image" />
-     <?php } ?>
+      <label class="dietLabel">Dietary Restrictions:</label>
+        <br />
+        <div class="diet">
+        <?php
+        while ($row = $stmt1->fetch()) {
+        ?>
+        <div class="dietdiv">
+          <label for="<?php echo($row['code']); ?>">
+            <img src="images/<?php echo($row['greyImage']); ?>" class="image" alt="image" />
+            </label>
+            <input type="checkbox" id="<?php echo($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
+          </div>
+         <?php } ?>
+       </div>
+      </p>
+      <p>
+      <label class="dietLabel">Allergies:</label>
+        <br />
+        <div class="allergy">
+        <?php
+        while ($row = $stmt2->fetch()) {
+        ?>
+        <div class="allergydiv">
+          <label for="<?php echo($row['code']); ?>"><img class="img" src="images/<?php echo($row['greyImage']); ?>" alt="image" /></label><input type="checkbox"  id="<?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); ?>"/><?php echo($row['value']); ?>
+        </div>  
+       <?php } ?>
+     </div>
     </p>
     <p>
       Other:

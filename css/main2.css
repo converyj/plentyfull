@@ -167,20 +167,35 @@ input[type=checkbox]{
     display:none;
 }
 
+.dueDate{
+    margin-top: 2%;
+}
+
+.dietLabel{
+    margin-top: 2%;
+}
+
 .diet, .img{
-    display:block;
+    display: block;
     align-content: center;
 }
 
 .diet{
     display:block;
     width:100%;
+
 }
 
 .dietdiv {
     display:inline-block;
-    margin:10%;
+    margin:5%;
+    width: 0.1%;
+    margin-top: 0%;
 
+}
+
+.allergyName {
+    color:red;
 }
 
 .allergy{
@@ -189,8 +204,10 @@ input[type=checkbox]{
 }
 
 .allergydiv{
-    float:left;
-    display:block;
+    display:inline-block;
+    margin:5%;
+    width: 0.1%;
+    margin-top: 0%;
 
 }
 
