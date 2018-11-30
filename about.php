@@ -26,8 +26,8 @@
 
 <div class="container">
   <p class="input-code">About Us</p>
-  <p>
-   Plentyfull is an application used to help match people or organizations up with inclusive catering options close by that best suits the needs of everyone involved. Our goal is to make the catering options at events more inclusive no matter what the dietary or allergy restrictions are.
+  <p class="aboutParagraph">
+  Plentyfull is an application used to help match people or organizations up with inclusive catering options close by that best suits the needs of everyone involved. Our goal is to make the catering options at events more inclusive no matter what the dietary or allergy restrictions are.
   </p>
   <!-- <h2>Amanda Goncalves</h2>
   <p>

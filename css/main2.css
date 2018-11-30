@@ -400,6 +400,7 @@ textarea, input {
 
 .agree[type=checkbox]{
     display:inline-block;
+    padding-top: 100px; /*doesn't work*/
 }
 
 .sentence{
@@ -475,9 +476,13 @@ input[type=radio]{
     cursor: pointer;
 }
 
+/*ABOUT PAGE ////////*/
 
-
-
+.aboutParagraph{
+    padding-top:20px;
+    text-align: center;
+    padding-bottom: 150px;
+}
 
 
 
