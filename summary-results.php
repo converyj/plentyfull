@@ -9,14 +9,14 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
 // SELECT all the dietary images
 $stmt1 = $pdo->prepare("
-                        SELECT `greyImage`, `value`, `code`
+                        SELECT `bigImage`, `value`, `code`
                         FROM `dietallergyvalue`
                         WHERE `dietallergyvalue`.`type` = 'D'");
 $stmt1->execute();
 
 // SELECT all the allergy images
 $stmt2 = $pdo->prepare("
-                        SELECT `greyImage`, `value`, `code`
+                        SELECT `bigImage`, `value`, `code`
                         FROM `dietallergyvalue`
                         WHERE `dietallergyvalue`.`type` = 'A'");
 $stmt2->execute();

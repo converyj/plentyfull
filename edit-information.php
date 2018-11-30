@@ -11,9 +11,9 @@ if($_SESSION['logged-in'] === false){
 
 }
 else{ 
-$dsn = "mysql:host=localhost;dbname=ngeli_A1;charset=utf8mb4";
-$dbusername = "ngeli";
-$dbpassword = "j*fWtHY&8q2";
+$dsn = "mysql:host=localhost;dbname=converyj_plentyfull;charset=utf8mb4";
+$dbusername = "converyj";
+$dbpassword = "HUgT86Fga#97";
 
 $pdo = new PDO($dsn, $dbusername, $dbpassword); 
 

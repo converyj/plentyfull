@@ -1,25 +1,34 @@
 <?php 
 session_start();
-
 $dsn = "mysql:host=localhost;dbname=converyj_plentyfull;charset=utf8mb4";
 $dbusername = "converyj";
 $dbpassword = "HUgT86Fga#97";
-
 $pdo = new PDO($dsn, $dbusername, $dbpassword);
+
+// SELECT all users (this is attendees right?)
+$stmt = $pdo->prepare("
+                        SELECT `userid`, `firstName`, `lastName`, `email`
+                        FROM `user`");
+$stmt->execute();
 
 // SELECT all the dietary images
 $stmt1 = $pdo->prepare("
-                        SELECT `greyImage`, `value`, `code`
+                        SELECT `image`, `value`, `code`
                         FROM `dietallergyvalue`
                         WHERE `dietallergyvalue`.`type` = 'D'");
 $stmt1->execute();
-
 // SELECT all the allergy images
 $stmt2 = $pdo->prepare("
-                        SELECT `greyImage`, `value`, `code`
+                        SELECT `image`, `value`, `code`
                         FROM `dietallergyvalue`
                         WHERE `dietallergyvalue`.`type` = 'A'");
 $stmt2->execute();
+
+// SELECT comments
+// $stmt3 = $pdo->prepare("
+//                         SELECT `userid`, `comment`
+//                         FROM `comment` ");
+// $stmt3->execute();
 
 ?>
 
@@ -31,7 +40,7 @@ $stmt2->execute();
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
-  <link rel="stylesheet" type="text/css" href="css/main2.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/main2.css"> -->
 
   <!-- plentyfull favicon -->
   <title>Plenty Full - Full Results</title>
@@ -49,26 +58,58 @@ $stmt2->execute();
 </div>
 
 <div class="container">
-		<p class="start">Here's Your Results</p>
+		<p class="start">Full Results</p>
 
-
-<p>
-        <!-- make the checkboxes images  -->
-        <br />
-        <div class="diet">
-        <?php
-        while ($row = $stmt1->fetch()) {
+<?php
+      //show records (process results)
+      while($row = $stmt->fetch()) {     
+        //echo($row["email"]); //or $row[0];
+        ?><div>
+          <a href="edit.php">Edit</a></span>
+          <a href="delete.php">Delete</a></span>
+          <p>First Name: <?php echo($row["firstName"]); ?></p>
+          <p>Last Name: <?php echo($row["lastName"]); ?></p>
+          <p>Email: <?php echo($row["email"]); ?></p>
+          <?php } ?>
+      
+<?php
+      while($row = $stmt1->fetch()) {
         ?>
-        <div class="dietdiv">
+         <p>Dietary:</p>
+           <div class="dietdiv">
           <label for="<?php echo($row['code']); ?>">
-            <img src="images/<?php echo($row['bigImage']); ?>" class="image" alt="image" />
+            <img src="images/<?php echo($row['image']); ?>" class="image" alt="image" />
             </label>
-            <input type="checkbox" id="<?php echo($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
-          </div>
-         <?php } ?>
-       </div>
-      </p>
+      <?php } ?>
+<?php
+      while($row = $stmt2->fetch()) {
+        ?>
+         <p>Allergens:</p>
+           <div class="dietdiv">
+          <label for="<?php echo($row['code']); ?>">
+            <img src="images/<?php echo($row['image']); ?>" class="image" alt="image" />
+            </label>
+       <?php } ?>
 
+
+
+        </div>
+      
+      <br>
+
+<!-- need to find the wasim notes that showed a list of everyone's info pulled from the database -->
+
+   <!--    <form action="confirm-update.php" method="POST">  
+  
+  <p>id: <?php echo($row["id"]); ?></p>
+  <input type="hidden" value="<?php echo($row["id"]); ?>" name="id"/>
+  <p>First Name: <input type='text' name='firstName' value="<?php echo($row["firstName"]); ?>"/></p>
+  <p>Last Name: <input type='text' name='lastName' value="<?php echo($row["lastName"]); ?>"/></p>
+  <p>email: <input type='text' name='email' value="<?php echo($row["email"]); ?>"/></p>
+  <p>Date of Birth: <input type='text' name='dob' value="<?php echo($row["dob"]); ?>"/></p>
+  <input type='submit'/> 
+</form>
+ -->
 
 </div>
  <script src="js/main.js"></script>
