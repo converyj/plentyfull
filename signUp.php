@@ -4,47 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
+  <link rel="stylesheet" type="text/css" href="css/main2.css">
+
   <title>Plenty Full - Sign Up </title>
 </head>
 <body>
   <!-- <a href=""><img src="" alt="logo"></a> -->
-<nav>
+<div class="at">
   <ul>
+  <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a>
     <li><a href="explore.php">Explore</a></li>
     <li><a href="inputCode.php">Input Code</a></li>
     <li><a href="about.php">About</a></li>
     <li><a href="login.php">Login</a></li>
   </ul>
-</nav>
-
+</div>
+<div class="background">
 <form action="process_signup.php" method="POST">
   <fieldset>
     <legend>
-      <h1>Sign Up</h1>
-      <h2>Register with us to always keep your information saved</h2>
+      <p class="login">Sign Up</p>
+      <p class="sentence" >Register with us to always keep your information saved</p>
     </legend>
-      <label>First Name:<input type="text" name="firstName" /></label><br />
-      <label>Last Name:<input type="text" name="lastName" /></label><br />
-      <label>Email:<input type="email" name="email" /></label><br />
-      <label>Password:<input type="password" name="password" required="required" /></label><br />
+    <font color="white">First Name<input class="registername" type="text" name="firstName" /><br />
+    <font color="white">Last Name<input class="registername" type="text" name="lastName" /><br />
+    <font color="white">Email<input class="loginemail" type="email" name="email" /><br />
+    <font color="white">Password<input class="password" type="password" name="password" required="required" /><br />
     <p>
-      <input type="checkbox" name="termOfUse" id="terms" />
-      <label for="terms"><a href="">I agree with the terms and conditions</a></label>
+      <input type="checkbox" name="termOfUse" />
+      <a class="agree" href="">I agree with the terms and conditions</a>
     </p>
-    <input type="submit" value="Go" />
+    <input class="submit-btn" type="submit" value="Go" />
 
   </fieldset>
 </form>
+</div>
 
+
+ <script src="js/main.js"></script>
 </body>
 
-
-<footer>
-  <a href="mailto:info@plentyfull.com">info@plentyfull.com</a>
+<footer class="footerAlternate">
+ <a href="mailto:info@plentyfull.com" class="emailAlternate">info@plentyfull.com</a>
   <br />
-  <a href="https://www.instagram.com/"><img src="images/ig.png" alt="ins" /></a>
-  <a href="https://www.facebook.com/"><img src="images/facebook.png" alt="facebook" /></a>
-  <a href="https://www.twitter.com/"><img src="images/twitter.png" alt="twitter" /></a>
+  <a href="https://www.twitter.com/"><img src="images/twitter-orange.png" width="3%" alt="twitter" /></a>
+  <a href="https://www.facebook.com/"><img src="images/fb-orange.png" width="3%" alt="facebook" /></a>
+  <a href="https://www.instagram.com/"><img src="images/ig-orange.png" width="3%" alt="ins" /></a>
 
 </footer>
 </html>

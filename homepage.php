@@ -55,12 +55,12 @@ $stmt2->execute();
 <div>
   <img  class="header" src="images/header.png" width="80%" >
 </div>
-<div class="intro"> 
+<div class="intro">
   <font color= "f9dfc7"><p>You’re only here for the food,</font> <br>so let’s get it right.</p>
 </div>
 
 <form action="process_plannersurvey.php" method="POST">
-  <div class="container">  
+  <div class="container">
       <p class="start"> Start Planning</p>
       <br />
       </label>
@@ -71,7 +71,7 @@ $stmt2->execute();
       <label>Country</label><input type="text" name="country" size="25" /><br />
       <label>When would you like your results?</label><input type="date" name="ddlDate" /><br />
       <p>
-
+        <!-- make the checkboxes images  -->
        <label>Dietary Restrictions:</label>
         <br />
         <div class="diet">
@@ -79,7 +79,7 @@ $stmt2->execute();
         while ($row = $stmt1->fetch()) {
         ?>
         <div class="dietdiv">
-          <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
+          <label for="<?php echo($row['code']); ?>">
             <img src="images/<?php echo($row['greyImage']); ?>" class="image" alt="image" />
             </label>
             <input type="checkbox" class="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
@@ -97,10 +97,8 @@ $stmt2->execute();
         while ($row = $stmt2->fetch()) {
         ?>
         <div class="allergydiv">
-          <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
-            <img class="image" src="images/<?php echo($row['greyImage']); ?>" alt="image" /></label>
-            <input type="checkbox" class="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
-        </div>  
+          <label for="<?php echo($row['code']); ?>"><img class="img" src="images/<?php echo($row['greyImage']); ?>" alt="image" /></label><input type="checkbox" id="<?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
+        </div>
        <?php } ?>
      </div>
       </p>
@@ -110,13 +108,13 @@ $stmt2->execute();
  <script src="js/main.js"></script>
 </body>
 <footer>
-  <a href="mailto:info@plentyfull.com" class="email">info@plentyfull.com</a>
-  <br />
-  <a href="https://www.twitter.com/"><img src="images/twitter.png" width="3%" alt="twitter" /></a>
-  <a href="https://www.facebook.com/"><img src="images/facebook.png" width="3%" alt="facebook" /></a>
-  <a href="https://www.instagram.com/"><img src="images/ig.png" width="3%" alt="ins" /></a>
-  
-  
+    <a href="mailto:info@plentyfull.com" class="email">info@plentyfull.com</a>
+    <br />
+    <a href="https://www.twitter.com/"><img src="images/twitter.png" width="3%" alt="twitter" /></a>
+    <a href="https://www.facebook.com/"><img src="images/facebook.png" width="3%" alt="facebook" /></a>
+    <a href="https://www.instagram.com/"><img src="images/ig.png" width="3%" alt="ins" /></a>
+
+
 
 </footer>
 </html>
