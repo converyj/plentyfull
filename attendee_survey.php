@@ -38,7 +38,7 @@ $stmt2->execute();
   <link rel="stylesheet" type="text/css" href="css/main2.css">
 
 	<!-- Add website favicon -->
-  <title>Plenty Full - Attendee Survey</title>
+  <title>PlentyFull - Attendee Survey</title>
 </head>
 <body>
   <!-- <a href=""><img src="" alt="logo"></a> -->
