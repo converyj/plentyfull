@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2018 at 09:27 PM
+-- Generation Time: Nov 30, 2018 at 10:56 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 5.6.38
 
@@ -99,23 +99,23 @@ CREATE TABLE `catererallergy` (
 --
 
 INSERT INTO `catererallergy` (`catererid`, `allergyCode`) VALUES
-(1, 12),
-(1, 13),
-(1, 8),
-(1, 9),
-(2, 9),
-(2, 8),
-(2, 12),
-(2, 13),
-(3, 7),
-(10, 9),
-(10, 8),
-(10, 12),
-(10, 13),
-(11, 11),
-(11, 7),
-(12, 7),
-(13, 10);
+(1, 6),
+(1, 7),
+(1, 2),
+(1, 3),
+(2, 3),
+(2, 2),
+(2, 6),
+(2, 7),
+(3, 1),
+(10, 3),
+(10, 2),
+(10, 6),
+(10, 7),
+(11, 5),
+(11, 1),
+(12, 1),
+(13, 4);
 
 -- --------------------------------------------------------
 
@@ -158,7 +158,13 @@ INSERT INTO `catererdietary` (`catererid`, `dietaryRestrictionCode`) VALUES
 (12, 6),
 (13, 2),
 (13, 1),
-(13, 6);
+(13, 6),
+(1, 2),
+(4, 6),
+(6, 2),
+(7, 2),
+(9, 2),
+(10, 2);
 
 -- --------------------------------------------------------
 
@@ -201,16 +207,16 @@ INSERT INTO `dietallergyvalue` (`type`, `code`, `value`, `image`, `bigImage`, `g
 ('D', 1, 'Vegetarian', 'vegetarian.png', 'vegetarian-big.png', 'vegetarian-grey.png'),
 ('D', 2, 'Vegan', 'vegan.png', 'vegan-big.png', 'vegan-grey.png'),
 ('D', 3, 'Pescetarian', 'presc.png', 'pesc-big.png', 'pesc-grey.png'),
-('D', 4, 'Kosher', 'kosher-small.png', 'kosher-big.png', 'kosher-grey.png'),
-('D', 5, 'Halal', 'halal-small.png', 'halal-big.png', 'halal-grey.png'),
-('D', 6, 'Gluten Free', 'glutenFree.png', 'glutenFree-big.png', 'glutenFree-grey.png'),
-('A', 7, 'Peanuts', 'peanutFree.png', 'peanutFree-big.png', 'peanutFree-grey.png'),
-('A', 8, 'Lactose', 'lactose.png', 'lactose.big.png', 'lactose-grey.png'),
-('A', 9, 'Eggs', 'eggFree.png', 'eggFree-big.png', 'eggFree-grey.png'),
-('A', 10, 'Wheat', 'wheatFree.png', 'wheatFree-big.png', 'wheatFree-grey.png'),
-('A', 11, 'Soy', 'soyFree.png', 'soyFree-big.png', 'soyFree-grey.png'),
-('A', 12, 'Fish', 'fishFree.png', 'fishFree-big.png', 'fishFree-grey.png'),
-('A', 13, 'Shell Fish', 'shellFish.png', 'shellFish-big.png', 'shellFish-grey.png');
+('D', 4, 'Kosher', 'kosher.png', 'kosher-big.png', 'kosher-grey.png'),
+('D', 5, 'Halal', 'halal.png', 'halal-big.png', 'halal-grey.png'),
+('D', 6, 'Gluten-Free', 'glutenFree.png', 'glutenFree-big.png', 'glutenFree-grey.png'),
+('A', 1, 'Peanuts', 'peanutFree.png', 'peanutFree-big.png', 'peanutFree-grey.png'),
+('A', 2, 'Lactose', 'lactose.png', 'lactose.big.png', 'lactose-grey.png'),
+('A', 3, 'Eggs', 'eggFree.png', 'eggFree-big.png', 'eggFree-grey.png'),
+('A', 4, 'Wheat', 'wheatFree.png', 'wheatFree-big.png', 'wheatFree-grey.png'),
+('A', 5, 'Soy', 'soyFree.png', 'soyFree-big.png', 'soyFree-grey.png'),
+('A', 6, 'Fish', 'fishFree.png', 'fishFree-big.png', 'fishFree-grey.png'),
+('A', 7, 'Shellfish', 'shellFish.png', 'shellFish-big.png', 'shellFish-grey.png');
 
 -- --------------------------------------------------------
 
