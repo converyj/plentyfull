@@ -73,7 +73,7 @@ $stmt2->execute();
           <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
             <img src="images/<?php echo($row['greyImage']); ?>" class="image" alt="image" />
             </label>
-            <input type="checkbox" class="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
+            <input type="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
           </div>
          <?php } ?>
        </div>
@@ -89,14 +89,14 @@ $stmt2->execute();
           <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
             <img class="image img" src="images/<?php echo($row['greyImage']); ?>" alt="image" />
           </label>
-            <input type="checkbox" class="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); ?>"/><?php echo($row['value']); ?>
-        </div>  
+            <input type="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); ?>"/><?php echo($row['value']); ?>
+        </div>
        <?php } ?>
      </div>
     </p>
     <p>
       Other:
-     
+
       <textarea id="other"></textarea>
     </p>
     <input type="submit" class="button" value="Submit" />
@@ -111,7 +111,7 @@ $stmt2->execute();
   <a href="https://www.twitter.com/"><img src="images/twitter.png" width="3%" alt="twitter" /></a>
   <a href="https://www.facebook.com/"><img src="images/facebook.png" width="3%" alt="facebook" /></a>
   <a href="https://www.instagram.com/"><img src="images/ig.png" width="3%" alt="ins" /></a>
-  
+
 
 </footer>
 </html>
