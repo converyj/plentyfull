@@ -1,5 +1,8 @@
 <?php 
+
 session_start();
+
+$surveyid = $_SESSION['surveyid']; 
 
 $dsn = "mysql:host=localhost;dbname=converyj_plentyfull;charset=utf8mb4";
 $dbusername = "converyj";
@@ -7,23 +10,27 @@ $dbpassword = "HUgT86Fga#97";
 
 $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
-// SELECT all the dietary images
+// COUNT the dietary restrictions 
 $stmt1 = $pdo->prepare("
-                        SELECT `bigImage`, `value`, `code`
-                        FROM `dietallergyvalue`
-                        WHERE `dietallergyvalue`.`type` = 'D'");
+                        SELECT COUNT(`userid`) AS diet, `value`, `bigImage` 
+                        FROM `userdietary`
+                        INNER JOIN `dietallergyvalue` ON `userdietary`.`dietaryRestrictionCode` = `dietallergyvalue`.`code`
+                        WHERE `userdietary`.`surveyid` = $surveyid AND `dietallergyvalue`.`type` = 'D'
+                        GROUP BY dietaryRestrictionCode");
 $stmt1->execute();
 
-// SELECT all the allergy images
+// COUNT the allergies 
 $stmt2 = $pdo->prepare("
-                        SELECT `bigImage`, `value`, `code`
-                        FROM `dietallergyvalue`
-                        WHERE `dietallergyvalue`.`type` = 'A'");
+                        SELECT COUNT(`userid`) AS allergy, `value`, `bigImage` 
+                        FROM `userallergy`
+                        INNER JOIN `dietallergyvalue` ON `userallergy`.`allergyCode` = `dietallergyvalue`.`code`
+                        WHERE `userallergy`.`surveyid` = $surveyid AND `dietallergyvalue`.`type` = 'A'
+                        GROUP BY allergyCode");
 $stmt2->execute();
 
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -34,7 +41,7 @@ $stmt2->execute();
   <link rel="stylesheet" type="text/css" href="css/main2.css">
 
   <!-- plentyfull favicon -->
-  <title>Plenty Full - Full Results</title>
+  <title>PlentyFull - Full Results</title>
 </head>
 <body>
 		
@@ -51,23 +58,29 @@ $stmt2->execute();
 <div class="container">
 		<p class="start">Here's Your Results</p>
 
-
-<p>
-        <!-- make the checkboxes images  -->
-        <br />
         <div class="diet">
         <?php
         while ($row = $stmt1->fetch()) {
         ?>
         <div class="dietdiv">
-          <label for="<?php echo($row['code']); ?>">
-            <img src="images/<?php echo($row['bigImage']); ?>" class="image" alt="image" />
-            </label>
-            <input type="checkbox" id="<?php echo($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
+            <img src="images/<?php echo($row['bigImage']); ?>" alt="image" />
+            <p><?php echo($row['diet']); ?></p>
+            <p><?php echo($row['value']); ?></p>
           </div>
          <?php } ?>
        </div>
-      </p>
+
+       <div class="allergy">
+        <?php
+        while ($row = $stmt2->fetch()) {
+        ?>
+        <div class="allergydiv">
+            <img src="images/<?php echo($row['bigImage']); ?>" alt="image" />
+            <p><?php echo($row['allergy']); ?></p>
+            <p><?php echo($row['value']); ?></p>
+          </div>
+         <?php } ?>
+       </div>
 
 
 <a href="full-results.php" class="results-button">View All Results</a>
