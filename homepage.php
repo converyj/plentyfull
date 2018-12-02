@@ -82,14 +82,12 @@ $stmt2->execute();
           <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
             <img src="images/<?php echo($row['greyImage']); ?>" class="image" alt="image" />
             </label>
-            <input type="checkbox" class="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?><?php echo($row['code']); ?><?php echo($row['type']); ?><?php echo($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
+            <input type="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
           </div>
          <?php } ?>
        </div>
       </p>
       <p>
-        <!-- make the checkboxes images  -->
-
         <label class="dietLabel">Allergies:</label>
         <br />
         <div class="allergy">
@@ -100,8 +98,8 @@ $stmt2->execute();
           <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
             <img class="image img" src="images/<?php echo($row['greyImage']); ?>" alt="image" />
             </label>
-            <input type="checkbox"  class="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); ?>"/><?php echo($row['value']); ?>
-        </div>  
+            <input type="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); ?>"/><?php echo($row['value']); ?>
+        </div>
        <?php } ?>
      </div>
       </p>
