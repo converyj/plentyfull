@@ -38,7 +38,7 @@ if ($row = $stmt->fetch()) {
 $stmt = $pdo->prepare("
 						SELECT `userid` 
 						FROM `admin` 
-						WHERE `admin`.`userid` = 
+						WHERE `admin`.`userid` IN 
 											(SELECT `userid` 
 											FROM `usersurvey` 
 											WHERE `usersurvey`.`surveyid` = $surveyid) "); 
@@ -72,12 +72,12 @@ if ($row = $stmt->fetch()){
 
 // check answer
 // - if yes - check userid against planner userid and save variables in SESSION to use later
-if ($role === 'yes') {
-	if ($userid === $plannerUserid) {
+if ($role == 'yes') {
+	if ($userid == $plannerUserid) {
 		$_SESSION['email'] = $email; 
 		$_SESSION['userid'] = $userid; 
 		$_SESSION['surveyid'] = $surveyid; 
-		header ("Location: results.php"); 
+		header ("Location: summary-results.php"); 
 	} else {
 		$message = "Error: You are not registered as the planner. Try Again";
 		header("Location: error.php?message= " . $message);
@@ -85,8 +85,8 @@ if ($role === 'yes') {
 }
 
 // if no - check userid against planner userid
-if ($role === 'no') {
-	if ($userid === $plannerUserid) {
+if ($role == 'no') {
+	if ($userid == $plannerUserid) {
 		$message = "Error: You are registered as the planner. Try Again";
 		header("Location: error.php?message= " . $message); 
 	} else {
@@ -102,8 +102,6 @@ if ($role === 'no') {
 										INSERT INTO `user` (`email`)
 										VALUES ('$email') "); 
 				$i = $stmt->execute();
-
-			
 
 			// check whether insert was successful, otherwise redirect to error page
 			if ($i == 1) {
