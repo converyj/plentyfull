@@ -86,7 +86,7 @@ $stmt2->execute();
 <a href="full-results.php" class="results-button">View All Results</a>
 
 
-<p><a href="explore-recom.php" class="results-button">See Recommendations</a></p>
+<p><a href="recommendations.php" class="results-button">See Recommendations</a></p>
 
 
 </div>
