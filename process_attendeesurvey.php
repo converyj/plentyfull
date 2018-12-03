@@ -42,7 +42,7 @@ if ($i == 0) {
 
 // check if any checkboxes are checked
 if (!empty($_POST["dietaryRestrictions"])) {
-	$dietary = $_POST['dietaryRestrictions']; 
+	$dietary = $_POST["dietaryRestrictions"]; 
 
 	// if one or more was checked, loop through checkboxes and insert row in userdietary
 	if(count($dietary > 0)) {
@@ -66,7 +66,7 @@ if (!empty($_POST["dietaryRestrictions"])) {
 
 // check if any checkboxes are checked
 if (!empty($_POST["allergies"])) {
-	$allergy = $_POST['allergies']; 
+	$allergy = $_POST["allergies"]; 
 
 	// if one or more was checked, loop through checkboxes and insert row in userallergy
 	if(count($allergy > 0)) {
@@ -87,13 +87,13 @@ if (!empty($_POST["allergies"])) {
 }
 
 // get comment form input if they are any
-if(!empty($_POST['comment'])) {
-	$comment = $_POST['comment'];
+if(!empty($_POST["comment"])) {
+	$comment = $_POST["comment"];
 
 	// INSERT comments into the comment table with their userid 
 	$stmt = $pdo->prepare("
 							INSERT INTO `comment` (`userid`, `comment`)
-							VALUES ($userid, `$comment`) "); 
+							VALUES ($userid, '$comment') "); 
 	$i = $stmt->execute();
 
 	// check whether insert was unsuccessful (redirect to error page), otherwise continue
