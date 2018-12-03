@@ -95,9 +95,9 @@ $stmt2->execute();
      </div>
     </p>
     <p>
-      Other:
+    Other:
 
-      <textarea id="other"></textarea>
+      <textarea id="other" name="comment"></textarea>
     </p>
     <input type="submit" class="button" value="Submit" />
   </fieldset>
