@@ -53,7 +53,7 @@ li {
     list-style: none;
     font-size: 30px;
 
-       
+
 
 }
 
@@ -120,7 +120,7 @@ label{
     display: inline-block;
     line-height: 1.5;
     vertical-align: middle;
-   
+
     margin-bottom: 8px;
 }
 
@@ -230,7 +230,7 @@ input[type=checkbox]{
     margin-top: 20px;
     font-weight: 700;
     font-family: 'Nunito', sans-serif;
-   
+
 }
 
 
@@ -295,12 +295,12 @@ fieldset{
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
-    
+
 }
 
 .container-thankyou{
      background-color: #fff7ed;
- 
+
 }
 
 
@@ -333,8 +333,8 @@ FOR LOG IN PAGE AND REGISTER */
 
 }
 
-textarea, input { 
-    outline: none; 
+textarea, input {
+    outline: none;
 }
 
 .loginemail, textarea,input{
@@ -460,7 +460,7 @@ input[type=radio]{
     margin-left: 10px;
    }
 
-  
+
 /*SUMMARY RESULTS ////////////*/
 
 .results-button{
@@ -485,6 +485,26 @@ input[type=radio]{
 }
 
 
+/*Thankyou-ShareInput Page*/
+
+/*I dunno why it doesn't apply  :'( '*/
+.thankyou2{
+    font-weight: 700;
+    color:#fa7d58;
+    text-align: center;
+    font-size: 70px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+
+}
+.container-thankyoushare{
+     background-color: #fff7ed;
+     vertical-align: middle;
+     text-align: center;
+
+}
 
 
 /*li.b a:hover {

@@ -25,24 +25,33 @@ $surveyid = $_SESSION['surveyid'];
   <!-- <a href=""><img src="" alt="logo"></a> -->
 <div class="at">
   <ul>
+    <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a>
     <li><a href="explore.php">Explore</a></li>
     <li><a href="inputCode.php">Input Code</a></li>
     <li><a href="about.php">About</a></li>
     <li><a href="login.php">Login</a></li>
   </ul>
 </div>
-  <h1>Thank you!</h1>
-  <h2>Your unique code is: </h2>
-  <h2><?php echo($surveyid);?></h2>
-  <h3>When you're ready to view results you can input this code through the input code page in our menu.</h3>
-  <h3>Here is your survey link. Share this with your attendees !</h3>
+
+
+<div class="container-thankyoushare">
+  <p class="thankyou2">Thank You!</p>
+  <img src="./images/bg3.png" width="100%">
+
+
+  <p class='urcodeis'>Your unique code is: </p>
+  <p class='urcode'><?php echo($surveyid);?></p>
+  <p>When you're ready to view results you can input this code through the input code page in our menu.</p>
+  <p>Here is your survey link. Share this with your attendees !</p>
+  
   <form>
     <input type="text" name="link" value="http://plentyfull.com/<?php echo($surveyid);?>" disabled />
   </form>
     <!-- <a href="http://plentyfull.com/?id=<?php echo($surveyid);?>>http://plentyfull.com/<?php echo($surveyid);?></a> -->
-  <p>
+  <p class="linktoregister">
     <a href="register.php">Would you like to register for our site?</a>
   </p>
+</div>
 </body>
 
 
