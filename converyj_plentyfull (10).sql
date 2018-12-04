@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2018 at 10:56 PM
+-- Generation Time: Dec 04, 2018 at 07:35 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 5.6.38
 
@@ -43,7 +43,14 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`userid`, `role`, `city`, `country`, `password`) VALUES
 (29, 1, 'Oakville', 'Can', ''),
 (36, 1, 'Oakville', 'Can', ''),
-(39, 1, 'Oakville', 'Can', '');
+(39, 1, 'Oakville', 'Can', ''),
+(41, 1, 'Oakville', 'Can', ''),
+(42, 1, 'Oakville', 'Can', ''),
+(43, 1, 'OOakville', 'Can', ''),
+(44, 1, 'Oakville', 'Can', ''),
+(45, 1, 'Oakville ', 'Can', ''),
+(46, 1, 'Oakville', 'Ont', ''),
+(47, 1, 'Oakville', 'Can', '');
 
 -- --------------------------------------------------------
 
@@ -182,7 +189,8 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`userid`, `comment`) VALUES
-(2, 'i love pasta');
+(2, 'i love pasta'),
+(50, 'I like pizza');
 
 -- --------------------------------------------------------
 
@@ -206,12 +214,12 @@ CREATE TABLE `dietallergyvalue` (
 INSERT INTO `dietallergyvalue` (`type`, `code`, `value`, `image`, `bigImage`, `greyImage`) VALUES
 ('D', 1, 'Vegetarian', 'vegetarian.png', 'vegetarian-big.png', 'vegetarian-grey.png'),
 ('D', 2, 'Vegan', 'vegan.png', 'vegan-big.png', 'vegan-grey.png'),
-('D', 3, 'Pescetarian', 'presc.png', 'pesc-big.png', 'pesc-grey.png'),
+('D', 3, 'Pescetarian', 'pesc.png', 'pesc-big.png', 'pesc-grey.png'),
 ('D', 4, 'Kosher', 'kosher.png', 'kosher-big.png', 'kosher-grey.png'),
 ('D', 5, 'Halal', 'halal.png', 'halal-big.png', 'halal-grey.png'),
 ('D', 6, 'Gluten-Free', 'glutenFree.png', 'glutenFree-big.png', 'glutenFree-grey.png'),
 ('A', 1, 'Peanuts', 'peanutFree.png', 'peanutFree-big.png', 'peanutFree-grey.png'),
-('A', 2, 'Lactose', 'lactose.png', 'lactose.big.png', 'lactose-grey.png'),
+('A', 2, 'Lactose', 'lactose.png', 'lactose-big.png', 'lactose-grey.png'),
 ('A', 3, 'Eggs', 'eggFree.png', 'eggFree-big.png', 'eggFree-grey.png'),
 ('A', 4, 'Wheat', 'wheatFree.png', 'wheatFree-big.png', 'wheatFree-grey.png'),
 ('A', 5, 'Soy', 'soyFree.png', 'soyFree-big.png', 'soyFree-grey.png'),
@@ -236,7 +244,14 @@ CREATE TABLE `survey` (
 INSERT INTO `survey` (`surveyid`, `deadline`) VALUES
 (24, '2018-12-14'),
 (25, '2018-12-14'),
-(26, '2018-12-14');
+(26, '2018-12-14'),
+(27, '2018-11-29'),
+(28, '2018-12-03'),
+(29, '2018-12-03'),
+(30, '2018-12-03'),
+(31, '2018-12-03'),
+(32, '2018-12-02'),
+(33, '2018-12-02');
 
 -- --------------------------------------------------------
 
@@ -276,12 +291,21 @@ INSERT INTO `user` (`userid`, `firstName`, `lastName`, `email`) VALUES
 (27, 'Alex', 'Smith', 'asmith@gmail.com'),
 (28, 'Matt', 'Smith', 'msmith@gmail.com'),
 (29, 'Donny', 'Smith', 'dsmith@gmail.com'),
-(30, '', '', 'esmith@gmail.com'),
-(36, 'Jill', 'Smith', 'jillsmith@gmail.com'),
-(37, '', '', 'ksmith@gmail.com'),
+(36, 'Frank', 'Zee', 'jillsmith@gmail.com'),
 (38, 'Jacob', 'Smith', 'jacobsmith@gmail.com'),
 (39, 'fred', 'Smith', 'fsmith@gmail.com'),
-(40, 'Susan', 'Smith', 'ssmith@gmail.com');
+(40, 'Susan', 'Smith', 'ssmith@gmail.com'),
+(41, 'Jack', 'Smtih', 'jack@cogefco.ca'),
+(42, 'Jone', 'Smith', 'jone@gmail.com'),
+(43, 'Jay', 'Richard', 'jay@gmail.com'),
+(44, 'Pete', 'Mavis', 'petemavis@hotmail.com'),
+(45, 'Diana', 'Soy', 'diane@gmail.com'),
+(46, 'Daneille', 'Joseph', 'danielle@gmail.com'),
+(47, 'Max', 'Maxim', 'max@gmail.com'),
+(48, 'Frank', 'Zee', 'frankze@gmail.com'),
+(49, 'Deb', 'Wilson', 'deb@hotmail.com'),
+(50, 'Andrew', 'Smyk', 'andy@gmaiil.com'),
+(51, 'Dorothy', 'Oz', 'dorothyoz@gmiaal.com');
 
 -- --------------------------------------------------------
 
@@ -300,9 +324,6 @@ CREATE TABLE `userallergy` (
 --
 
 INSERT INTO `userallergy` (`surveyid`, `userid`, `allergyCode`) VALUES
-(0, 3, 5),
-(0, 1, 5),
-(0, 1, 6),
 (23, 28, 1),
 (23, 28, 2),
 (24, 29, 1),
@@ -316,7 +337,35 @@ INSERT INTO `userallergy` (`surveyid`, `userid`, `allergyCode`) VALUES
 (26, 40, 1),
 (26, 40, 2),
 (26, 40, 1),
-(26, 40, 2);
+(26, 40, 2),
+(27, 41, 2),
+(27, 41, 4),
+(29, 43, 1),
+(29, 43, 4),
+(30, 44, 1),
+(30, 44, 4),
+(31, 45, 1),
+(31, 45, 4),
+(32, 46, 1),
+(32, 46, 4),
+(33, 47, 1),
+(33, 47, 4),
+(25, 48, 1),
+(25, 48, 2),
+(25, 36, 1),
+(25, 36, 2),
+(25, 49, 1),
+(25, 49, 2),
+(25, 49, 3),
+(25, 49, 4),
+(25, 49, 5),
+(25, 49, 6),
+(25, 49, 7),
+(25, 50, 1),
+(25, 50, 2),
+(25, 50, 1),
+(25, 50, 2),
+(25, 51, 1);
 
 -- --------------------------------------------------------
 
@@ -335,18 +384,6 @@ CREATE TABLE `userdietary` (
 --
 
 INSERT INTO `userdietary` (`surveyid`, `userid`, `dietaryRestrictionCode`) VALUES
-(0, 1, 1),
-(0, 2, 3),
-(0, 3, 3),
-(0, 4, 1),
-(16, 0, 1),
-(16, 0, 4),
-(17, 0, 1),
-(17, 0, 4),
-(18, 0, 1),
-(18, 0, 4),
-(19, 0, 2),
-(20, 0, 2),
 (22, 27, 3),
 (23, 28, 1),
 (23, 28, 2),
@@ -361,7 +398,26 @@ INSERT INTO `userdietary` (`surveyid`, `userid`, `dietaryRestrictionCode`) VALUE
 (26, 40, 1),
 (26, 40, 2),
 (26, 40, 1),
-(26, 40, 2);
+(26, 40, 2),
+(32, 46, 1),
+(32, 46, 2),
+(33, 47, 1),
+(33, 47, 2),
+(25, 48, 1),
+(25, 48, 3),
+(25, 36, 1),
+(25, 36, 3),
+(25, 49, 1),
+(25, 49, 2),
+(25, 49, 3),
+(25, 49, 4),
+(25, 49, 5),
+(25, 49, 6),
+(25, 50, 1),
+(25, 50, 2),
+(25, 50, 1),
+(25, 50, 2),
+(25, 51, 1);
 
 -- --------------------------------------------------------
 
@@ -384,7 +440,20 @@ INSERT INTO `usersurvey` (`userid`, `surveyid`) VALUES
 (38, 25),
 (39, 26),
 (40, 26),
-(40, 26);
+(40, 26),
+(41, 27),
+(42, 28),
+(43, 29),
+(44, 30),
+(45, 31),
+(46, 32),
+(47, 33),
+(48, 25),
+(36, 25),
+(49, 25),
+(50, 25),
+(50, 25),
+(51, 25);
 
 --
 -- Indexes for dumped tables
@@ -394,8 +463,7 @@ INSERT INTO `usersurvey` (`userid`, `surveyid`) VALUES
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`userid`),
-  ADD KEY `userid` (`userid`);
+  ADD PRIMARY KEY (`userid`);
 
 --
 -- Indexes for table `caterer`
@@ -436,13 +504,13 @@ ALTER TABLE `caterer`
 -- AUTO_INCREMENT for table `survey`
 --
 ALTER TABLE `survey`
-  MODIFY `surveyid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `surveyid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- Constraints for dumped tables
