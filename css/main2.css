@@ -71,6 +71,22 @@ li a {
 }
 
 
+#menu-icon {
+
+	display: none;
+	width: 40px;
+	height: 40px;
+	background: #fa7d58 url(images/menu-icon.png) center;
+
+}
+
+a:hover#menu-icon {
+
+	background-color: #444;
+	border-radius: 4px 4px 0 0;
+
+}
+
 .header{
     /*padding-left: 140px;
     padding-bottom: 70px;
@@ -643,7 +659,7 @@ FULL RESULTS PAGE*/
     column-count: 2;
     margin-left: 15%;
     margin-top: 5%;
-    margin-bottom:5%; 
+    margin-bottom:5%;
 }
 
 .edit-delete{
@@ -651,5 +667,3 @@ FULL RESULTS PAGE*/
 }
 
 /*fULL RESULTS ENDS*/
-
-

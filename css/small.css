@@ -32,6 +32,8 @@ color:#424241;
 
 .at {
     background-color: blue;
+    position: absolute;
+
 }
 
 /* ul {
@@ -61,19 +63,26 @@ li a {
     font-size: 20px;
     font-weight: 400;
 /*    text-align: center;*/
-    padding: 14px 16px;
+    /* padding: 14px 16px;
     text-decoration: none;
     float:left;
     list-style: none;
 
 } */
 
+#menu-icon {
+
+		display:inline-block;
+
+	}
+
+
 .at ul, .at:active ul {
 
 		display: none;
 		position: absolute;
 		padding: 20px;
-		background: #fff;
+		background: #fa7d58;
 		border: 5px solid #444;
 		right: 20px;
 		top: 60px;
