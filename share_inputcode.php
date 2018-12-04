@@ -34,22 +34,24 @@ $surveyid = $_SESSION['surveyid'];
 </div>
 
 
-<div class="container-thankyoushare">
-  <p class="thankyou2">Thank You!</p>
-  <img src="./images/bg3.png" width="100%">
+<div class="container-thankyou">
+  <p class="thankyou-input">Thank You!</p>
 
 
-  <p class='urcodeis'>Your unique code is: </p>
-  <p class='urcode'><?php echo($surveyid);?></p>
-  <p>When you're ready to view results you can input this code through the input code page in our menu.</p>
-  <p>Here is your survey link. Share this with your attendees !</p>
+
+  <p class='urcode1'>Your unique code is: </p>
+  <p class='urcode2'><?php echo($surveyid);?></p>
+  <p class='urcode3'>When you're ready to view results you can input this code through the input code page in our menu.
+    <br>
+    <br>
+  Here is your survey link. Share this with your attendees !</p>
   
   <form>
-    <input type="text" name="link" value="http://plentyfull.com/<?php echo($surveyid);?>" disabled />
+    <input type="text" class="surveyinputtext" name="link" value="http://plentyfull.com/<?php echo($surveyid);?>" disabled />
   </form>
-    <!-- <a href="http://plentyfull.com/?id=<?php echo($surveyid);?>>http://plentyfull.com/<?php echo($surveyid);?></a> -->
+   <!--  <a href="http://plentyfull.com/?id=<?php echo($surveyid);?>>http://plentyfull.com/<?php echo($surveyid);?></a>  -->
   <p class="linktoregister">
-    <a href="register.php">Would you like to register for our site?</a>
+    <a href="register.php" class="linktoregister">Would you like to register for our site?</a>
   </p>
 </div>
 </body>
@@ -58,9 +60,9 @@ $surveyid = $_SESSION['surveyid'];
 <footer>
   <a href="mailto:info@plentyfull.com">info@plentyfull.com</a>
   <br />
-  <a href="https://www.instagram.com/"><img src="images/ig.png" alt="ins" /></a>
-  <a href="https://www.facebook.com/"><img src="images/facebook.png" alt="facebook" /></a>
-  <a href="https://www.twitter.com/"><img src="images/twitter.png" alt="twitter" /></a>
+  <a href="https://www.instagram.com/"><img src="images/ig.png" width="3%" alt="ins" /></a>
+  <a href="https://www.facebook.com/"><img src="images/facebook.png" width="3%" alt="facebook" /></a>
+  <a href="https://www.twitter.com/"><img src="images/twitter.png" width="3%" alt="twitter" /></a>
 
 </footer>
 </html>

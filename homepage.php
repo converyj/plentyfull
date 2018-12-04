@@ -64,11 +64,11 @@ $stmt2->execute();
       <p class="start"> Start Planning</p>
       <br />
       </label>
-      <label>First Name</label><input type="text" name="firstName" /><br />
-      <label>Last Name</label><input type="text" name="lastName" /><br />
-      <label>Email</label><input type="email" name="email" /><br />
-      <label>City</label><input type="text" name="city" size="25" /><br />
-      <label>Country</label><input type="text" name="country" size="25" /><br />
+      <label>First Name</label><input class="surveyinputtext" type="text" name="firstName" /><br />
+      <label>Last Name</label><input  class="surveyinputtext" type="text" name="lastName" /><br />
+      <label>Email</label><input class="surveyinputemail" type="email" name="email" /><br />
+      <label>City</label><input class="surveyinputtext" type="text" name="city" size="25" /><br />
+      <label>Country</label><input class="surveyinputtext" type="text" name="country" size="25" /><br />
       <label>When would you like your results?</label><input type="date" class="dueDate" name="ddlDate" /><br />
       <p>
 

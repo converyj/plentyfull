@@ -28,10 +28,10 @@
       <p class="login">Sign Up</p>
       <p class="sentence" >Register with us to always keep your information saved</p>
     </legend>
-    <font color="white">First Name<input class="registername" type="text" name="firstName" /><br />
-    <font color="white">Last Name<input class="registername" type="text" name="lastName" /><br />
-    <font color="white">Email<input class="loginemail" type="email" name="email" /><br />
-    <font color="white">Password<input class="password" type="password" name="password" required="required" /><br />
+    <font color="white">First Name<input class="registername logininput" type="text" name="firstName" /><br />
+    <font color="white">Last Name<input class="registername logininput" type="text" name="lastName" /><br />
+    <font color="white">Email<input class="loginemail logininput" type="email" name="email" /><br />
+    <font color="white">Password<input class="password logininput" type="password" name="password" required="required" /><br />
     <p>
       <input type="checkbox" name="termOfUse" />
       <a class="agree" href="">I agree with the terms and conditions</a>

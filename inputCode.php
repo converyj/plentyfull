@@ -26,7 +26,7 @@
 <div class="container">
   <P class="input-code">Input Code</P>
   <form action="process_inputcode.php" method="POST">
-      Code<input type="text" name="code" /><br />
+      Code<input class="surveyinputtext" type="text" name="code" /><br />
 
           <p class="planner">
         Are you the event planner?
@@ -34,7 +34,7 @@
           <input type="radio"  name="role" value="no" />No
       </p>
 
-      Email<input type="email" name="email" /><br />
+      Email<input class="surveyinputemail" type="email" name="email" /><br />
   
       <input class="code-button" type="submit" value="Go" />
 </div>

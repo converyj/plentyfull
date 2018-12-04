@@ -128,9 +128,9 @@ form{
     text-align: center;
 }
 
+/*//////////////////////////////////////*/
 
-
-input[type=text]{
+.surveyinputtext{
     width: 30%;
     padding:12px 20px;
     margin: 8px 0;
@@ -142,7 +142,7 @@ input[type=text]{
 
   }
 
-input[type=email]{
+.surveyinputemail{
     width: 30%;
     padding:12px 20px;
     margin: 8px 0;
@@ -153,7 +153,7 @@ input[type=email]{
 }
 
 input[type=date]{
-    color:#fff7ed;
+    color:black;
     border-radius: 12px;
     border: 1px solid #bababa;
     background-color: #fff7ed;
@@ -284,7 +284,8 @@ fieldset{
 
 
 
-/*thankyoupage///////////////////////////*/
+/*thankyoupage///////////////////////////*/  /*THANKY YOU INPUT PAGE*/
+
 
 .thankyou{
     font-weight: 700;
@@ -298,12 +299,52 @@ fieldset{
 
 }
 
-.container-thankyou{
-     background-color: #fff7ed;
+.thankyou-input{
+    font-weight: 700;
+    color:#fa7d58;
+    text-align: center;
+    font-size: 70px;
+    padding-top: 5%;
+    /*position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);*/
 
 }
 
+.urcode1{
+    font-weight: 300;
+    color:#fa7d58;
+    text-align: center;
+    font-size: 24px;
 
+}
+
+.urcode2{
+    text-align: center;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.urcode3{
+    text-align: center;
+}
+
+.container-thankyou{
+     background-color: #fff7ed;
+     background-image: url(../images/bg3.png);
+     min-height: 500px;
+     /*width: 100%*/;
+     background-size: contain;
+     /*background-repeat: no-repeat;*/
+
+
+}
+
+.linktoregister{
+    text-align: center;
+    color: #fa7d58;
+}
 
 /*
 FOR LOG IN PAGE AND REGISTER */
@@ -320,13 +361,12 @@ FOR LOG IN PAGE AND REGISTER */
 }
 
 
- .loginemail[type=email]{
+ .logininput[type=email]{
     width: 30%;
     padding:12px 20px;
     padding-top: 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    background-color: #fa7d58;
     border:none;
     border-bottom: 1px solid white;
     font-family: 'Nunito', sans-serif;
@@ -337,10 +377,12 @@ textarea, input {
     outline: none;
 }
 
-.loginemail, textarea,input{
+.logininput{
     color:white;
     font-size: 14px;
     font-family: 'Nunito', sans-serif;
+
+    background-color: #fa7d58;
 }
 
 
@@ -351,7 +393,6 @@ textarea, input {
     padding-top: 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    background-color: #fa7d58;
     border:none;
     display: inline-block;
     border-bottom: 1px solid white;
@@ -412,7 +453,7 @@ textarea, input {
 /*END OF LOG IN AND REGISTER */
 
 
-/*INPUT CODE PAGE*/
+/*INPUT CODE PAGE//////////////*/
 
 .input-code{
     padding-top: 10%;
@@ -484,29 +525,35 @@ input[type=radio]{
     padding-bottom: 150px;
 }
 
+/*RECOMMENDATIONS*/
 
-/*Thankyou-ShareInput Page*/
+.dietdiv-recommendations {
+    display:inline-block;
+    /*margin-top: 5%;*/
+    margin:3%;
+    width: 0.1%;
+    margin-top: 0%;
+    font-size:12px;
 
-/*I dunno why it doesn't apply  :'( '*/
-.thankyou2{
-    font-weight: 700;
-    color:#fa7d58;
+}
+
+.allergydiv-recommendations {
+    display:inline-block;
+    /*margin-top: 5%;*/
+    margin:3%;
+    width: 0.1%;
+    margin-top: 0%;
+    font-size:12px;
+
+}
+
+/*.dietallergy{
+    display:block;
+    width:100%;
+
+}
+
+.allergy{
     text-align: center;
-    font-size: 70px;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-
-}
-.container-thankyoushare{
-     background-color: #fff7ed;
-     vertical-align: middle;
-     text-align: center;
-
-}
-
-
-/*li.b a:hover {
-	background-color: #111;
+    display: block;
 }*/

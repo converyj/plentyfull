@@ -59,9 +59,9 @@ $stmt2->execute();
 
 <form action="process_attendeesurvey.php" method="POST">
   <fieldset>
-    First Name:<input type="text" name="firstName" /><br />
-    Last Name:<input type="text" name="lastName" /><br />
-    Email:<input type="email" name="email" value="<?php echo($email);?>" /><br />
+    First Name:<input class="surveyinputtext" type="text" name="firstName" /><br />
+    Last Name:<input class="surveyinputtext" type="text" name="lastName" /><br />
+    Email:<input class="surveyinputemail" type="email" name="email" value="<?php echo($email);?>" /><br />
     <p>
       <label class="dietLabel">Dietary Restrictions:</label>
         <br />

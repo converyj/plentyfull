@@ -24,8 +24,8 @@
 <div class="background">
 <form action="process_login.php" method="POST">
     <p class="login">Log In</p>
-    <font color="white">Email</font><input class="loginemail" type="email" name="email" /><br />
-    <font color="white">Password</font><input  class="password" type="password" name="password" required="required" /><br />
+    <font color="white">Email</font><input class="logininput" type="email" name="email" /><br />
+    <font color="white">Password</font><input  class="password logininput" type="password" name="password" required="required" /><br />
       <p class="register"> Don't have an account?<a href="signup.php">  Register here</a></p>
     <input class="submit-btn"type="submit" value="Go" />
 </form>

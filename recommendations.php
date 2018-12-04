@@ -57,6 +57,7 @@ $stmt3->execute();
   <!-- <a href=""><img src="" alt="logo"></a> -->
 <div class="at">
   <ul>
+  <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a>
     <li><a href="explore.php">Explore</a></li>
     <li><a href="inputCode.php">Input Code</a></li>
     <li><a href="about.php">About</a></li>
@@ -64,39 +65,38 @@ $stmt3->execute();
   </ul>
 </div>
 
-<div id="bar">
+<!-- <div id="bar">
     <li>Discover</li>
     <li>Newest</li>
     <li>Popular</li>
     <li><input type="search" name="search" /><input type="submit" value="Search" /></li>
-</div>
+</div> -->
 <p>
     <div class="diet">
     <?php
     while ($row = $stmt1->fetch()) {
     ?>
-    <div class="dietdiv">
+    <div class="dietdiv-recommendations">
       <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
-        <img src="images/<?php echo($row['greyImage']); ?>" class="image" alt="image" />
+        <img src="images/<?php echo($row['greyImage']); ?>" width="2000%" class="image" alt="image" />
         </label>
         <input type="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
       </div>
      <?php } ?>
-   </div>
-  </p>
-  <p>
-    <div class="allergy">
-    <?php
+
+     <?php
     while ($row = $stmt2->fetch()) {
     ?>
-    <div class="allergydiv">
+    <div class="allergydiv-recommendations">
       <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
-        <img class="image img" src="images/<?php echo($row['greyImage']); ?>" alt="image" />
+        <img class="image img" src="images/<?php echo($row['greyImage']); ?>" width="2000%" alt="image" />
       </label>
-        <input type="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); ?>"/><?php echo($row['value']); ?>
+        <input type="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); 
+        ?>"/><?php echo($row['value']); ?>
     </div>
    <?php } ?>
- </div>
+   </div>
+
 </p>
 <div class="caterers">
     <?php
@@ -151,14 +151,14 @@ function getCatererDetails($pdo, $catererid) {
   // display dietary images
   while ($row1 = $stmt1->fetch()) {
   ?>
-    <img src="images/<?php echo($row1['image']); ?>" alt="image" />
+    <img src="images/<?php echo($row1['image']); ?>" width="2%" alt="image" />
   <?php
   }
 
   // display allergy images
   while ($row2 = $stmt2->fetch()) {
   ?>
-    <img class="image img" src="images/<?php echo($row2['image']); ?>" alt="image" />
+    <img class="image img" src="images/<?php echo($row2['image']); ?>" width="2%" alt="image" />
   <?php
   }
 }
