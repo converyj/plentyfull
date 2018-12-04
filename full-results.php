@@ -29,7 +29,7 @@ $stmt->execute();
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
-  <!-- <link rel="stylesheet" type="text/css" href="css/main2.css"> -->
+  <link rel="stylesheet" type="text/css" href="css/main2.css">
 
   <!-- plentyfull favicon -->
   <title>Plenty Full - Full Results</title>
@@ -46,14 +46,14 @@ $stmt->execute();
   </div>
   <div class="container">
     <p class="start">Full Results</p>
-
+  <div class="survey-people">
         <?php
         //show results for each user in the survey
         while($row = $stmt->fetch()) {    
         ?>
           <div>
-            <a href="edit.php">Edit</a></span>
-            <a href="delete.php">Delete</a></span>
+            <a class="edit-delete" href="edit.php">Edit</a></span>
+            <a class="edit-delete" href="delete.php">Delete</a></span>
             <p>First Name: <?php echo($row["firstName"]); ?></p>
             <p>Last Name: <?php echo($row["lastName"]); ?></p>
             <p>Email: <?php echo($row["email"]); ?></p>
@@ -63,6 +63,7 @@ $stmt->execute();
             // call function to get user details
             getUserDetails($pdo, $surveyid, $userid); 
             ?>
+            <br>
           </div>
         <?php
         }
@@ -149,3 +150,4 @@ function getUserDetails($pdo, $surveyid, $userid) {
   }
 }
 ?>
+</div>

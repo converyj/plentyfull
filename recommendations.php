@@ -25,7 +25,7 @@ $stmt2->execute();
 
 // SELECT all caterers with matching dietary and allergy results
 $stmt3 = $pdo->prepare("
-                        SELECT DISTINCT `caterer`.`catererid`, `caterer`.`image`, `city`, `link`, `postal`, `name`, `price`, `description`
+                        SELECT DISTINCT `caterer`.`catererid`, `caterer`.`image`, `city`, `link`, `streetName`, `name`, `price`, `description`
                         FROM `caterer`
                         LEFT OUTER JOIN `catererdietary` ON `caterer`.`catererid` = `catererdietary`.`catererid`
                         LEFT OUTER JOIN `catererallergy` ON `caterer`.`catererid` = `catererallergy`.`catererid`
@@ -71,7 +71,8 @@ $stmt3->execute();
     <li>Popular</li>
     <li><input type="search" name="search" /><input type="submit" value="Search" /></li>
 </div> -->
-<p>
+<div class="container">
+<p>Filters:
     <div class="diet">
     <?php
     while ($row = $stmt1->fetch()) {
@@ -102,29 +103,31 @@ $stmt3->execute();
     <?php
     while ($row = $stmt3->fetch()) {
     ?>
+    <img class="catererImage" src="images/<?php echo($row['image']); ?>" alt="image" />
     <div class="catererdiv">
-      <img class="image img" src="images/<?php echo($row['image']); ?>" alt="image" />
       <p><?php echo($row['name']); ?></p>
       <p><?php echo($row['price']); ?></p>
-      <p><?php echo($row['description']); ?></p>
+      <p class="restaurantDescription"><?php echo($row['description']); ?></p>
       <p><?php echo($row['link']); ?></p>
+      <p><?php echo($row['streetName']); ?></p>
       <p><?php echo($row['city']); ?></p>
-      <p><?php echo($row['postal']); ?></p>
       <?php
       $catererid = $row['catererid'];
       getCatererDetails($pdo, $catererid);
       ?>
+      <br>
     </div>
    <?php } ?>
  </div>
 </body>
 <footer>
-  <a href="mailto:info@plentyfull.com">info@plentyfull.com</a>
+  <a href="mailto:info@plentyfull.com" class="email">info@plentyfull.com</a>
   <br />
-  <a href="https://www.instagram.com/"><img src="images/ig.png" alt="ins" /></a>
-  <a href="https://www.facebook.com/"><img src="images/facebook.png" alt="facebook" /></a>
-  <a href="https://www.twitter.com/"><img src="images/twitter.png" alt="twitter" /></a>
+  <a href="https://www.instagram.com/"><img src="images/ig.png" width="3%" alt="ins" /></a>
+  <a href="https://www.facebook.com/"><img src="images/facebook.png" width="3%" alt="facebook" /></a>
+  <a href="https://www.twitter.com/"><img src="images/twitter.png" width="3%" alt="twitter" /></a>
 </footer>
+</div>
 </html>
 
 <?php
@@ -151,15 +154,16 @@ function getCatererDetails($pdo, $catererid) {
   // display dietary images
   while ($row1 = $stmt1->fetch()) {
   ?>
-    <img src="images/<?php echo($row1['image']); ?>" width="2%" alt="image" />
+    <img src="images/<?php echo($row1['image']); ?>" width="5%" alt="image" />
   <?php
   }
 
   // display allergy images
   while ($row2 = $stmt2->fetch()) {
   ?>
-    <img class="image img" src="images/<?php echo($row2['image']); ?>" width="2%" alt="image" />
+    <img src="images/<?php echo($row2['image']); ?>" width="5%" alt="image" />
   <?php
   }
 }
 ?>
+<br>

@@ -338,8 +338,9 @@ fieldset{
      background-size: contain;
      /*background-repeat: no-repeat;*/
 
-
 }
+
+/*END OF THANK YOUS*/
 
 .linktoregister{
     text-align: center;
@@ -507,14 +508,22 @@ input[type=radio]{
 .results-button{
     background-color: #fa7d58;
     border: none;
-    color: white;
-    padding: 15px 32px;
+    color: #fff7ed;
+    padding-right: 80px;
+    padding-left:80px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-size: 20px;
     cursor: pointer;
+    border-radius: 12px;
+    border: 1px solid #fa7d58;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
 }
 
 /*ABOUT PAGE ////////*/
@@ -547,13 +556,100 @@ input[type=radio]{
 
 }
 
-/*.dietallergy{
-    display:block;
-    width:100%;
+.caterers {
+    column-count:2;
+}
+
+.restaurantDescription {
+    max-width: calc(30em*0.5);
+    font-size:14px;
+    /*white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*max-width: 100px;*/
+}
+
+.catererImage{
+    padding-top:5%;
+    padding-left: 5%;
+}
+
+.catererdiv{
+    padding-top: 5%;
+    padding-left: 5%;
+    display: inline-block;
+}
+
+/*SUMMARY RESULTS /////////////*/
+
+.dietallergySummary {
+    /*display:block;
+    width:100%;*/
+/*    column-count: 3;*/
+margin-left: 5%;
+margin-top: 5%;
 
 }
 
-.allergy{
+.dietdivSummary{
+    display:inline-block;
+    margin:5%;
+    /*width: 0.1%;*/
+    margin-top: 0%;
+}
+
+.allergydivSummary{
+    display:inline-block;
+    margin:5%;
+    /*width: 0.1%;*/
+    margin-top: 0%;
+
+}
+
+
+.result-label{
+    font-size: 24px;
+    font-weight: 900;
+
+}
+
+.result-number{
+    font-size: 24px;
+    font-weight: 900;
+    color:#fa7d58;
+}
+
+.allresults{
     text-align: center;
-    display: block;
-}*/
+    padding-bottom: 8%;
+}
+
+.one{
+    margin-right:2%;
+}
+
+
+
+.two{
+    margin-left:2%;
+}
+
+
+
+/*
+FULL RESULTS PAGE*/
+
+.survey-people{
+    column-count: 2;
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-bottom:5%; 
+}
+
+.edit-delete{
+    color:#fa7d58;
+}
+
+/*fULL RESULTS ENDS*/
+
+
