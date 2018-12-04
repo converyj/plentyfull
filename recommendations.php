@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 session_start();
 
-$surveyid = $_SESSION['surveyid']; 
+$surveyid = $_SESSION['surveyid'];
 
 $dsn = "mysql:host=localhost;dbname=converyj_plentyfull;charset=utf8mb4";
 $dbusername = "converyj";
@@ -23,19 +23,19 @@ $stmt2 = $pdo->prepare("
                         WHERE `dietallergyvalue`.`type` = 'A'");
 $stmt2->execute();
 
-// SELECT all caterers with matching dietary and allergy results 
+// SELECT all caterers with matching dietary and allergy results
 $stmt3 = $pdo->prepare("
                         SELECT DISTINCT `caterer`.`catererid`, `caterer`.`image`, `city`, `link`, `postal`, `name`, `price`, `description`
-                        FROM `caterer` 
-                        LEFT OUTER JOIN `catererdietary` ON `caterer`.`catererid` = `catererdietary`.`catererid` 
-                        LEFT OUTER JOIN `catererallergy` ON `caterer`.`catererid` = `catererallergy`.`catererid` 
-                        WHERE `catererdietary`.`dietaryRestrictionCode` IN 
-                                                                            (SELECT `userdietary`.`dietaryRestrictionCode` 
+                        FROM `caterer`
+                        LEFT OUTER JOIN `catererdietary` ON `caterer`.`catererid` = `catererdietary`.`catererid`
+                        LEFT OUTER JOIN `catererallergy` ON `caterer`.`catererid` = `catererallergy`.`catererid`
+                        WHERE `catererdietary`.`dietaryRestrictionCode` IN
+                                                                            (SELECT `userdietary`.`dietaryRestrictionCode`
                                                                             FROM `userdietary`
                                                                             WHERE `surveyid` = $surveyid)
-                        AND `catererallergy`.`allergyCode` IN 
-                                                               (SELECT `userallergy`.`allergyCode` 
-                                                               FROM `userallergy` 
+                        AND `catererallergy`.`allergyCode` IN
+                                                               (SELECT `userallergy`.`allergyCode`
+                                                               FROM `userallergy`
                                                                WHERE `surveyid` = $surveyid); ");
 $stmt3->execute();
 
@@ -47,18 +47,22 @@ $stmt3->execute();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
+  <link rel="stylesheet" type="text/css" href="css/main2.css">
+  <!-- plentyfull favicon -->
   <title>Plenty Full -  Recommendations </title>
 </head>
 <body>
   <!-- <a href=""><img src="" alt="logo"></a> -->
-<nav>
+<div class="at">
   <ul>
     <li><a href="explore.php">Explore</a></li>
     <li><a href="inputCode.php">Input Code</a></li>
     <li><a href="about.php">About</a></li>
     <li><a href="login.php">Login</a></li>
   </ul>
-</nav>
+</div>
 
 <div id="bar">
     <li>Discover</li>
@@ -108,7 +112,7 @@ $stmt3->execute();
       <p><?php echo($row['postal']); ?></p>
       <?php
       $catererid = $row['catererid'];
-      getCatererDetails($pdo, $catererid); 
+      getCatererDetails($pdo, $catererid);
       ?>
     </div>
    <?php } ?>
@@ -123,39 +127,39 @@ $stmt3->execute();
 </footer>
 </html>
 
-<?php 
+<?php
 function getCatererDetails($pdo, $catererid) {
 
   // SELECT all dietary restrictions for the user
   $stmt1 = $pdo->prepare("
                           SELECT `dietallergyvalue`.`image`
                           FROM `catererdietary`
-                          INNER JOIN `dietallergyvalue` ON `catererdietary`.`dietaryRestrictionCode` = `dietallergyvalue`.`code`  
-                          WHERE `catererdietary`.`catererid` = $catererid 
-                          AND `dietallergyvalue`.`type` = 'D'"); 
+                          INNER JOIN `dietallergyvalue` ON `catererdietary`.`dietaryRestrictionCode` = `dietallergyvalue`.`code`
+                          WHERE `catererdietary`.`catererid` = $catererid
+                          AND `dietallergyvalue`.`type` = 'D'");
   $stmt1->execute();
 
   // SELECT all allergies for the user
   $stmt2 = $pdo->prepare("
                           SELECT `dietallergyvalue`.`image`
                           FROM `catererallergy`
-                          INNER JOIN `dietallergyvalue` ON `catererallergy`.`allergyCode` = `dietallergyvalue`.`code` 
-                          WHERE `catererallergy`.`catererid` = $catererid 
+                          INNER JOIN `dietallergyvalue` ON `catererallergy`.`allergyCode` = `dietallergyvalue`.`code`
+                          WHERE `catererallergy`.`catererid` = $catererid
                           AND `dietallergyvalue`.`type` = 'A'");
   $stmt2->execute();
 
-  // display dietary images 
+  // display dietary images
   while ($row1 = $stmt1->fetch()) {
   ?>
     <img src="images/<?php echo($row1['image']); ?>" alt="image" />
   <?php
   }
 
-  // display allergy images  
-  while ($row2 = $stmt2->fetch()) { 
+  // display allergy images
+  while ($row2 = $stmt2->fetch()) {
   ?>
     <img class="image img" src="images/<?php echo($row2['image']); ?>" alt="image" />
-  <?php 
+  <?php
   }
 }
 ?>
