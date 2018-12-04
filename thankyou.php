@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
   <link rel="stylesheet" type="text/css" href="css/main2.css">
+  <link rel="stylesheet" media="screen and (max-width: 480px)" href="css/small.css" />
   <title>Plenty Full - Thank you!</title>
 </head>
 <body>
@@ -26,8 +27,8 @@
 <div class="container-thankyou">
   <p class="thankyou">Thank You!</p>
   <img src="./images/bg3.png" width="100%">
-  
-</div>  
+
+</div>
 
 </body>
 
