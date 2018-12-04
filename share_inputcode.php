@@ -14,19 +14,23 @@ $surveyid = $_SESSION['surveyid'];
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
+  <link rel="stylesheet" type="text/css" href="css/main2.css">
+
   <!-- plentyfull favicon -->
   <title>Plenty Full - Thank you! Now share your code</title>
 </head>
 <body>
   <!-- <a href=""><img src="" alt="logo"></a> -->
-<nav>
+<div class="at">
   <ul>
     <li><a href="explore.php">Explore</a></li>
     <li><a href="inputCode.php">Input Code</a></li>
     <li><a href="about.php">About</a></li>
     <li><a href="login.php">Login</a></li>
   </ul>
-</nav>
+</div>
   <h2>Your unique code is: </h2>
   <h2><?php echo($surveyid);?></h2>
   <h3>When you're ready to view results you can input this code through the input code page in our menu.</h3>
