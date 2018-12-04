@@ -31,6 +31,7 @@ $surveyid = $_SESSION['surveyid'];
     <li><a href="login.php">Login</a></li>
   </ul>
 </div>
+  <h1>Thank you!</h1>
   <h2>Your unique code is: </h2>
   <h2><?php echo($surveyid);?></h2>
   <h3>When you're ready to view results you can input this code through the input code page in our menu.</h3>
