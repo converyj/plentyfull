@@ -1,4 +1,3 @@
-
 *{
     margin:0;
 
@@ -33,26 +32,27 @@ color:#424241;
 
 .at {
     background-color: blue;
+    position: absolute;
+
 }
 
-ul {
+/* ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    //padding: 0;
     overflow: hidden;
     background-color: #fa7d58;
-    padding: 15px 15px 15px 15px;
+    padding: 0px 10px 0px 10px;
     font-size: 30px;
 
 }
 
 li {
-    float: right;
+    //float: right;
     text-decoration: none;
     color:black;
     list-style: none;
     font-size: 30px;
-
 
 
 }
@@ -63,38 +63,59 @@ li a {
     font-size: 20px;
     font-weight: 400;
 /*    text-align: center;*/
-    padding: 14px 16px;
+    /* padding: 14px 16px;
     text-decoration: none;
-    float:right;
+    float:left;
     list-style: none;
 
-}
-
+} */
 
 #menu-icon {
 
-	display: none;
-	width: 40px;
-	height: 40px;
-	background: #fa7d58 url(images/menu-icon.png) center;
+		display:inline-block;
 
-}
+	}
 
-a:hover#menu-icon {
 
-	background-color: #444;
-	border-radius: 4px 4px 0 0;
+.at ul, .at:active ul {
 
-}
+		display: none;
+		position: absolute;
+		padding: 20px;
+		background: #fa7d58;
+		border: 5px solid #444;
+		right: 20px;
+		top: 60px;
+		width: 50%;
+		border-radius: 4px 0 4px 4px;
+
+	}
+
+	.at li {
+
+		text-align: center;
+		width: 100%;
+		padding: 10px 0;
+		margin: 0;
+
+	}
+
+	.at:hover ul {
+
+		display: block;
+
+	}
+
 
 .header{
     /*padding-left: 140px;
     padding-bottom: 70px;
     padding-top: 50px;*/
+
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 75%;
+    width: 100%;
     padding-top: 6%;
     padding-bottom:8%;
 }
@@ -107,11 +128,11 @@ a:hover#menu-icon {
 
 .intro{
     background-color: #fa7d58;
-    padding: 50px 50px 50px 150px;
+    padding: 50px 0 50px 60px;
     color:white;
     line-height: 1.5;
     font-weight: 600;
-    font-size: 45px;
+    font-size: 20px;
     letter-spacing: 2px;
 
 }
@@ -137,6 +158,9 @@ label{
     line-height: 1.5;
     vertical-align: middle;
 
+
+    padding-right: 10px;
+    padding-top: 10px;
     margin-bottom: 8px;
 }
 
@@ -144,10 +168,10 @@ form{
     text-align: center;
 }
 
-/*//////////////////////////////////////*/
 
-.surveyinputtext{
-    width: 30%;
+
+input[type=text]{
+    width: 50%;
     padding:12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -158,8 +182,8 @@ form{
 
   }
 
-.surveyinputemail{
-    width: 30%;
+input[type=email]{
+    width: 50%;
     padding:12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -169,7 +193,7 @@ form{
 }
 
 input[type=date]{
-    color:black;
+    color:#fff7ed;
     border-radius: 12px;
     border: 1px solid #bababa;
     background-color: #fff7ed;
@@ -194,6 +218,8 @@ input[type=checkbox]{
 .diet, .img{
     display: block;
     align-content: center;
+    weight: 50%;
+    height: 50%
 }
 
 .diet{
@@ -205,7 +231,7 @@ input[type=checkbox]{
 .dietdiv {
     display:inline-block;
     margin:5%;
-    width: 0.1%;
+    width:10%;
     margin-top: 0%;
 
 }
@@ -222,7 +248,7 @@ input[type=checkbox]{
 .allergydiv{
     display:inline-block;
     margin:5%;
-    width: 0.1%;
+    width: 10%;
     margin-top: 0%;
 
 }
@@ -242,7 +268,7 @@ input[type=checkbox]{
     cursor: pointer;
     border-radius: 12px;
     border: 1px solid #fa7d58;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
     margin-top: 20px;
     font-weight: 700;
     font-family: 'Nunito', sans-serif;
@@ -254,6 +280,12 @@ footer{
     text-align: center;
     background-color: #fa7d58;
     padding: 20px 20px 20px 20px;
+}
+
+footer img{
+  width: 8%;
+  height:8%;
+
 }
 
 .footerAlternate{
@@ -300,14 +332,13 @@ fieldset{
 
 
 
-/*thankyoupage///////////////////////////*/  /*THANKY YOU INPUT PAGE*/
-
+/*thankyoupage///////////////////////////*/
 
 .thankyou{
     font-weight: 700;
     color:#fa7d58;
     text-align: center;
-    font-size: 70px;
+    font-size: 45px;
     position: absolute;
     top:50%;
     left:50%;
@@ -315,53 +346,12 @@ fieldset{
 
 }
 
-.thankyou-input{
-    font-weight: 700;
-    color:#fa7d58;
-    text-align: center;
-    font-size: 70px;
-    padding-top: 5%;
-    /*position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);*/
-
-}
-
-.urcode1{
-    font-weight: 300;
-    color:#fa7d58;
-    text-align: center;
-    font-size: 24px;
-
-}
-
-.urcode2{
-    text-align: center;
-    font-weight: 900;
-    font-size: 24px;
-}
-
-.urcode3{
-    text-align: center;
-}
-
 .container-thankyou{
      background-color: #fff7ed;
-     background-image: url(../images/bg3.png);
-     min-height: 500px;
-     /*width: 100%*/;
-     background-size: contain;
-     /*background-repeat: no-repeat;*/
 
 }
 
-/*END OF THANK YOUS*/
 
-.linktoregister{
-    text-align: center;
-    color: #fa7d58;
-}
 
 /*
 FOR LOG IN PAGE AND REGISTER */
@@ -378,12 +368,13 @@ FOR LOG IN PAGE AND REGISTER */
 }
 
 
- .logininput[type=email]{
+ .loginemail[type=email]{
     width: 30%;
     padding:12px 20px;
     padding-top: 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    background-color: #fa7d58;
     border:none;
     border-bottom: 1px solid white;
     font-family: 'Nunito', sans-serif;
@@ -394,12 +385,10 @@ textarea, input {
     outline: none;
 }
 
-.logininput{
+.loginemail, textarea,input{
     color:white;
     font-size: 14px;
     font-family: 'Nunito', sans-serif;
-
-    background-color: #fa7d58;
 }
 
 
@@ -410,6 +399,7 @@ textarea, input {
     padding-top: 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    background-color: #fa7d58;
     border:none;
     display: inline-block;
     border-bottom: 1px solid white;
@@ -470,7 +460,7 @@ textarea, input {
 /*END OF LOG IN AND REGISTER */
 
 
-/*INPUT CODE PAGE//////////////*/
+/*INPUT CODE PAGE*/
 
 .input-code{
     padding-top: 10%;
@@ -483,7 +473,7 @@ textarea, input {
 
 
 .code-button{
-      background-color: #fa7d58;
+    background-color: #fa7d58;
     border: none;
     color: #fff7ed;
     padding-right: 45px;
@@ -524,22 +514,14 @@ input[type=radio]{
 .results-button{
     background-color: #fa7d58;
     border: none;
-    color: #fff7ed;
-    padding-right: 80px;
-    padding-left:80px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    color: white;
+    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
+    font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
-    border-radius: 12px;
-    border: 1px solid #fa7d58;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-weight: 700;
-    font-family: 'Nunito', sans-serif;
 }
 
 /*ABOUT PAGE ////////*/
@@ -550,120 +532,29 @@ input[type=radio]{
     padding-bottom: 150px;
 }
 
-/*RECOMMENDATIONS*/
 
-.dietdiv-recommendations {
-    display:inline-block;
-    /*margin-top: 5%;*/
-    margin:3%;
-    width: 0.1%;
-    margin-top: 0%;
-    font-size:12px;
+/*Thankyou-ShareInput Page*/
 
-}
-
-.allergydiv-recommendations {
-    display:inline-block;
-    /*margin-top: 5%;*/
-    margin:3%;
-    width: 0.1%;
-    margin-top: 0%;
-    font-size:12px;
-
-}
-
-.caterers {
-    column-count:2;
-}
-
-.restaurantDescription {
-    max-width: calc(30em*0.5);
-    font-size:14px;
-    /*white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    /*max-width: 100px;*/
-}
-
-.catererImage{
-    padding-top:5%;
-    padding-left: 5%;
-}
-
-.catererdiv{
-    padding-top: 5%;
-    padding-left: 5%;
-    display: inline-block;
-}
-
-/*SUMMARY RESULTS /////////////*/
-
-.dietallergySummary {
-    /*display:block;
-    width:100%;*/
-/*    column-count: 3;*/
-margin-left: 5%;
-margin-top: 5%;
-
-}
-
-.dietdivSummary{
-    display:inline-block;
-    margin:5%;
-    /*width: 0.1%;*/
-    margin-top: 0%;
-}
-
-.allergydivSummary{
-    display:inline-block;
-    margin:5%;
-    /*width: 0.1%;*/
-    margin-top: 0%;
-
-}
-
-
-.result-label{
-    font-size: 24px;
-    font-weight: 900;
-
-}
-
-.result-number{
-    font-size: 24px;
-    font-weight: 900;
+/*I dunno why it doesn't apply  :'( '*/
+.thankyou2{
+    font-weight: 700;
     color:#fa7d58;
-}
-
-.allresults{
     text-align: center;
-    padding-bottom: 8%;
+    font-size: 70px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+
+}
+.container-thankyoushare{
+     background-color: #fff7ed;
+     vertical-align: middle;
+     text-align: center;
+
 }
 
-.one{
-    margin-right:2%;
-}
 
-
-
-.two{
-    margin-left:2%;
-}
-
-
-
-/*
-FULL RESULTS PAGE*/
-
-.survey-people{
-    column-count: 2;
-    margin-left: 15%;
-    margin-top: 5%;
-    margin-bottom:5%;
-}
-
-.edit-delete{
-    color:#fa7d58;
-}
-
-/*fULL RESULTS ENDS*/
+/*li.b a:hover {
+	background-color: #111;
+}*/

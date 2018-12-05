@@ -33,7 +33,7 @@ $stmt2->execute();
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
   <link rel="stylesheet" type="text/css" href="css/main2.css">
-
+ <link rel="stylesheet" media="screen and (max-width: 480px)" href="css/small.css" />
   <!-- plentyfull favicon -->
   <title>PlentyFull - Home Page</title>
 </head>
@@ -42,6 +42,7 @@ $stmt2->execute();
 
 
 <div class="at">
+  <a href="#" id="menu-icon"></a>
   <ul>
   <a href="homepage.php" class="main-logo"><img src="images/logo-orange.png" width="20%"></a>
     <li><a href="explore.php">Explore</a></li>
