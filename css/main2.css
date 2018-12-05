@@ -562,7 +562,7 @@ input[type=radio]{
 
 .restaurantDescription {
     max-width: calc(30em*0.5);
-    font-size:14px;
+    font-size:16px;
     /*white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -648,6 +648,11 @@ FULL RESULTS PAGE*/
 
 .edit-delete{
     color:#fa7d58;
+}
+
+.filter{
+    color:#fa7d58;
+    padding-left: 2%;
 }
 
 /*fULL RESULTS ENDS*/
