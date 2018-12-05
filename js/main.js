@@ -23,3 +23,5 @@ function load(e) {
 		e.target.setAttribute("src", src.substring(0 , index) + "-grey.png");
 	}
 }
+
+

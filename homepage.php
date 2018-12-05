@@ -2,7 +2,7 @@
 
 session_start();
 
-$dsn = "mysql:host=localhost;dbname=converyj_plentyfull;charset=utf8mb4";
+$dsn = "mysql:host=localhost;dbname=converyj_plentyfull_new;charset=utf8mb4";
 $dbusername = "converyj";
 $dbpassword = "HUgT86Fga#97";
 
