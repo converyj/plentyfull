@@ -90,10 +90,11 @@ nav {
 	float: left;
 	width: 200px;
 	height: 40px;
-	background: url(images/logo-orange.png) no-repeat center;
+	background: url(../images/logo-orange.png) no-repeat center;
 	display: block;
   padding-left: 50px;
-  padding-top: 40px;
+  padding-top: 10px;
+  /* z-index: 1; */
 
 }
 
@@ -103,7 +104,10 @@ nav {
 	display: none;
 	width: 40px;
 	height: 40px;
-	background: #fa7d58 url(images/menu-icon.png) center;
+  padding-left: 20px;
+	background: #fa7d58 url(../images/menu-icon.png) center;
+  z-index: 1;
+  background-repeat:no-repeat;
 
 }
 
@@ -119,7 +123,7 @@ a:hover#menu-icon {
     padding-bottom: 70px;
     padding-top: 50px;*/
     display: block;
-    
+
     margin-left: auto;
     margin-right: auto;
     width: 75%;
