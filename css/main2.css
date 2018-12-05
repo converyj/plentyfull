@@ -547,7 +547,9 @@ input[type=radio]{
 .aboutParagraph{
     padding-top:20px;
     text-align: center;
-    padding-bottom: 150px;
+    padding-bottom: 280px;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 /*RECOMMENDATIONS*/

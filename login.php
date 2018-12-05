@@ -15,7 +15,7 @@
 <div class="at">
   <ul>
   <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a>
-    <li><a href="explore.php">Explore</a></li>
+    <!-- <li><a href="explore.php">Explore</a></li> -->
     <li><a href="inputCode.php">Input Code</a></li>
     <li><a href="about.php">About</a></li>
     <li><a href="login.php">Login</a></li>
@@ -36,8 +36,8 @@
 <footer class="footerAlternate">
  <a href="mailto:info@plentyfull.com" class="emailAlternate">info@plentyfull.com</a>
   <br />
-  <a href="https://www.twitter.com/"><img src="images/twitter-orange.png" width="3%" alt="twitter" /></a>
-  <a href="https://www.facebook.com/"><img src="images/fb-orange.png" width="3%" alt="facebook" /></a>
-  <a href="https://www.instagram.com/"><img src="images/ig-orange.png" width="3%" alt="ins" /></a>
+  <a href="https://www.twitter.com/"><img src="images/twitter-orange.png" width="30px" alt="twitter" /></a>
+  <a href="https://www.facebook.com/"><img src="images/fb-orange.png" width="30px" alt="facebook" /></a>
+  <a href="https://www.instagram.com/"><img src="images/ig-orange.png" width="30px" alt="ins" /></a>
 </footer>
 </html>
