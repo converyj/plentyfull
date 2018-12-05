@@ -52,8 +52,8 @@ $stmt->execute();
         while($row = $stmt->fetch()) {    
         ?>
           <div>
-            <a class="edit-delete" href="edit.php">Edit</a></span>
-            <a class="edit-delete" href="delete.php?userid=<?php echo($row["userid"]); ?>">Delete</a></span>
+            <a class="edit-delete" href="edit.php?id=<?php echo($row["userid"]); ?>">Edit</a></span>
+            <a class="edit-delete" href="delete.php?id=<?php echo($row["userid"]); ?>">Delete</a></span>
             <p>First Name: <?php echo($row["firstName"]); ?></p>
             <p>Last Name: <?php echo($row["lastName"]); ?></p>
             <p>Email: <?php echo($row["email"]); ?></p>
