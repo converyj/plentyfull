@@ -14,6 +14,8 @@
   <!-- <a href=""><img src="" alt="logo"></a> -->
 <nav>
  <div class="at">
+   <a href="#" id="menu-icon"></a>
+
   <ul>
   <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a>
     <!-- <li><a href="explore.php">Explore</a></li> -->
