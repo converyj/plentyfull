@@ -7,8 +7,8 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
   <link rel="icon" href="images/favicon.ico" />
-  <link rel="stylesheet" type="text/css" href="css/main2.css">
-  <link rel="stylesheet" media="screen and (max-width: 640px)" href="css/main3forOrange.css" />
+  <link rel="stylesheet" type="text/css" href="css/main3forOrange.css">
+  <link rel="stylesheet" media="screen and (max-width: 640px)" href="css/small.css" />
   <title>Plenty Full - Thank you!</title>
 </head>
 <body>
@@ -30,7 +30,7 @@
 
 <div class="container-thankyou">
   <p class="thankyou">Thank You!</p>
-  
+
 
 </div>
 
