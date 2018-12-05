@@ -72,7 +72,7 @@ $stmt3->execute();
     <li><input type="search" name="search" /><input type="submit" value="Search" /></li>
 </div> -->
 <div class="container">
-<p><p class="filter">Filter by:</p>
+<p>Filters:
     <div class="diet">
     <?php
     while ($row = $stmt1->fetch()) {
@@ -119,15 +119,13 @@ $stmt3->execute();
     </div>
    <?php } ?>
  </div>
- <br>
- <br>
 </body>
 <footer>
   <a href="mailto:info@plentyfull.com" class="email">info@plentyfull.com</a>
   <br />
-  <a href="https://www.instagram.com/"><img src="images/ig.png" width="40px" alt="ins" /></a>
-  <a href="https://www.facebook.com/"><img src="images/facebook.png" width="40px" alt="facebook" /></a>
-  <a href="https://www.twitter.com/"><img src="images/twitter.png" width="40px" alt="twitter" /></a>
+  <a href="https://www.instagram.com/"><img src="images/ig.png" width="3%" alt="ins" /></a>
+  <a href="https://www.facebook.com/"><img src="images/facebook.png" width="3%" alt="facebook" /></a>
+  <a href="https://www.twitter.com/"><img src="images/twitter.png" width="3%" alt="twitter" /></a>
 </footer>
 </div>
 </html>
@@ -156,14 +154,14 @@ function getCatererDetails($pdo, $catererid) {
   // display dietary images
   while ($row1 = $stmt1->fetch()) {
   ?>
-    <img src="images/<?php echo($row1['image']); ?>" width="20px" alt="image" />
+    <img src="images/<?php echo($row1['image']); ?>" width="5%" alt="image" />
   <?php
   }
 
   // display allergy images
   while ($row2 = $stmt2->fetch()) {
   ?>
-    <img src="images/<?php echo($row2['image']); ?>" width="20px" alt="image" />
+    <img src="images/<?php echo($row2['image']); ?>" width="5%" alt="image" />
   <?php
   }
 }
