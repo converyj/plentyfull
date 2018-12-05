@@ -2,10 +2,10 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 04, 2018 at 07:35 PM
+-- Host: localhost
+-- Generation Time: Dec 05, 2018 at 08:57 PM
 -- Server version: 10.1.36-MariaDB
--- PHP Version: 5.6.38
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -483,12 +483,6 @@ ALTER TABLE `survey`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`userid`),
   ADD UNIQUE KEY `email` (`email`);
-
---
--- Indexes for table `usersurvey`
---
-ALTER TABLE `usersurvey`
-  ADD KEY `surveyid` (`surveyid`);
 
 --
 -- AUTO_INCREMENT for dumped tables
