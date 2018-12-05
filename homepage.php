@@ -56,7 +56,7 @@ $stmt2->execute();
 
 
 <div>
-  <img  class="header" src="images/header.png" width="80%" >
+  <img  class="header" src="images/header.png">
 </div>
 <div class="intro">
   <font color= "f9dfc7"><p>You’re only here for the food,</font> <br>so let’s get it right.</p>
