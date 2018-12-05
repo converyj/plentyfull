@@ -33,6 +33,7 @@ color:#424241;
 
 .at {
     background-color: #fa7d58;
+    float: right;
 }
 
 ul {
@@ -104,7 +105,7 @@ nav {
 	display: none;
 	width: 40px;
 	height: 40px;
-  padding-left: 20px;
+
 	background: #fa7d58 url(../images/menu-icon.png) center;
   z-index: 1;
   background-repeat:no-repeat;

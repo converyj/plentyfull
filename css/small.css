@@ -34,6 +34,8 @@ color:#424241;
     background-color: blue;
     position: absolute;
 
+    float: right;
+
 }
 
 /* ul {
@@ -73,6 +75,8 @@ li a {
 #menu-icon {
 
 		display:inline-block;
+    float: right;
+
 
 	}
 
