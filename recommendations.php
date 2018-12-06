@@ -128,6 +128,7 @@ $stmt3->execute();
   <a href="https://www.twitter.com/"><img src="images/twitter.png" width="30px" alt="twitter" /></a>
 </footer>
 </div>
+<script src="js/main.js"></script>
 </html>
 
 <?php
