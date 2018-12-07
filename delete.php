@@ -5,13 +5,6 @@ session_start();
 $userid = $_GET['id']; 
 $surveyid = $_SESSION['surveyid']; 
 
-if($_SESSION['logged-in'] === false){
-	echo("You are not allowed to view this page");
-	?>
-	<a href="login-pg.html">Return to login page</a>
-	<?php 
-
-}
 
 $dsn = "mysql:host=localhost;dbname=converyj_plentyfull_new;charset=utf8mb4";
 $dbusername = "converyj";
@@ -61,27 +54,16 @@ if ($i == 0) {
 	header("Location: error.php?message= " . $message);
 }
 
-// DELETE user row in usersurvey table 
+// DELETE user row in comment table 
 $stmt = $pdo->prepare("
 						DELETE FROM 
 						`comment` 
-						WHERE `comment`.`userid` = $userid
-						AND `comment`.`userid` IN 
-										(SELECT `userid` 
-										FROM `usersurvey` 
-										WHERE `surveyid` = $surveyid); ")
+						WHERE `comment`.`userid` = $userid");
 $i = $stmt->execute();
 
 // check whether delete was unsuccessfull (redirect to error page)
 if ($i == 0) {
 	$message = "Error: Could not delete the record in usersurvey";
-	header("Location: error.php?message= " . $message);
-}
-
-// DELETE from admin table
-// check whether delete was unsuccessfull (redirect to error page)
-if ($i == 0) {
-	$message = "Error: Could not delete the record in userdietary";
 	header("Location: error.php?message= " . $message);
 }
 
@@ -93,12 +75,14 @@ $stmt = $pdo->prepare("
 						AND `admin`.`userid` IN 
 										(SELECT `userid` 
 										FROM `usersurvey` 
-										WHERE `surveyid` = $surveyid); ")
+										WHERE `surveyid` = $surveyid); ");
 $i = $stmt->execute();
 
 // check whether delete was unsuccessfull (redirect to error page)
-if ($i == 0) {
-	$message = "Error: Could not delete the record in usersurvey";
+if ($i == 1) {
+	header("Location: full-results.php"); 
+} else {
+	$message = "Error: Could not delete the record in admin";
 	header("Location: error.php?message= " . $message);
 }
 

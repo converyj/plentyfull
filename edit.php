@@ -106,6 +106,7 @@ $stmt4->execute();
 		<h1>Edit</h1>
 
 		<form action="edit-update.php" method="POST">
+			<input type="hidden" name="id" value="<?php echo($userid); ?>" />
 			<p>First Name:<input type='text' name='firstName' value="<?php echo($row['firstName']); ?>"/></p>
 			<p>Last Name:<input type='text' name='lastName' value="<?php echo($row['lastName']); ?>"/></p>
 			<p>Email:<input type='email' name='email' value="<?php echo($row['email']); ?>"/></p>
@@ -127,24 +128,22 @@ $stmt4->execute();
 		        			$found = true; 
 		      				?>
 		            		<img src="images/<?php echo($diets['image']); ?>" class="image" alt="image" />
+		            		</label>
+			        		<input type="checkbox" id="<?php echo($diets['type']); ?><?php echo($diets['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($diets['code']); ?>" checked /><?php echo($diets['value']); ?>
+			        	</div>
 		            	<?php
 							
 		        		}
 		        	} 
-		        	if ($found) {
-		        	?>
-		        		</label>
-			        		<input type="checkbox" id="<?php echo($diets['type']); ?><?php echo($diets['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($diets['code']); ?>" /><?php echo($diets['value']); ?>
-			        	</div>
-			        <?php
-		        	} else {
+		        	if (!$found) {
 		        	?>
 		        		<img src="images/<?php echo($diets['greyImage']); ?>" class="image" alt="image" />
 		        		</label>
-			        		<input type="checkbox" id="<?php echo($diets['type']); ?><?php echo($diets['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($diets['code']); ?>" /><?php echo($diets['value']); ?>
+			        		<input type="checkbox" id="<?php echo($diets['type']); ?><?php echo($diets['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($diets['code']); ?>" unchecked /><?php echo($diets['value']); ?>
 			        	</div>
+			        	
 			        <?php
-		        	}
+		        	} 
 		        } 	
 		       	?>
 		    </div>
@@ -168,23 +167,20 @@ $stmt4->execute();
 		        			$found = true; 
 		      				?>
 		            		<img src="images/<?php echo($allergies['image']); ?>" class="image" alt="image" />
+		            		</label>
+			        		<input type="checkbox" id="<?php echo($allergies['type']); ?><?php echo($allergies['code']); ?>" name="allergies[]" value="<?php echo($allergies['code']); ?>" checked /><?php echo($allergies['value']); ?>
+			        	</div>
 		            	<?php	
 		        		}
 		        	} 
-		        	if ($found) {
-		        	?>
-		        		</label>
-			        		<input type="checkbox" id="<?php echo($allergies['type']); ?><?php echo($allergies['code']); ?>" name="allergies[]" value="<?php echo($allergies['code']); ?>" /><?php echo($allergies['value']); ?>
-			        	</div>
-			        <?php
-		        	} else {
+		        	if (!$found) {
 		        	?>
 		        		<img src="images/<?php echo($allergies['greyImage']); ?>" class="image" alt="image" />
 		        		</label>
-			        		<input type="checkbox" id="<?php echo($allergies['type']); ?><?php echo($allergies['code']); ?>" name="allergies[]" value="<?php echo($allergies['code']); ?>" /><?php echo($allergies['value']); ?>
+			        		<input type="checkbox" id="<?php echo($allergies['type']); ?><?php echo($allergies['code']); ?>" name="allergies[]" value="<?php echo($allergies['code']); ?>" unchecked /><?php echo($allergies['value']); ?>
 			        	</div>
 			        <?php
-		        	}
+			   		}		
 		        } 	
 		       	?>
 		     </div>		

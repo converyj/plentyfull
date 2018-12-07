@@ -12,20 +12,20 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
 // COUNT the dietary restrictions 
 $stmt1 = $pdo->prepare("
-  SELECT COUNT(`userid`) AS diet, `value`, `bigImage` 
-  FROM `userdietary`
-  INNER JOIN `dietallergyvalue` ON `userdietary`.`dietaryRestrictionCode` = `dietallergyvalue`.`code`
-  WHERE `userdietary`.`surveyid` = $surveyid AND `dietallergyvalue`.`type` = 'D'
-  GROUP BY dietaryRestrictionCode");
+                        SELECT COUNT(`userid`) AS diet, `value`, `bigImage` 
+                        FROM `userdietary`
+                        INNER JOIN `dietallergyvalue` ON `userdietary`.`dietaryRestrictionCode` = `dietallergyvalue`.`code`
+                        WHERE `userdietary`.`surveyid` = $surveyid AND `dietallergyvalue`.`type` = 'D'
+                        GROUP BY dietaryRestrictionCode");
 $stmt1->execute();
 
 // COUNT the allergies 
 $stmt2 = $pdo->prepare("
-  SELECT COUNT(`userid`) AS allergy, `value`, `bigImage` 
-  FROM `userallergy`
-  INNER JOIN `dietallergyvalue` ON `userallergy`.`allergyCode` = `dietallergyvalue`.`code`
-  WHERE `userallergy`.`surveyid` = $surveyid AND `dietallergyvalue`.`type` = 'A'
-  GROUP BY allergyCode");
+                        SELECT COUNT(`userid`) AS allergy, `value`, `bigImage` 
+                        FROM `userallergy`
+                        INNER JOIN `dietallergyvalue` ON `userallergy`.`allergyCode` = `dietallergyvalue`.`code`
+                        WHERE `userallergy`.`surveyid` = $surveyid AND `dietallergyvalue`.`type` = 'A'
+                        GROUP BY allergyCode");
 $stmt2->execute();
 
 ?>

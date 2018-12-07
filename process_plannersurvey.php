@@ -79,7 +79,7 @@ if (!empty($_POST["dietaryRestrictions"])) {
 	// if one or more was checked, loop through checkboxes and insert row in userdietary
 	if(count($dietary > 0)) {
 
-		foreach ($_POST['dietaryRestrictions'] as $dietCode) {
+		foreach ($dietary as $dietCode) {
 			$stmt = $pdo->prepare("
 									INSERT INTO `userdietary` (`surveyid`, `userid`, `dietaryRestrictionCode`)
 									VALUES ($surveyid, $userid, $dietCode) "); 
@@ -87,7 +87,6 @@ if (!empty($_POST["dietaryRestrictions"])) {
 
 			// check whether insert was unsuccessful (redirect to error page), otherwise continue
 			if ($i == 0) {
-			} else { 
 				$message = "Error: Could not insert the record in userdietary";
 				header("Location: error.php?message= " . $message);
 			} 
