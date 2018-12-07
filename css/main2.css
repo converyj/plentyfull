@@ -127,7 +127,7 @@ a:hover#menu-icon {
 
     margin-left: auto;
     margin-right: auto;
-    /* width: 75%; */
+    width: 75%;
     padding-top: 0%;
     padding-bottom:8%;
     padding-left: 8%;
@@ -178,6 +178,7 @@ label{
 form{
     text-align: center;
 }
+
 
 /*//////////////////////////////////////*/
 
@@ -289,6 +290,7 @@ footer{
     text-align: center;
     background-color: #fa7d58;
     padding: 20px 20px 20px 20px;
+    bottom: 0;
 }
 
 .footerAlternate{
