@@ -1,9 +1,6 @@
 <?php
 
 session_start();
-if ($_SESSION['logged-in'] == true) {
-      header ("Location: homepage.php"); 
-}
 
 // get the email from SESSION
 $email = $_SESSION['email'];
