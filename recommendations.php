@@ -11,19 +11,19 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
 // SELECT all the dietary images
 $stmt1 = $pdo->prepare("
-                        SELECT `greyImage`, `value`, `code`, `type`
+                        SELECT `greyImage`, `image`, `value`, `code`, `type`
                         FROM `dietallergyvalue`
                         WHERE `dietallergyvalue`.`type` = 'D'");
 $stmt1->execute();
 
 // SELECT all the allergy images
 $stmt2 = $pdo->prepare("
-                        SELECT `greyImage`, `value`, `code`, `type`
+                        SELECT `greyImage`, `image`, `value`, `code`, `type`
                         FROM `dietallergyvalue`
                         WHERE `dietallergyvalue`.`type` = 'A'");
 $stmt2->execute();
 
-// SELECT all caterers with matching dietary and allergy results
+// SELECT all caterers with matching dietary and allergy results from survey
 $stmt3 = $pdo->prepare("
                         SELECT DISTINCT `caterer`.`catererid`, `caterer`.`image`, `city`, `link`, `streetName`, `name`, `price`, `description`
                         FROM `caterer`
@@ -38,6 +38,24 @@ $stmt3 = $pdo->prepare("
                                                                FROM `userallergy`
                                                                WHERE `surveyid` = $surveyid); ");
 $stmt3->execute();
+
+// SELECT all diet restrictions from survey results 
+$stmt4 = $pdo->prepare("
+                        SELECT DISTINCT `code`
+                        FROM `userdietary`
+                        INNER JOIN `dietallergyvalue` ON `userdietary`.`dietaryRestrictionCode` = `dietallergyvalue`.`code`
+                        WHERE `userdietary`.`surveyid` = $surveyid
+                        AND `dietallergyvalue`.`type` = 'D'");
+$stmt4->execute();
+
+// SELECT all allergy restrictions from survey results 
+$stmt5 = $pdo->prepare("
+                        SELECT DISTINCT `code`
+                        FROM `userallergy`
+                        INNER JOIN `dietallergyvalue` ON `userallergy`.`allergyCode` = `dietallergyvalue`.`code`
+                        WHERE `userallergy`.`surveyid` = $surveyid
+                        AND `dietallergyvalue`.`type` = 'A'");
+$stmt5->execute();
 
 ?>
 
@@ -61,7 +79,16 @@ $stmt3->execute();
     <!-- <li><a href="explore.php">Explore</a></li> -->
     <li><a href="inputCode.php">Input Code</a></li>
     <li><a href="about.php">About</a></li>
-    <li><a href="login.php">Login</a></li>
+    <!-- if already logged in, change navigation  -->
+    <?php 
+    if (isset($_SESSION['logged-in'])) {
+    ?>
+        <li>
+          <a href="logout.php">Logout</a>
+        </li>
+      <?php 
+      }
+      ?>
   </ul>
 </div>
 
@@ -75,27 +102,77 @@ $stmt3->execute();
 <p>Filters:
     <div class="diet">
     <?php
-    while ($row = $stmt1->fetch()) {
+    // fetch all diet restrictions for survey and store in array
+    $diet = $stmt4->fetchAll(PDO::FETCH_ASSOC);
+
+    // fetches all the dietary images
+    while ($diets = $stmt1->fetch()) {
     ?>
     <div class="dietdiv-recommendations">
-      <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
-        <img src="images/<?php echo($row['greyImage']); ?>" width="2000%" class="image" alt="image" />
-        </label>
-        <input type="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
-      </div>
-     <?php } ?>
+      <label for="<?php echo($diets['type']); ?><?php echo($diets['code']); ?>">
+        <?php
+              // set flag to use when matched
+              $found = false; 
+              // loop through the survey diet array
+               foreach ($diet as $restriction) {
+                // if the diet in array matches to the diet in dietallergyvalue table, set flag and display orange image 
+                if ($restriction['code'] == $diets['code']) {
+                  $found = true; 
+                  ?>
+                    <img src="images/<?php echo($diets['image']); ?>" class="image" alt="image" />
+                    </label>
+                  <input type="checkbox" id="<?php echo($diets['type']); ?><?php echo($diets['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($diets['code']); ?>" /><?php echo($diets['value']); ?>
+                </div>
+                  <?php 
+                }
+              } 
+              // if not found, display grey image
+              if (!$found) {
+              ?>
+                <img src="images/<?php echo($diets['greyImage']); ?>" class="image" alt="image" />
+                </label>
+                  <input type="checkbox" id="<?php echo($diets['type']); ?><?php echo($diets['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($diets['code']); ?>" /><?php echo($diets['value']); ?>
+                </div>
+              <?php
+              } 
+            }   
+            ?>
 
      <?php
-    while ($row = $stmt2->fetch()) {
+      // fetch all allergies for survey and store in array
+    $allergy = $stmt5->fetchAll(PDO::FETCH_ASSOC);
+    // fetches all the allergy images
+    while ($allergies = $stmt2->fetch()) {
     ?>
     <div class="allergydiv-recommendations">
-      <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
-        <img class="image img" src="images/<?php echo($row['greyImage']); ?>" width="2000%" alt="image" />
-      </label>
-        <input type="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); 
-        ?>"/><?php echo($row['value']); ?>
-    </div>
-   <?php } ?>
+      <label for="<?php echo($allergies['type']); ?><?php echo($allergies['code']); ?>">
+        <?php
+              // set flag to use when matched
+              $found = false; 
+              // loop through the survey allergy array
+               foreach ($allergy as $restriction) {
+                  // if the allergy in array matches to the allergy in dietallergyvalue table, set flag and display orange image 
+                  if ($restriction['code'] == $allergies['code']) {
+                    $found = true; 
+                    ?>
+                      <img src="images/<?php echo($allergies['image']); ?>" class="image" alt="image" />
+                      </label>
+                    <input type="checkbox" id="<?php echo($allergies['type']); ?><?php echo($allergies['code']); ?>" name="allergies[]" value="<?php echo($diets['code']); ?>" /><?php echo($allergies['value']); ?>
+                  </div>
+                    <?php 
+                  }
+                } 
+              // if not found, display grey image
+              if (!$found) {
+              ?>
+                <img src="images/<?php echo($allergies['greyImage']); ?>" class="image" alt="image" />
+                </label>
+                  <input type="checkbox" id="<?php echo($allergies['type']); ?><?php echo($allergies['code']); ?>" name="allergies[]" value="<?php echo($allergies['code']); ?>" /><?php echo($diets['value']); ?>
+                </div>
+              <?php
+              } 
+            }   
+            ?>
    </div>
 
 </p>

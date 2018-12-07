@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +25,17 @@
     <!-- <li><a href="explore.php">Explore</a></li> -->
     <li><a href="inputCode.php">Input Code</a></li>
     <li><a href="about.php">About</a></li>
-    <li><a href="login.php">Login</a></li>
-  </ul>
+    <!-- if already logged in, change navigation  -->
+    <?php 
+    if (isset($_SESSION['logged-in'])) {
+    ?>
+        <li>
+          <a href="logout.php">Logout</a>
+        </li>
+      <?php 
+      }
+      ?>
+    </ul>
 </div>
 </nav>
 <div class="container">

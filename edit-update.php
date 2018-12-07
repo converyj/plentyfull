@@ -3,9 +3,7 @@
 session_start(); 
 
 $userid = $_POST['id']; 
-echo($userid); 
 $surveyid = $_SESSION['surveyid'];
-echo($surveyid);
 
 // check if user filled in all fields 
 if(!empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['email'])) {

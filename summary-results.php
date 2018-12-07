@@ -51,7 +51,17 @@ $stmt2->execute();
       <!-- <li><a href="explore.php">Explore</a></li> -->
       <li><a href="inputCode.php">Input Code</a></li>
       <li><a href="about.php">About</a></li>
-      <li><a href="login.php">Login</a></li>
+      <!-- if already logged in, change navigation  -->
+    <!-- if already logged in, change navigation  -->
+    <?php 
+    if (isset($_SESSION['logged-in'])) {
+    ?>
+        <li>
+          <a href="logout.php">Logout</a>
+        </li>
+      <?php 
+      } 
+      ?>
     </ul>
   </div>
 
@@ -80,17 +90,9 @@ $stmt2->execute();
       <?php } ?>
     </div>
 
-  
-
   <div class="allresults">
      <a href="full-results.php" class="one results-button">View All Results</a>
      <a href="recommendations.php" class="two results-button">See Recommendations</a>
-  </div>
-
-
-    
-
-
   </div>
   <script src="js/main.js"></script>
 </body>

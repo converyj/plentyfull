@@ -53,8 +53,8 @@ if ($row = $stmt->fetch()) {
 
 					header("Location: homepage.php");
 			} else {
-				// $message = "Error: Could not update the record";
-				// header("Location: error.php?message= " . $message);
+				$message = "Error: Could not update the record";
+				header("Location: error.php?message= " . $message);
 			}
 		} else {
 			echo("User already has an account"); 
@@ -63,8 +63,8 @@ if ($row = $stmt->fetch()) {
 		<?php 
 		}
 	} else {
-		// $message = "Error: User does not exist";
-		// header("Location: error.php?message= " . $message);
+		$message = "Error: User does not exist";
+		header("Location: error.php?message= " . $message);
 	}
 			
 } else {

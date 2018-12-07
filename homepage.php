@@ -49,7 +49,7 @@ $stmt2->execute();
     <!-- <li><a href="explore.php">Explore</a></li> -->
           <li><a href="inputCode.php">Input Code</a></li>
           <li><a href="about.php">About</a></li>
-          <li><a href="login.php">Login</a></li>
+<!--           <li><a href="login.php">Login</a></li> -->
       </ul>
   </div>
 </nav>

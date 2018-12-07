@@ -124,8 +124,9 @@ $stmt = $pdo->prepare("
 						VALUES ($userid, $surveyid) "); 
 $i = $stmt->execute();
 
-// check whether insert was successful, otherwise redirect to error page
+// check whether insert was successful and save session, otherwise redirect to error page
 if ($i == 1) {
+	$_SESSION['logged-in'] = true;
 	header("Location: share_inputcode.php");
 } else {
 	$message = "Error: Could not insert the record in usersurvey";

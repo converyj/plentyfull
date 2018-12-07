@@ -23,19 +23,14 @@
     <!-- <li><a href="explore.php">Explore</a></li> -->
           <li><a href="inputCode.php">Input Code</a></li>
           <li><a href="about.php">About</a></li>
-          <li><a href="login.php">Login</a></li>
         </ul>
       </div>
 </nav>
 
 <div class="container-thankyou">
   <p class="thankyou">Thank You!</p>
-
-
 </div>
-
 </body>
-
  <script src="js/main.js"></script>
 <footer>
   <a href="mailto:info@plentyfull.com" class="email">info@plentyfull.com</a>

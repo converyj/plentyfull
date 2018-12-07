@@ -76,25 +76,21 @@ if ($row = $stmt->fetch()){
 // - if yes - check userid against planner userid and save variables in SESSION to use later
 if ($role == 'yes') {
 	if ($userid == $plannerUserid) {
-		echo($plannerUserid);
 		$_SESSION['email'] = $email; 
 		$_SESSION['userid'] = $userid; 
 		$_SESSION['surveyid'] = $surveyid; 
 		header ("Location: summary-results.php"); 
 	} else {
-		echo("Planner not set");
-		//$message = "Error: You are not registered as the planner. Try Again";
-		//header("Location: error.php?message= " . $message);
+		$message = "Error: You are not registered as the planner. Try Again";
+		header("Location: error.php?message= " . $message);
 	}
 }
 
 // if no - check userid against planner userid
 if ($role == 'no') {
 	if ($userid == $plannerUserid) {
-		echo($plannerUserid); 
-		echo("you are not the planner");
-		// $message = "Error: You are registered as the planner. Try Again";
-		// header("Location: error.php?message= " . $message); 
+		$message = "Error: You are registered as the planner. Try Again";
+		header("Location: error.php?message= " . $message); 
 	} else {
 
 			// if not match, check if the email was found and save variables in SESSION to use later, otherwise insert new user
