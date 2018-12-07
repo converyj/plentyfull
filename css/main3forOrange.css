@@ -176,9 +176,6 @@ form{
     text-align: center;
 }
 
-footer{
-  position: 
-}
 /*//////////////////////////////////////*/
 
 .surveyinputtext{
@@ -288,7 +285,11 @@ input[type=checkbox]{
 footer{
     text-align: center;
     background-color: #fa7d58;
-    padding: 20px 20px 20px 20px;
+    padding: 20px 0px 20px 0px;
+    bottom:0;
+    position: fixed;
+    width: 100%;
+
 }
 
 .footerAlternate{
@@ -388,6 +389,7 @@ fieldset{
      /*width: 100%*/;
      background-size: contain;
      /*background-repeat: no-repeat;*/
+       padding-bottom: 200px;
 
 }
 
