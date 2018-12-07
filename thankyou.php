@@ -14,7 +14,7 @@
 <body>
   <!-- <a href=""><img src="" alt="logo"></a> -->
 <nav>
-    <a href="#" id="main-logo"></a>
+    <a href="homepage.php" id="main-logo"></a>
       <div class="at">
         <a href="#" id="menu-icon"></a>
 
