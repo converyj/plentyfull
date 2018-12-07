@@ -7,6 +7,7 @@ body {
 /*font-family: 'Roboto', sans-serif;*/
 font-family: 'Nunito', sans-serif;
 color:#424241;
+background-color: #fff7ed;
 };
 
 /*.at{
@@ -154,12 +155,14 @@ a:hover#menu-icon {
     color:#fa7d58;
     text-align: center;
     padding-top: 80px;
+
 }
 
 
 .container{
     background-color: #fff7ed;
     padding-bottom: 300px;
+
 
 
 }

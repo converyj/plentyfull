@@ -12,31 +12,35 @@ session_start();
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
-  <link rel="stylesheet" type="text/css" href="css/main2.css">
+  <link rel="icon" href="images/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="css/main3forOrange.css">
+  <link rel="stylesheet" media="screen and (max-width: 640px)" href="css/small.css" />
   <!-- plentyfull favicon -->
   <title>Plenty Full - Input Code</title>
 </head>
 <body>
   <!-- <a href=""><img src="" alt="logo"></a> -->
 <nav>
- <div class="at">
-  <ul>
-  <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a>
-    <!-- <li><a href="explore.php">Explore</a></li> -->
-    <li><a href="inputCode.php">Input Code</a></li>
-    <li><a href="about.php">About</a></li>
-    <!-- if already logged in, change navigation  -->
-    <?php 
-    if (isset($_SESSION['logged-in'])) {
-    ?>
-        <li>
-          <a href="logout.php">Logout</a>
-        </li>
-      <?php 
-      }
-      ?>
-    </ul>
-</div>
+   <a href="homepage.php" id="main-logo"></a>
+       <div class="at">
+         <a href="#" id="menu-icon"></a>
+          <ul>
+          <!-- <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a> -->
+            <!-- <li><a href="explore.php">Explore</a></li> -->
+            <li><a href="inputCode.php">Input Code</a></li>
+            <li><a href="about.php">About</a></li>
+            <!-- if already logged in, change navigation  -->
+            <?php
+            if (isset($_SESSION['logged-in'])) {
+            ?>
+                <li>
+                  <a href="logout.php">Logout</a>
+                </li>
+              <?php
+              }
+              ?>
+            </ul>
+      </div>
 </nav>
 <div class="container">
   <P class="input-code">Input Code</P>
@@ -50,7 +54,7 @@ session_start();
       </p>
 
       Email<input class="surveyinputemail" type="email" name="email" /><br />
-  
+
       <input class="code-button" type="submit" value="Go" />
 </div>
 </body>
