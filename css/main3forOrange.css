@@ -405,6 +405,7 @@ FOR LOG IN PAGE AND REGISTER */
 
 .background{
     background-color: #fa7d58;
+    padding-bottom: 500px;
 }
 
 .login{

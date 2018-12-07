@@ -193,7 +193,7 @@ input[type=email]{
     padding:12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    background-color: #fff7ed;
+    /* background-color: #fff7ed; */
     border:none;
     border-bottom: 1px solid #bababa;
 }
@@ -354,6 +354,7 @@ fieldset{
 
 .container-thankyou{
      background-color: #fff7ed;
+     padding-bottom: 500px;
 
 }
 
@@ -364,6 +365,7 @@ FOR LOG IN PAGE AND REGISTER */
 
 .background{
     background-color: #fa7d58;
+    padding-bottom: 500px;
 }
 
 .login{
@@ -374,18 +376,18 @@ FOR LOG IN PAGE AND REGISTER */
 }
 
 
- .loginemail[type=email]{
-    width: 30%;
-    padding:12px 20px;
-    padding-top: 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    background-color: #fa7d58;
-    border:none;
-    border-bottom: 1px solid white;
-    font-family: 'Nunito', sans-serif;
+.logininput[type=email]{
+   width: 30%;
+   padding:12px 20px;
+   padding-top: 20px;
+   margin: 8px 0;
+   box-sizing: border-box;
+   border:none;
+   border-bottom: 1px solid white;
+   font-family: 'Nunito', sans-serif;
 
 }
+
 
 textarea, input {
     outline: none;
