@@ -58,11 +58,11 @@ $stmt2->execute();
 
 <form action="process_attendeesurvey.php" method="POST">
   <fieldset>
-    First Name:<input class="surveyinputtext" type="text" name="firstName" /><br />
-    Last Name:<input class="surveyinputtext" type="text" name="lastName" /><br />
-    Email:<input class="surveyinputemail" type="email" name="email" value="<?php echo($email);?>" /><br />
+    First Name<input class="surveyinputtext" type="text" name="firstName" /><br />
+    Last Name<input class="surveyinputtext" type="text" name="lastName" /><br />
+    Email<input class="surveyinputemail" type="email" name="email" value="<?php echo($email);?>" /><br />
     <p>
-      <label class="dietLabel">Dietary Restrictions:</label>
+      <label class="dietLabel">Dietary Restrictions</label>
         <br />
         <div class="diet">
         <?php
@@ -78,7 +78,7 @@ $stmt2->execute();
        </div>
       </p>
       <p>
-      <label class="dietLabel">Allergies:</label>
+      <label class="dietLabel">Allergies</label>
         <br />
         <div class="allergy">
         <?php
@@ -94,9 +94,9 @@ $stmt2->execute();
      </div>
     </p>
     <p>
-    Other:
+    Other
 
-      <textarea id="other" name="comment"></textarea>
+      <textarea id="other" class="beblack" name="comment"></textarea>
     </p>
     <input type="submit" class="button" value="Submit" />
   </fieldset>

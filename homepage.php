@@ -75,7 +75,7 @@ $stmt2->execute();
       <label>When would you like your results?</label><input type="date" class="dueDate" name="ddlDate" /><br />
       <p>
 
-       <label class="dietLabel">Dietary Restrictions:</label>
+       <label class="dietLabel">Dietary Restrictions</label>
         <br />
         <div class="diet">
         <?php
@@ -91,7 +91,7 @@ $stmt2->execute();
        </div>
       </p>
       <p>
-        <label class="dietLabel">Allergies:</label>
+        <label class="dietLabel">Allergies</label>
         <br />
         <div class="allergy">
         <?php

@@ -99,7 +99,8 @@ $stmt5->execute();
     <li><input type="search" name="search" /><input type="submit" value="Search" /></li>
 </div> -->
 <div class="container">
-<p>Filters:
+<p>
+  <br>
     <div class="diet">
     <?php
     // fetch all diet restrictions for survey and store in array

@@ -325,17 +325,20 @@ fieldset{
 
 
 #other{
-    color:#fff7ed;
+    /*color:#fff7ed;*/
     border-radius: 12px;
+    color:black;
     border: 1px solid #bababa;
-    background-color: #fff7ed;
+    /*background-color: #fff7ed;*/
     padding:10px;
     width:400px;
     height:70px;
     margin-left: 10px;
 }
 
-
+.beblack{
+    color:red;
+}
 
 /*thankyoupage////////////////////////////*/  /*THANKY YOU INPUT PAGE*/
 
@@ -415,7 +418,7 @@ FOR LOG IN PAGE AND REGISTER */
 }
 
 
- .logininput[type=email]{
+ /*.logininput[type=email]{
     width: 30%;
     padding:12px 20px;
     padding-top: 20px;
@@ -425,23 +428,23 @@ FOR LOG IN PAGE AND REGISTER */
     border-bottom: 1px solid white;
     font-family: 'Nunito', sans-serif;
 
-}
+}*/
 
 textarea, input {
     outline: none;
 }
 
-.logininput{
+/*.logininput{
     color:white;
     font-size: 14px;
     font-family: 'Nunito', sans-serif;
 
     background-color: #fa7d58;
-}
+}*/
 
 
 
-.password[type=password]{
+/*.password[type=password]{
     width: 30%;
     padding:12px 20px;
     padding-top: 20px;
@@ -451,7 +454,7 @@ textarea, input {
     display: inline-block;
     border-bottom: 1px solid white;
 }
-
+*/
 .submit-btn{
     background-color: white;
     border: none;

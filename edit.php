@@ -72,40 +72,36 @@ $stmt4->execute();
 	<head>
 		<title>Full Results</title>
 				<meta charset="utf-8" />
-		<link rel="icon" href="IMMimages/favicon.ico" /> <!--plentyfull icon-->
-	</head>
-	<body>
-		<a href="main-page.php"><img src="IMMimages/IMM-logo.jpg" alt="IMM logo" title="logo" width='100'></a> <!--plentyfull-->
-		<nav>
-		<ul>
-			<li>
-				<a href="about.php">About</a></li>
-			<!-- <li>
-				<a href="explore.php">Explore</a> </li>
-			<li> -->
-				<a href="inputCode.php">Input Code</a> </li>
-			<li>
-			<!-- if already logged in, change navigation  -->
-		    <?php 
-		    if (isset($_SESSION['logged-in'])) {
-		    ?>
-		        <li>
-		          <a href="logout.php">Logout</a>
-		        </li>
-		     <?php 
-		     } 
-		     ?>
-			</ul>
-		</nav>
-		<h1>Edit</h1>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
+  <link rel="stylesheet" type="text/css" href="css/main2.css">
+  <link rel="stylesheet" media="screen and (max-width: 640px)" href="css/small.css" />
+  <link rel="icon" href="images/favicon.ico" />
+  <title>PlentyFull - Home Page</title>
+</head>
+<body>
+
+<ul>
+  <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a>
+    <!-- <li><a href="explore.php">Explore</a></li> -->
+    <li><a href="inputCode.php">Input Code</a></li>
+    <li><a href="about.php">About</a></li>
+<!--           <li><a href="login.php">Login</a></li> -->
+      </ul>
+  </div>
+</nav>
+  <div class="container">
+		<p class ="start">Edit</p>
 
 		<form action="edit-update.php" method="POST">
 			<input type="hidden" name="id" value="<?php echo($userid); ?>" />
-			<p>First Name:<input type='text' name='firstName' value="<?php echo($row['firstName']); ?>" disabled /></p>
-			<p>Last Name:<input type='text' name='lastName' value="<?php echo($row['lastName']); ?>" disabled /></p>
-			<p>Email:<input type='email' name='email' value="<?php echo($row['email']); ?>" disabled /></p>
-			<p>Other:<textarea id="other" name="comment"><?php echo($row['comment']); ?></textarea></p>
-			<p>Dietary:</p>
+			<label>First Name</label><input class="surveyinputtext" type='text' name='firstName' value="<?php echo($row['firstName']); ?>" disabled /><br>
+			<labe>Last Name</labe><input class="surveyinputtext" type='text' name='lastName' value="<?php echo($row['lastName']); ?>" disabled /><br>
+			<label>Email</label><input class="surveyinputtext" type='email' name='email' value="<?php echo($row['email']); ?>" disabled /><br><br>
+			<label>Other</label><textarea id="other" name="comment"><?php echo($row['comment']); ?></textarea><br>
+			<p>Dietary</p>
 			<div class="diet">
 				<?php 
 				// fetch all diet restrictions for user and store in array
@@ -146,7 +142,7 @@ $stmt4->execute();
 		    </div>
 		      </p>
 		      <p>
-		        <label class="dietLabel">Allergies:</label>
+		        <label class="dietLabel">Allergies</label>
 		        <br />
 		        <div class="allergy">
 		        <?php 
@@ -186,9 +182,20 @@ $stmt4->execute();
 		        } 	
 		       	?>
 		     </div>		
-			<input type="submit" value="Update"/>
+			<input type="submit" class="button" value="Update"/>
 		</form>
 		<p><a href="full-results.php">Go Back</a></p>
 		<script src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
+<footer>
+    <a href="mailto:info@plentyfull.com" class="email">info@plentyfull.com</a>
+    <br />
+    <a href="https://www.twitter.com/"><img src="images/twitter.png" width="30px" alt="twitter" /></a>
+    <a href="https://www.facebook.com/"><img src="images/facebook.png" width="30px" alt="facebook" /></a>
+    <a href="https://www.instagram.com/"><img src="images/ig.png" width="30px" alt="ins" /></a>
+
+
+
+</footer>
 </html>
