@@ -229,12 +229,14 @@ input[type=checkbox]{
     display: block;
     align-content: center;
     weight: 50%;
-    height: 50%
+    /* height: 50% */
 }
 
 .diet{
     display:block;
     width:100%;
+    padding-left: 50px;
+    padding-right: 50px;
 
 }
 
