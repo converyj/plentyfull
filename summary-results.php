@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 session_start();
 
-$surveyid = $_SESSION['surveyid']; 
+$surveyid = $_SESSION['surveyid'];
 
 $dsn = "mysql:host=localhost;dbname=converyj_plentyfull_new;charset=utf8mb4";
 $dbusername = "converyj";
@@ -10,18 +10,18 @@ $dbpassword = "HUgT86Fga#97";
 
 $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
-// COUNT the dietary restrictions 
+// COUNT the dietary restrictions
 $stmt1 = $pdo->prepare("
-                        SELECT COUNT(`userid`) AS diet, `value`, `bigImage` 
+                        SELECT COUNT(`userid`) AS diet, `value`, `bigImage`
                         FROM `userdietary`
                         INNER JOIN `dietallergyvalue` ON `userdietary`.`dietaryRestrictionCode` = `dietallergyvalue`.`code`
                         WHERE `userdietary`.`surveyid` = $surveyid AND `dietallergyvalue`.`type` = 'D'
                         GROUP BY dietaryRestrictionCode");
 $stmt1->execute();
 
-// COUNT the allergies 
+// COUNT the allergies
 $stmt2 = $pdo->prepare("
-                        SELECT COUNT(`userid`) AS allergy, `value`, `bigImage` 
+                        SELECT COUNT(`userid`) AS allergy, `value`, `bigImage`
                         FROM `userallergy`
                         INNER JOIN `dietallergyvalue` ON `userallergy`.`allergyCode` = `dietallergyvalue`.`code`
                         WHERE `userallergy`.`surveyid` = $surveyid AND `dietallergyvalue`.`type` = 'A'
@@ -38,33 +38,37 @@ $stmt2->execute();
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
-  <link rel="stylesheet" type="text/css" href="css/main2.css">
-
+  <link rel="stylesheet" type="text/css" href="css/main3forOrange.css">
+  <link rel="stylesheet" media="screen and (max-width: 640px)" href="css/small.css" />
+  <link rel="icon" href="images/favicon.ico" />
   <!-- plentyfull favicon -->
   <title>PlentyFull - Full Results</title>
 </head>
 <body>
+<nav>
+  <a href="homepage.php" id="main-logo"></a>
 
-  <div class="at">
-    <ul>
-      <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a>
-      <!-- <li><a href="explore.php">Explore</a></li> -->
-      <li><a href="inputCode.php">Input Code</a></li>
-      <li><a href="about.php">About</a></li>
-      <!-- if already logged in, change navigation  -->
-    <!-- if already logged in, change navigation  -->
-    <?php 
-    if (isset($_SESSION['logged-in'])) {
-    ?>
-        <li>
-          <a href="logout.php">Logout</a>
-        </li>
-      <?php 
-      } 
-      ?>
-    </ul>
-  </div>
-
+      <div class="at">
+        <a href="#" id="menu-icon"></a>
+        <ul>
+          <!-- <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a> -->
+          <!-- <li><a href="explore.php">Explore</a></li> -->
+          <li><a href="inputCode.php">Input Code</a></li>
+          <li><a href="about.php">About</a></li>
+          <!-- if already logged in, change navigation  -->
+        <!-- if already logged in, change navigation  -->
+        <?php
+        if (isset($_SESSION['logged-in'])) {
+        ?>
+            <li>
+              <a href="logout.php">Logout</a>
+            </li>
+          <?php
+          }
+          ?>
+        </ul>
+      </div>
+</nav>
   <div class="container">
     <p class="start">Here's Your Results</p>
 
@@ -96,7 +100,7 @@ $stmt2->execute();
   </div>
   <script src="js/main.js"></script>
 </body>
-<footer> 
+<footer>
   <a href="mailto:info@plentyfull.com" class="email">info@plentyfull.com</a>
   <br />
   <a href="https://www.twitter.com/"><img src="images/twitter.png" width="30px" alt="twitter" /></a>

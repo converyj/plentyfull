@@ -55,7 +55,7 @@ $stmt2->execute();
 </nav>
 
 
-<div>
+<div class="justforbg">
   <img  class="header" src="images/header.png">
 </div>
 <div class="intro">

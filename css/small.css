@@ -123,8 +123,11 @@ li a {
     /* width: 100%; */
     padding-top: 0%;
     padding-bottom:8%;
-    padding-right: 0%;
 
+
+}
+.justforbg{
+  background-color: white;
 }
 
 .main-logo{
@@ -155,8 +158,9 @@ li a {
 
 .container{
     background-color: #fff7ed;
-    /* padding-bottom: 300px */;
+    padding-bottom: 70px ;
     font-size: 120%;
+    line-height: 3
 
 }
 
@@ -212,6 +216,7 @@ input[type=date]{
     width:170px;
     height:5px;
     margin-left: 10px;
+    color: #424241;
 }
 
 input[type=checkbox]{

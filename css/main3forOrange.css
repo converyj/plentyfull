@@ -93,7 +93,7 @@ nav {
 	height: 40px;
 	background: url(../images/logo-white.png) no-repeat center;
 	display: block;
-  padding-left: 50px;
+  padding-left: 0px;
   padding-top: 10px;
   /* z-index: 1; */
 
