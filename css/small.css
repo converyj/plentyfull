@@ -189,6 +189,7 @@ input[type=text]{
     border:none;
     display: inline-block;
     border-bottom: 1px solid #bababa;
+    color: #424241;
 
   }
 
@@ -235,8 +236,7 @@ input[type=checkbox]{
 .diet{
     display:block;
     width:100%;
-    padding-left: 50px;
-    padding-right: 50px;
+
 
 }
 
@@ -362,6 +362,12 @@ fieldset{
      background-color: #fff7ed;
      padding-bottom: 500px;
 
+}
+
+.urcode3{
+    text-align: center;
+    padding: 30px;
+    font-size: 120%;
 }
 
 
