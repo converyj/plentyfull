@@ -1,12 +1,8 @@
 //change the icons, so when it's clicked, it turns from grey to orange
-console.log("connected");
-
-
 var image = document.getElementsByClassName("image");
 for (var i = 0; i < image.length; i++) {
 	image[i].addEventListener("click", load, false);
 }
-
 
 function load(e) {
 	var src = e.target.getAttribute("src");

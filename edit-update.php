@@ -14,6 +14,7 @@ if(!empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['e
 	$email = $_POST['email'];  
 } else {
 	header("Location: edit.php");
+  	exit();
 }
 
 $dsn = "mysql:host=localhost;dbname=converyj_plentyfull_new;charset=utf8mb4";
@@ -21,23 +22,6 @@ $dbusername = "converyj";
 $dbpassword = "HUgT86Fga#97";
 
 $pdo = new PDO($dsn, $dbusername, $dbpassword); 
-
-// UPDATE firstname, lastName, email into user table 
-$stmt = $pdo->prepare("
-						UPDATE `user`
-						SET `firstName` = '$firstName',
-						    `lastName` = '$lastName'
-						    `email` = '$email'
-						WHERE `user`.`userid` = $userid"); 
-$i = $stmt->execute();
-
-// check whether update was unsuccessful (redirect to error page)
-if ($i == 0) {
-	echo("Could not update user");
-		// $message = "Error: Could not update the record in user";
-		// header("Location: error.php?message= " . $message);
-} 
-
 
 // DELETE dietary restrictions checkboxes in userdietary table 
 $stmt = $pdo->prepare("
@@ -49,9 +33,9 @@ $i = $stmt->execute();
 
 // check whether update was unsuccessful (redirect to error page), otherwise continue
 if ($i == 0) {
-	echo("Cannot delete userdietary");
-	// $message = "Error: Could not delete the record in userdietary";
-	// header("Location: error.php?message= " . $message);
+	$message = "Error: Could not delete the record in userdietary";
+	header("Location: error.php?message= " . $message);
+  	exit();
 } 
 
 // INSERT dietary restrictions checkboxes in userdietary table 
@@ -59,9 +43,7 @@ if ($i == 0) {
 // check if any checkboxes are checked
 if (!empty($_POST["dietaryRestrictions"])) {
 	$dietary = $_POST['dietaryRestrictions']; 
-	echo($dietary);
-	echo($userid);
-	echo($surveyid);
+
 	// if one or more was checked, loop through checkboxes and insert row in userdietary
 	if(count($dietary > 0)) {
 
@@ -73,9 +55,9 @@ if (!empty($_POST["dietaryRestrictions"])) {
 
 			// check whether update was unsuccessful (redirect to error page), otherwise continue
 			if ($i == 0) {
-				echo("Could not delete userdietary"); 
-				// $message = "Error: Could not update the record in userdietary";
-				// header("Location: error.php?message= " . $message);
+				$message = "Error: Could not update the record in userdietary";
+				header("Location: error.php?message= " . $message);
+  				exit();
 			} 
 		}
 	}
@@ -91,9 +73,9 @@ $i = $stmt->execute();
 
 // check whether delete was unsuccessfull (redirect to error page)
 if ($i == 0) {
-	echo("Could not delete"); 
-	// $message = "Error: Could not delete the record in userallergy";
-	// header("Location: error.php?message= " . $message);
+	$message = "Error: Could not delete the record in userallergy";
+	header("Location: error.php?message= " . $message);
+  	exit();
 }
 
 // INSERT allergy checkboxes into userallergy table 
@@ -101,9 +83,7 @@ if ($i == 0) {
 // check if any checkboxes are checked
 if (!empty($_POST["allergies"])) {
 	$allergy = $_POST['allergies']; 
-	echo($allergy);
-	echo($userid);
-	echo($surveyid);
+
 	// if one or more was checked, loop through checkboxes and insert row in userallergy 
 	if(count($allergy > 0)) {
 
@@ -115,9 +95,9 @@ if (!empty($_POST["allergies"])) {
 
 			// check whether insert was unsuccessful (redirect to error page), otherwise continue
 			if ($i == 0) {
-				echo("Could not insert");
-				// $message = "Error: Could not insert the record in userallergy";
-				// header("Location: error.php?message= " . $message);
+				$message = "Error: Could not insert the record in userallergy";
+				header("Location: error.php?message= " . $message);
+  				exit();
 			} 
 		}
 	}
@@ -138,6 +118,7 @@ if(!empty($_POST["comment"])) {
 	if ($i == 0) {
 		$message = "Error: Could not update the record in comment";
 		header("Location: error.php?message= " . $message);
+  		exit();
 	} 
 }
 

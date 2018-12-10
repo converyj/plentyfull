@@ -11,6 +11,7 @@ if(!empty($_POST['code']) && !empty($_POST['role']) && !empty($_POST['email'])) 
 		$email = $_POST['email']; 
 } else {
 	header("Location: inputCode.php");
+	exit();
 }
 
 $dsn = "mysql:host=localhost;dbname=converyj_plentyfull_new;charset=utf8mb4";
@@ -32,6 +33,7 @@ if ($row = $stmt->fetch()) {
 } else {
 	$message = "Error: Incorrect Input Code";
 	header("Location: error.php?message= " . $message);
+	exit();
 } 
 
 // get planner for survey with the surveyid
@@ -49,10 +51,9 @@ if ($row = $stmt->fetch()) {
 	$plannerUserid = $row['userid'];
 }
 else {
-	echo($plannerUserid); 
-	echo("planner not set");
 	$message = "Error: Don't have a planner set";
 	header("Location: error.php?message= " . $message);
+	exit();
 }
 
 // check user email, set flag to keep for later (may be a new attendee, a planner, or a returning attendee)
@@ -79,10 +80,14 @@ if ($role == 'yes') {
 		$_SESSION['email'] = $email; 
 		$_SESSION['userid'] = $userid; 
 		$_SESSION['surveyid'] = $surveyid; 
+		$_SESSION['role'] = 1;  
+		$_SESSION['logged-in'] = true;  
 		header ("Location: summary-results.php"); 
+		exit();
 	} else {
 		$message = "Error: You are not registered as the planner. Try Again";
 		header("Location: error.php?message= " . $message);
+		exit();
 	}
 }
 
@@ -91,6 +96,7 @@ if ($role == 'no') {
 	if ($userid == $plannerUserid) {
 		$message = "Error: You are registered as the planner. Try Again";
 		header("Location: error.php?message= " . $message); 
+		exit();
 	} else {
 
 			// if not match, check if the email was found and save variables in SESSION to use later, otherwise insert new user
@@ -98,7 +104,10 @@ if ($role == 'no') {
 				$_SESSION['email'] = $email; 
 				$_SESSION['userid'] = $userid; 
 				$_SESSION['surveyid'] = $surveyid; 
+				$_SESSION['role'] = 2;
 				header("Location: attendee_survey.php");
+				exit();
+
 			} else {
 				$stmt = $pdo->prepare("
 										INSERT INTO `user` (`email`)
@@ -113,10 +122,13 @@ if ($role == 'no') {
 				$_SESSION['email'] = $email; 
 				$_SESSION['userid'] = $userid; 
 				$_SESSION['surveyid'] = $surveyid;
+				$_SESSION['role'] = 2;
 				header ("Location: attendee_survey.php");
+				exit();
 			} else {
 				$message = "Error: Could not insert record in user";
 				header("Location: error.php?message= " . $message); 
+				exit();
 			}		
 		}
 	}

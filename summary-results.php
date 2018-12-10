@@ -2,6 +2,14 @@
 
 session_start();
 
+// if not logged in and is not a planner, go to homepage 
+if (isset($_SESSION['logged-in'])) {
+  if($_SESSION['logged-in'] == false && $_SESSION['role'] != 1) {
+      header("Location: homepage");
+      exit();
+  }
+}
+
 $surveyid = $_SESSION['surveyid'];
 
 $dsn = "mysql:host=localhost;dbname=converyj_plentyfull_new;charset=utf8mb4";

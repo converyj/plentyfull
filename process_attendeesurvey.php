@@ -16,6 +16,7 @@ if(!empty($_POST['firstName']) && !empty($_POST['lastName'])) {
 	$lastName = $_POST['lastName']; 
 } else {
 	header("Location: attendee_survey.php");
+  	exit();
 }
 
 $dsn = "mysql:host=localhost;dbname=converyj_plentyfull_new;charset=utf8mb4";
@@ -36,6 +37,7 @@ $i = $stmt->execute();
 if ($i == 0) {
 	$message = "Error: Could not update the record in user";
 	header("Location: error.php?message= " . $message);
+  	exit();
 }
 
 // INSERT dietary restrictions checkboxes into userdietary table
@@ -57,6 +59,7 @@ if (!empty($_POST["dietaryRestrictions"])) {
 			if ($i == 0) {
 				$message = "Error: Could not insert the record in userdietary";
 				header("Location: error.php?message= " . $message);
+  				exit();
 			} 
 		}
 	}
@@ -81,6 +84,7 @@ if (!empty($_POST["allergies"])) {
 			if ($i == 0) {
 				$message = "Error: Could not insert the record in userallergy";
 				header("Location: error.php?message= " . $message);
+  				exit();
 			}
 		} 
 	}
@@ -100,6 +104,7 @@ if(!empty($_POST["comment"])) {
 	if ($i == 0) {
 		$message = "Error: Could not insert the record in comment";
 		header("Location: error.php?message= " . $message);
+  		exit();
 	} 
 }
 
@@ -112,9 +117,11 @@ $i = $stmt->execute();
 // check whether insert was successful, otherwise redirect to error page
 if ($i == 1) {
 	header ("Location: thankyou.php");
+  	exit();
 } else {
 	$message = "Error: Could not insert the record in usersurvey";
 	header("Location: error.php?message= " . $message);
+  	exit();
 } 
 
 ?>

@@ -10,18 +10,14 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
   <link rel="stylesheet" type="text/css" href="css/main2.css">
 
-  <!--Add website favicon -->
   <title>Plenty Full - About</title>
 </head>
 <body>
-  <!-- <a href=""><img src="" alt="logo"></a> -->
 <nav>
   <ul>
   <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a>
-    <!-- <li><a href="explore.php">Explore</a></li> -->
     <li><a href="inputCode.php">Input Code</a></li>
     <li><a href="about.php">About</a></li>
     <!-- if already logged in, change navigation  -->

@@ -2,12 +2,17 @@
 
 session_start();
 
+// if not logged in and is not a planner, go to homepage 
+if($_SESSION['logged-in'] == false && $_SESSION['role'] != 1) {
+  header("Location: homepage.php");
+  exit();
+}
+
 // get the surveyid from SESSION to concatenate to link
 $surveyid = $_SESSION['surveyid'];
 
 ?>
 
-<!-- HTML code -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,29 +20,24 @@ $surveyid = $_SESSION['surveyid'];
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
   <link rel="icon" href="images/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="css/main3forOrange.css">
   <link rel="stylesheet" media="screen and (max-width: 640px)" href="css/small.css" />
-
-  <!-- plentyfull favicon -->
   <title>Plenty Full - Thank you! Now share your code</title>
 </head>
 <body>
-  <!-- <a href=""><img src="" alt="logo"></a> -->
+
   <nav>
     <a href="homepage.php" id="main-logo"></a>
       <div class="at">
         <a href="#" id="menu-icon"></a>
           <ul>
-            <!-- <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a> -->
-            <!-- <li><a href="explore.php">Explore</a></li> -->
             <li><a href="inputCode.php">Input Code</a></li>
             <li><a href="about.php">About</a></li>
             <!-- if already logged in, change navigation  -->
-            <?php
-            if (isset($_SESSION['logged-in'])) {
-            ?>
+              <?php
+              if (isset($_SESSION['logged-in'])) {
+              ?>
                 <li>
                   <a href="logout.php">Logout</a>
                 </li>
@@ -51,9 +51,6 @@ $surveyid = $_SESSION['surveyid'];
 
 <div class="container-thankyou">
   <p class="thankyou-input">Thank You!</p>
-
-
-
   <p class='urcode1'>Your unique code is: </p>
   <p class='urcode2'><?php echo($surveyid);?></p>
   <p class='urcode3'>When you're ready to view results you can input this code through the input code page in our menu.
@@ -64,7 +61,6 @@ $surveyid = $_SESSION['surveyid'];
   <form>
     <input type="text" class="surveyinputtext" name="link" value="http://plentyfull.com/<?php echo($surveyid);?>" disabled />
   </form>
-   <!--  <a href="http://plentyfull.com/?id=<?php echo($surveyid);?>>http://plentyfull.com/<?php echo($surveyid);?></a>  -->
   <p class="linktoregister">
     <a href="register.php" class="linktoregister">Would you like to register for our site?</a>
   </p>
@@ -78,6 +74,5 @@ $surveyid = $_SESSION['surveyid'];
   <a href="https://www.instagram.com/"><img src="images/ig.png" width="30px" alt="ins" /></a>
   <a href="https://www.facebook.com/"><img src="images/facebook.png" width="30px" alt="facebook" /></a>
   <a href="https://www.twitter.com/"><img src="images/twitter.png" width="30px" alt="twitter" /></a>
-
 </footer>
 </html>

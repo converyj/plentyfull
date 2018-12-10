@@ -15,6 +15,7 @@ if(!empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['e
 	$deadline = $_POST['ddlDate']; 
 } else {
 	header("Location: homepage.php");
+  	exit();
 }
 
 $dsn = "mysql:host=localhost;dbname=converyj_plentyfull_new;charset=utf8mb4";
@@ -39,6 +40,7 @@ if ($i == 1) {
 	} else {
 		$message = "Error: Could not insert the record in user";
 		header("Location: error.php?message= " . $message);
+		exit(); 
 	} 
 
 // INSERT userid, role, city, country into admin table 
@@ -51,6 +53,7 @@ $i = $stmt->execute();
 if ($i == 0) {
 	$message = "Error: Could not insert the record in admin";
 	header("Location: error.php?message= " . $message);
+	exit();
 } 
 
 // INSERT deadline into survey table 
@@ -68,6 +71,7 @@ if ($i == 1) {
 } else {
 	$message = "Error: Could not insert the record in survey";
 	header("Location: error.php?message= " . $message);
+	exit();
 } 
 
 // INSERT dietary restrictions checkboxes into userdietary table 
@@ -89,6 +93,7 @@ if (!empty($_POST["dietaryRestrictions"])) {
 			if ($i == 0) {
 				$message = "Error: Could not insert the record in userdietary";
 				header("Location: error.php?message= " . $message);
+				exit();
 			} 
 		}
 	}
@@ -113,6 +118,7 @@ if (!empty($_POST["allergies"])) {
 			if ($i == 0) {
 				$message = "Error: Could not insert the record in userallergy";
 				header("Location: error.php?message= " . $message);
+				exit();
 			} 
 		}
 	}
@@ -126,11 +132,14 @@ $i = $stmt->execute();
 
 // check whether insert was successful and save session, otherwise redirect to error page
 if ($i == 1) {
+	// save information in SESSION 
 	$_SESSION['logged-in'] = true;
+	$_SESSION['role'] = 1;
 	header("Location: share_inputcode.php");
 } else {
 	$message = "Error: Could not insert the record in usersurvey";
 	header("Location: error.php?message= " . $message);
+	exit();
 } 
 
 ?>

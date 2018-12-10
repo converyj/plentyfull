@@ -2,6 +2,13 @@
 
 session_start();
 
+// if role is not a planner, redirect to homepage
+if ($_SESSION['role'] != 1) {
+  header("Location: homepage.php"); 
+  exit();
+}
+
+// get the surveyid and the userid
 $userid = $_GET['id']; 
 $surveyid = $_SESSION['surveyid']; 
 
@@ -24,6 +31,7 @@ $i = $stmt->execute();
 if ($i == 0) {
 	$message = "Error: Could not delete the record in usersurvey";
 	header("Location: error.php?message= " . $message);
+  	exit();
 }
 
 // DELETE user row in userallergy table 
@@ -38,6 +46,7 @@ $i = $stmt->execute();
 if ($i == 0) {
 	$message = "Error: Could not delete the record in userallergy";
 	header("Location: error.php?message= " . $message);
+  	exit();
 }
 
 // DELETE user row in userdietary table 
@@ -52,6 +61,7 @@ $i = $stmt->execute();
 if ($i == 0) {
 	$message = "Error: Could not delete the record in userdietary";
 	header("Location: error.php?message= " . $message);
+  	exit();
 }
 
 // DELETE user row in comment table 
@@ -65,6 +75,7 @@ $i = $stmt->execute();
 if ($i == 0) {
 	$message = "Error: Could not delete the record in usersurvey";
 	header("Location: error.php?message= " . $message);
+  	exit();
 }
 
 // DELETE user row in usersurvey table 
@@ -81,13 +92,9 @@ $i = $stmt->execute();
 // check whether delete was unsuccessfull (redirect to error page)
 if ($i == 1) {
 	header("Location: full-results.php"); 
+  	exit();
 } else {
 	$message = "Error: Could not delete the record in admin";
 	header("Location: error.php?message= " . $message);
+  	exit();
 }
-
-
-
-
-
-
