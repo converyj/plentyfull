@@ -194,7 +194,7 @@ $stmt5->execute();
       <p><?php echo($row['name']); ?></p>
       <p><?php echo($row['price']); ?></p>
       <p class="restaurantDescription"><?php echo($row['description']); ?></p>
-      <a href="<?php echo($row['link']); ?>"><?php echo($row['link']); ?></p>
+      <a href="<?php echo($row['link']); ?>"><?php echo($row['link']); ?></a>
       <p><?php echo($row['streetName']); ?></p>
       <p><?php echo($row['city']); ?></p>
       <?php
