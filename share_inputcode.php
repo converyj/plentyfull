@@ -61,9 +61,6 @@ $surveyid = $_SESSION['surveyid'];
   <form>
     <input type="text" class="surveyinputtext" name="link" value="http://plentyfull.com/<?php echo($surveyid);?>" disabled />
   </form>
-  <p class="linktoregister">
-    <a href="register.php" class="linktoregister">Would you like to register for our site?</a>
-  </p>
 </div>
 </body>
 
