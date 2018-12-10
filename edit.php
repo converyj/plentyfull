@@ -185,8 +185,9 @@ $stmt4->execute();
 		       	?>
 		     </div>
 			<input type="submit" class="button" value="Update"/>
+			<a href="full-results.php" class="button">Back</a>
+		
 		</form>
-		<p><a href="full-results.php">Go Back</a></p>
 		<script src="js/main.js"></script>
 <script src="js/main.js"></script>
 </body>

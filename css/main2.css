@@ -286,6 +286,8 @@ input[type=checkbox]{
 }
 
 
+
+
 footer{
     text-align: center;
     background-color: #fa7d58;
@@ -325,11 +327,11 @@ fieldset{
 
 
 #other{
-    color:black;
+    color:#bababa;
     border-radius: 12px;
     color:black;
     border: 1px solid #bababa;
-    /*background-color: #fff7ed;*/
+    background-color: #fff7ed;
     padding:10px;
     width:400px;
     height:70px;
