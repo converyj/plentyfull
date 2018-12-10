@@ -77,7 +77,7 @@ $stmt5->execute();
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link rel="icon" href="images/favicon.ico" />
-  <link rel="stylesheet" type="text/css" href="css/main3forOrange.css">
+  <link rel="stylesheet" type="text/css" href="css/main2.css">
   <link rel="stylesheet" media="screen and (max-width: 640px)" href="css/small.css" />
   <title>Plenty Full -  Recommendations </title>
 </head>
