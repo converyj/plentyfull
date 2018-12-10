@@ -158,10 +158,13 @@ li a {
 
 .container{
     background-color: #fff7ed;
-    padding-bottom: 70px ;
+    padding-bottom: 150px ;
     font-size: 120%;
     line-height: 3
 
+}
+.dietallergySummary img{
+    width: 100px;
 }
 
 label{
