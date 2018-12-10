@@ -5,10 +5,10 @@ session_start();
 // check if user filled in all the fields
 if(!empty($_POST['code']) && !empty($_POST['role']) && !empty($_POST['email'])) {
 
-		// get the form inputs 
-		$code = $_POST['code']; 
-		$role = $_POST['role']; 
-		$email = $_POST['email']; 
+	// get the form inputs 
+	$code = $_POST['code']; 
+	$role = $_POST['role']; 
+	$email = $_POST['email']; 
 } else {
 	header("Location: inputCode.php");
 	exit();

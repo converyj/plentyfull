@@ -2,6 +2,7 @@
 
 session_start();
 
+// if logged in is set and user is not logged in, go back to login
 if (isset($_SESSION['logged-in'])) {
 	if($_SESSION['logged-in'] === false){
 		echo("You are not allowed to view this page");

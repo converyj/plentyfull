@@ -45,11 +45,9 @@ $stmt2->execute();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
   <link rel="stylesheet" type="text/css" href="css/main3forOrange.css">
   <link rel="stylesheet" media="screen and (max-width: 640px)" href="css/small.css" />
   <link rel="icon" href="images/favicon.ico" />
-  <!-- plentyfull favicon -->
   <title>PlentyFull - Full Results</title>
 </head>
 <body>
@@ -59,11 +57,8 @@ $stmt2->execute();
       <div class="at">
         <a href="#" id="menu-icon"></a>
         <ul>
-          <!-- <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a> -->
-          <!-- <li><a href="explore.php">Explore</a></li> -->
           <li><a href="inputCode.php">Input Code</a></li>
           <li><a href="about.php">About</a></li>
-          <!-- if already logged in, change navigation  -->
         <!-- if already logged in, change navigation  -->
         <?php
         if (isset($_SESSION['logged-in'])) {

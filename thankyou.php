@@ -7,6 +7,7 @@ if ($_SESSION['role'] == 1) {
   header("Location: homepage.php"); 
   exit();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +46,5 @@ if ($_SESSION['role'] == 1) {
   <a href="https://www.twitter.com/"><img src="images/twitter.png" width="30px" alt="twitter" /></a>
   <a href="https://www.facebook.com/"><img src="images/facebook.png" width="30px" alt="facebook" /></a>
   <a href="https://www.instagram.com/"><img src="images/ig.png" width="30px" alt="ins" /></a>
-
 </footer>
 </html>
