@@ -182,7 +182,7 @@ $stmt5->execute();
               ?>
                 <img src="images/<?php echo($allergies['greyImage']); ?>" class="image" alt="image" />
                 </label>
-                  <input type="checkbox" id="<?php echo($allergies['type']); ?><?php echo($allergies['code']); ?>" name="allergies[]" value="<?php echo($allergies['code']); ?>" /><?php echo($diets['value']); ?>
+                  <input type="checkbox" id="<?php echo($allergies['type']); ?><?php echo($allergies['code']); ?>" name="allergies[]" value="<?php echo($allergies['code']); ?>" /><?php echo($allergies['value']); ?>
                 </div>
               <?php
               }
