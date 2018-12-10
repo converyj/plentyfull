@@ -180,6 +180,7 @@ form{
     text-align: center;
     line-height: 4;
     font-size: 120%;
+    padding-bottom: 30px;
 }
 
 
@@ -241,6 +242,7 @@ input[type=checkbox]{
 .diet{
     display:block;
     width:100%;
+    text-align: center;
 
 
 }
@@ -491,7 +493,7 @@ textarea, input {
     padding-top: 10%;
     padding-bottom: 10%;
     font-weight: 700;
-    font-size: 55px;
+    font-size: 40px;
     color: #fa7d58;
     text-align: center;
 
@@ -533,7 +535,9 @@ input[type=radio]{
   /*  height:5px;*/
     margin-left: 10px;
    }
-
+.thankyou-input{
+  font-size: 300%;
+}
 
 /*SUMMARY RESULTS ////////////*/
 
@@ -546,7 +550,7 @@ input[type=radio]{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 7px 2px 10px 2px;
     cursor: pointer;
 }
 

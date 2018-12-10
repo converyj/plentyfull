@@ -39,7 +39,7 @@ $stmt3 = $pdo->prepare("
                                                                WHERE `surveyid` = $surveyid); ");
 $stmt3->execute();
 
-// SELECT all diet restrictions from survey results 
+// SELECT all diet restrictions from survey results
 $stmt4 = $pdo->prepare("
                         SELECT DISTINCT `code`
                         FROM `userdietary`
@@ -48,7 +48,7 @@ $stmt4 = $pdo->prepare("
                         AND `dietallergyvalue`.`type` = 'D'");
 $stmt4->execute();
 
-// SELECT all allergy restrictions from survey results 
+// SELECT all allergy restrictions from survey results
 $stmt5 = $pdo->prepare("
                         SELECT DISTINCT `code`
                         FROM `userallergy`
@@ -67,30 +67,36 @@ $stmt5->execute();
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
-  <link rel="stylesheet" type="text/css" href="css/main2.css">
-  <!-- plentyfull favicon -->
+  <link rel="icon" href="images/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="css/main3forOrange.css">
+  <link rel="stylesheet" media="screen and (max-width: 640px)" href="css/small.css" />
   <title>Plenty Full -  Recommendations </title>
 </head>
 <body>
   <!-- <a href=""><img src="" alt="logo"></a> -->
-<div class="at">
-  <ul>
-  <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a>
-    <!-- <li><a href="explore.php">Explore</a></li> -->
-    <li><a href="inputCode.php">Input Code</a></li>
-    <li><a href="about.php">About</a></li>
-    <!-- if already logged in, change navigation  -->
-    <?php 
-    if (isset($_SESSION['logged-in'])) {
-    ?>
-        <li>
-          <a href="logout.php">Logout</a>
-        </li>
-      <?php 
-      }
-      ?>
-  </ul>
-</div>
+<nav>
+  <a href="homepage.php" id="main-logo"></a>
+
+      <div class="at">
+        <a href="#" id="menu-icon"></a>
+          <ul>
+          <!-- <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a> -->
+            <!-- <li><a href="explore.php">Explore</a></li> -->
+            <li><a href="inputCode.php">Input Code</a></li>
+            <li><a href="about.php">About</a></li>
+            <!-- if already logged in, change navigation  -->
+            <?php
+            if (isset($_SESSION['logged-in'])) {
+            ?>
+                <li>
+                  <a href="logout.php">Logout</a>
+                </li>
+              <?php
+              }
+              ?>
+          </ul>
+      </div>
+</nav>
 
 <!-- <div id="bar">
     <li>Discover</li>
@@ -113,20 +119,20 @@ $stmt5->execute();
       <label for="<?php echo($diets['type']); ?><?php echo($diets['code']); ?>">
         <?php
               // set flag to use when matched
-              $found = false; 
+              $found = false;
               // loop through the survey diet array
                foreach ($diet as $restriction) {
-                // if the diet in array matches to the diet in dietallergyvalue table, set flag and display orange image 
+                // if the diet in array matches to the diet in dietallergyvalue table, set flag and display orange image
                 if ($restriction['code'] == $diets['code']) {
-                  $found = true; 
+                  $found = true;
                   ?>
                     <img src="images/<?php echo($diets['image']); ?>" class="image" alt="image" />
                     </label>
                   <input type="checkbox" id="<?php echo($diets['type']); ?><?php echo($diets['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($diets['code']); ?>" /><?php echo($diets['value']); ?>
                 </div>
-                  <?php 
+                  <?php
                 }
-              } 
+              }
               // if not found, display grey image
               if (!$found) {
               ?>
@@ -135,8 +141,8 @@ $stmt5->execute();
                   <input type="checkbox" id="<?php echo($diets['type']); ?><?php echo($diets['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($diets['code']); ?>" /><?php echo($diets['value']); ?>
                 </div>
               <?php
-              } 
-            }   
+              }
+            }
             ?>
 
      <?php
@@ -149,20 +155,20 @@ $stmt5->execute();
       <label for="<?php echo($allergies['type']); ?><?php echo($allergies['code']); ?>">
         <?php
               // set flag to use when matched
-              $found = false; 
+              $found = false;
               // loop through the survey allergy array
                foreach ($allergy as $restriction) {
-                  // if the allergy in array matches to the allergy in dietallergyvalue table, set flag and display orange image 
+                  // if the allergy in array matches to the allergy in dietallergyvalue table, set flag and display orange image
                   if ($restriction['code'] == $allergies['code']) {
-                    $found = true; 
+                    $found = true;
                     ?>
                       <img src="images/<?php echo($allergies['image']); ?>" class="image" alt="image" />
                       </label>
                     <input type="checkbox" id="<?php echo($allergies['type']); ?><?php echo($allergies['code']); ?>" name="allergies[]" value="<?php echo($diets['code']); ?>" /><?php echo($allergies['value']); ?>
                   </div>
-                    <?php 
+                    <?php
                   }
-                } 
+                }
               // if not found, display grey image
               if (!$found) {
               ?>
@@ -171,8 +177,8 @@ $stmt5->execute();
                   <input type="checkbox" id="<?php echo($allergies['type']); ?><?php echo($allergies['code']); ?>" name="allergies[]" value="<?php echo($allergies['code']); ?>" /><?php echo($diets['value']); ?>
                 </div>
               <?php
-              } 
-            }   
+              }
+            }
             ?>
    </div>
 
