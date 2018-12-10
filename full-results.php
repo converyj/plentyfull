@@ -89,6 +89,8 @@ $stmt->execute();
         }
         ?>
   </div>
+      <a href="summary-results.php" class="buttonBack">Back</a>
+  
   <script src="js/main.js"></script>
 </body>
 <footer>
