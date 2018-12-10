@@ -136,6 +136,7 @@ if ($i == 1) {
 	$_SESSION['logged-in'] = true;
 	$_SESSION['role'] = 1;
 	header("Location: share_inputcode.php");
+	exit();
 } else {
 	$message = "Error: Could not insert the record in usersurvey";
 	header("Location: error.php?message= " . $message);

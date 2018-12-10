@@ -106,12 +106,6 @@ $stmt5->execute();
       </div>
 </nav>
 
-<!-- <div id="bar">
-    <li>Discover</li>
-    <li>Newest</li>
-    <li>Popular</li>
-    <li><input type="search" name="search" /><input type="submit" value="Search" /></li>
-</div> -->
 <div class="container">
 <p>
   <br>
@@ -200,7 +194,7 @@ $stmt5->execute();
       <p><?php echo($row['name']); ?></p>
       <p><?php echo($row['price']); ?></p>
       <p class="restaurantDescription"><?php echo($row['description']); ?></p>
-      <p><?php echo($row['link']); ?></p>
+      <a href="<?php echo($row['link']); ?>"><?php echo($row['link']); ?></p>
       <p><?php echo($row['streetName']); ?></p>
       <p><?php echo($row['city']); ?></p>
       <?php
