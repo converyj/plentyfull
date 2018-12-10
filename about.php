@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-session_start(); 
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -10,28 +10,33 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/main2.css">
+  <link rel="icon" href="images/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="css/main3forOrange.css">
+  <link rel="stylesheet" media="screen and (max-width: 640px)" href="css/small.css" />
 
   <title>Plenty Full - About</title>
 </head>
 <body>
 <nav>
-  <ul>
-  <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a>
-    <li><a href="inputCode.php">Input Code</a></li>
-    <li><a href="about.php">About</a></li>
-    <!-- if already logged in, change navigation  -->
-    <?php 
-    if (isset($_SESSION['logged-in'])) {
-    ?>
-        <li>
-          <a href="logout.php">Logout</a>
-        </li>
-      <?php 
-      } 
-      ?>
-  </ul>
-</div>
+  <a href="homepage.php" id="main-logo"></a>
+      <div class="at">
+         <a href="#" id="menu-icon"></a>
+            <ul>
+            <!-- <a href="homepage.php" class="main-logo"><img src="images/logo-white.png" width="20%"></a> -->
+              <li><a href="inputCode.php">Input Code</a></li>
+              <li><a href="about.php">About</a></li>
+              <!-- if already logged in, change navigation  -->
+              <?php
+              if (isset($_SESSION['logged-in'])) {
+              ?>
+                  <li>
+                    <a href="logout.php">Logout</a>
+                  </li>
+                <?php
+                }
+                ?>
+            </ul>
+  </div>
 </nav>
 
 <div class="container">
