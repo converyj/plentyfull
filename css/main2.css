@@ -285,28 +285,7 @@ input[type=checkbox]{
 
 }
 
-.buttonBack{
-    background-color: #fa7d58;
-    border: none;
-    color: #fff7ed;
-    padding-right: 80px;
-    padding-left:80px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 32px;
-    cursor: pointer;
-    border-radius: 12px;
-    border: 1px solid #fa7d58;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 30%;
-    font-weight: 700;
-    font-family: 'Nunito', sans-serif;
 
-}
 
 
 footer{
