@@ -6,6 +6,8 @@ session_start();
 if ($_SESSION['role'] == 1) {
   header("Location: homepage.php"); 
   exit();
+} else {
+  session_destroy();
 }
 
 ?>

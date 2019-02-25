@@ -618,26 +618,34 @@ input[type=radio]{
 
 .caterers {
     column-count:2;
+    margin-left: 30px;
+    margin-bottom: 15px;
 }
 
 .restaurantDescription {
     max-width: calc(30em*0.5);
-    font-size:14px;
+    font-size:13px;
     /*white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     /*max-width: 100px;*/
 }
 
+.restaurantLink{
+    font-size:12px;
+     max-width: calc(30em*0.5);
+     color:#bababa;
+}
 .catererImage{
     padding-top:5%;
-    padding-left: 5%;
+    /*padding-left: 5%;*/
 }
 
 .catererdiv{
     padding-top: 5%;
     padding-left: 5%;
     display: inline-block;
+
 }
 
 /*SUMMARY RESULTS /////////////*/

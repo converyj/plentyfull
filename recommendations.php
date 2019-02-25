@@ -190,11 +190,11 @@ $stmt5->execute();
     while ($row = $stmt3->fetch()) {
     ?>
     <img class="catererImage" src="images/<?php echo($row['image']); ?>" alt="image" />
-    <div class="catererdiv">
-      <p><?php echo($row['name']); ?></p>
+<!--     <div class="catererdiv">
+ -->      <p><?php echo($row['name']); ?></p>
       <p><?php echo($row['price']); ?></p>
       <p class="restaurantDescription"><?php echo($row['description']); ?></p>
-      <a href="<?php echo($row['link']); ?>"><?php echo($row['link']); ?></a>
+      <a class="restaurantLink" href="<?php echo($row['link']); ?>"><?php echo($row['link']); ?></a>
       <p><?php echo($row['streetName']); ?></p>
       <p><?php echo($row['city']); ?></p>
       <?php
@@ -202,7 +202,7 @@ $stmt5->execute();
       getCatererDetails($pdo, $catererid);
       ?>
       <br>
-    </div>
+    <!-- </div> -->
    <?php } ?>
  </div>
 </body>

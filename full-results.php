@@ -38,7 +38,7 @@ $stmt->execute();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/main3forOrange.css">
+  <link rel="stylesheet" type="text/css" href="css/main2.css">
   <link rel="stylesheet" media="screen and (max-width: 640px)" href="css/small.css" />
   <link rel="icon" href="images/favicon.ico" />
   <title>Plenty Full - Full Results</title>

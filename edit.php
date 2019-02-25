@@ -189,7 +189,6 @@ $stmt4->execute();
 		
 		</form>
 		<script src="js/main.js"></script>
-<script src="js/main.js"></script>
 </body>
 <footer>
     <a href="mailto:info@plentyfull.com" class="email">info@plentyfull.com</a>
