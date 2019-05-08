@@ -4,7 +4,7 @@ session_start();
 
 // if role is planner, redirect to homepage
 if ($_SESSION['role'] == 1) {
-  header("Location: homepage.php"); 
+  header("Location: homepage.php");
   exit();
 }
 
@@ -35,79 +35,72 @@ $stmt2->execute();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link rel="icon" href="images/favicon.ico" />
-  <link rel="stylesheet" type="text/css" href="css/main3forOrange.css">
+  <link rel="stylesheet" type="text/css" href="css/main2.css">
   <link rel="stylesheet" media="screen and (max-width: 640px)" href="css/small.css" />
 
   <title>PlentyFull - Attendee Survey</title>
 </head>
-<body>
-<nav>
-   <a href="homepage.php" id="main-logo"></a>
-        <div class="at">
-          <a href="#" id="menu-icon"></a>
-              <ul>
-                <li><a href="inputCode.php">Input Code</a></li>
-                <li><a href="about.php">About</a></li>
-              </ul>
-      </div>
-</nav>
-<div class="container">
-  <p class="start">Just a few questions...</p>
-  <p class="paragraph">You're going to an event! Let's make sure there’s lot’s to eat for you.</p>
 
-<form action="process_attendeesurvey.php" method="POST">
-  <fieldset>
-    First Name<input class="surveyinputtext" type="text" name="firstName" /><br />
-    Last Name<input class="surveyinputtext" type="text" name="lastName" /><br />
-    Email<input class="surveyinputemail" type="email" name="email" value="<?php echo($email);?>" /><br />
-    <p>
-      <label class="dietLabel">Dietary Restrictions</label>
-        <br />
-        <div class="diet">
+<body>
+  <nav>
+    <a href="homepage.php" id="main-logo"></a>
+    <div class="at">
+      <a href="#" id="menu-icon"></a>
+      <ul>
+        <li><a href="inputCode.php">Input Code</a></li>
+        <li><a href="about.php">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <p class="start">Just a few questions...</p>
+    <p class="paragraph">You're going to an event! Let's make sure there’s lot’s to eat for you.</p>
+    <form action="process_attendeesurvey.php" method="POST">
+      <label>First Name</label><input class="surveyinputtext" type="text" name="firstName" /><br />
+      <label>Last Name</label><input class="surveyinputtext" type="text" name="lastName" /><br />
+      <label>Email</label><input class="surveyinputtext" type="email" name="email" value='<?php echo ($email); ?>' /><br />
+      <p class="dietLabel">Dietary Restrictions</p>
+      <div class="diet">
         <?php
         while ($row = $stmt1->fetch()) {
-        ?>
-        <div class="dietdiv">
-          <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
-            <img src="images/<?php echo($row['greyImage']); ?>" class="image" alt="image" />
+          ?>
+          <div class="dietdiv">
+            <label for="<?php echo ($row['type']); ?><?php echo ($row['code']); ?>">
+              <img src="images/<?php echo ($row['greyImage']); ?>" class="image" alt="image" />
             </label>
-            <input type="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
+            <input type="checkbox" id="<?php echo ($row['type']); ?><?php echo ($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo ($row['code']); ?>" /><?php echo ($row['value']); ?>
           </div>
-         <?php } ?>
-       </div>
-      </p>
-      <p>
-      <label class="dietLabel">Allergies</label>
-        <br />
-        <div class="allergy">
+        <?php } ?>
+      </div>
+      <p class="dietLabel">Allergies</p>
+      <div class="allergy">
         <?php
         while ($row = $stmt2->fetch()) {
-        ?>
-        <div class="allergydiv">
-          <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
-            <img class="image img" src="images/<?php echo($row['greyImage']); ?>" alt="image" />
-          </label>
-            <input type="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); ?>"/><?php echo($row['value']); ?>
-        </div>
-       <?php } ?>
-     </div>
-    </p>
-    <p>
-    Other
+          ?>
+          <div class="allergydiv">
+            <label for="<?php echo ($row['type']); ?><?php echo ($row['code']); ?>">
+              <img class="image" src="images/<?php echo ($row['greyImage']); ?>" alt="image" />
+            </label>
+            <input type="checkbox" id="<?php echo ($row['type']); ?><?php echo ($row['code']); ?>" name="allergies[]" value="<?php echo ($row['code']); ?>" /><?php echo ($row['value']); ?>
+          </div>
+        <?php } ?>
+      </div>
+      <p>
+        Other
 
-      <textarea id="other" class="beblack" name="comment"></textarea>
-    </p>
-    <input type="submit" class="button" value="Submit" />
-  </fieldset>
-</form>
- <script src="js/main.js"></script>
-</div>
+        <textarea id="other" class="beblack" name="comment"></textarea>
+      </p>
+      <input type="submit" class="button" value="Submit" />
+    </form>
+    <script src="js/main.js"></script>
+  </div>
 </body>
 <footer>
   <a href="mailto:info@plentyfull.com" class="email">info@plentyfull.com</a>
@@ -118,4 +111,5 @@ $stmt2->execute();
 
 
 </footer>
+
 </html>

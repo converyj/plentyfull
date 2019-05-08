@@ -7,8 +7,17 @@ body {
 /*font-family: 'Roboto', sans-serif;*/
 font-family: 'Nunito', sans-serif;
 color:#424241;
-background-color: #fff7ed;
+font-size: 1em;
 };
+
+.container > label {
+    display: inline-block;
+    width: 140px;
+    text-align: right; 
+    line-height: 1.5;
+    vertical-align: middle;
+    /* margin-bottom: 8px; */
+}
 
 /*.at{
 	width: 100%;
@@ -184,24 +193,32 @@ form{
 /*//////////////////////////////////////*/
 
 .surveyinputtext{
+    appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
     width: 30%;
     padding:12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     background-color: #fff7ed;
     border:none;
+    outline: none; 
     display: inline-block;
     border-bottom: 1px solid #bababa;
 
   }
 
 .surveyinputemail{
+    appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
     width: 30%;
     padding:12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     background-color: #fff7ed;
     border:none;
+    outline: none; 
     border-bottom: 1px solid #bababa;
 }
 
@@ -267,6 +284,7 @@ input[type=checkbox]{
 .button{
     background-color: #fa7d58;
     border: none;
+    -webkit-appearance: none;
     color: #fff7ed;
     padding-right: 80px;
     padding-left:80px;
@@ -529,6 +547,9 @@ textarea, input {
 .code-button{
       background-color: #fa7d58;
     border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none; 
     color: #fff7ed;
     padding-right: 45px;
     padding-left:45px;
@@ -551,16 +572,45 @@ textarea, input {
     padding-top: 15px;
 }
 
-input[type=radio]{
-      color:#fff7ed;
-    border-radius: 12px;
-    border: 1px solid #fff7ed;
-    background-color: #fff7ed;
-    padding:5px;
-    width:20px;
-  /*  height:5px;*/
-    margin-left: 10px;
-   }
+#radio p {
+    display: inline; 
+}
+
+#radio div {
+    display: inline-block;
+    margin-left: 1%;
+}
+.cus {
+    margin: 0 10px 0 5px;
+}
+
+.cus:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #fff7ed;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid #ffe5d6;
+    }
+
+    .cus:checked:after {
+        /* width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px; */
+        /* position: relative; */
+        background-color: #fa7d58;
+        /* content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white; */
+    }
 
 
 /*SUMMARY RESULTS ////////////*/
@@ -568,6 +618,9 @@ input[type=radio]{
 .results-button{
     background-color: #fa7d58;
     border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     color: #fff7ed;
     padding-right: 80px;
     padding-left:80px;
@@ -618,9 +671,9 @@ input[type=radio]{
 
 }
 
-.caterers {
+/* .caterers {
     column-count:2;
-}
+} */
 
 .restaurantDescription {
     max-width: calc(30em*0.5);

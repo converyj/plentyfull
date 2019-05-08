@@ -26,6 +26,7 @@ $stmt2->execute();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,93 +37,89 @@ $stmt2->execute();
   <link rel="icon" href="images/favicon.ico" />
   <title>PlentyFull - Home Page</title>
 </head>
+
 <body>
-<nav>
-  <a href="#" id="main-logo"></a>
-  <div class="at">
-    <a href="#" id="menu-icon"></a>
+  <nav>
+    <a href="#" id="main-logo"></a>
+    <div class="at">
+      <a href="#" id="menu-icon"></a>
       <ul>
-          <li><a href="inputCode.php">Input Code</a></li>
-          <li><a href="about.php">About</a></li>
-          <!-- if already logged in, change navigation  -->
-          <?php 
-          if (isset($_SESSION['logged-in'])) {
+        <li><a href="inputCode.php">Input Code</a></li>
+        <li><a href="about.php">About</a></li>
+        <!-- if already logged in, change navigation  -->
+        <?php
+        if (isset($_SESSION['logged-in'])) {
           ?>
-              <li>
-                <a href="logout.php">Logout</a>
-              </li>
-            <?php 
-            } 
-            ?>
+          <li>
+            <a href="logout.php">Logout</a>
+          </li>
+        <?php
+      }
+      ?>
       </ul>
+    </div>
+  </nav>
+
+
+  <div class="justforbg">
+    <img class="header" src="images/header.png">
   </div>
-</nav>
+  <div class="intro">
+    <font color="f9dfc7">
+      <p>You’re only here for the food,
+    </font> <br>so let’s get it right.</p>
+  </div>
 
-
-<div class="justforbg">
-  <img  class="header" src="images/header.png">
-</div>
-<div class="intro">
-  <font color= "f9dfc7"><p>You’re only here for the food,</font> <br>so let’s get it right.</p>
-</div>
-
-<form action="process_plannersurvey.php" method="POST">
-  <div class="container">
+  <form action="process_plannersurvey.php" method="POST">
+    <div class="container">
       <p class="start"> Start Planning</p>
       <br />
-      </label>
       <label>First Name</label><input class="surveyinputtext" type="text" name="firstName" /><br />
-      <label>Last Name</label><input  class="surveyinputtext" type="text" name="lastName" /><br />
-      <label>Email</label><input class="surveyinputemail" type="email" name="email" /><br />
+      <label>Last Name</label><input class="surveyinputtext" type="text" name="lastName" /><br />
+      <label>Email</label><input class="surveyinputtext" type="email" name="email" /><br />
       <label>City</label><input class="surveyinputtext" type="text" name="city" size="25" /><br />
       <label>Country</label><input class="surveyinputtext" type="text" name="country" size="25" /><br />
-      <label>When would you like your results?</label><input type="date" class="dueDate" name="ddlDate" /><br />
-      <p>
-
-       <label class="dietLabel">Dietary Restrictions</label>
-        <br />
-        <div class="diet">
+      <label id="date">When would you like your results?</label><input type="date" class="dueDate" name="ddlDate" /><br />
+      <p class="dietLabel">Dietary Restrictions</p>
+      <div class="diet">
         <?php
         while ($row = $stmt1->fetch()) {
-        ?>
-        <div class="dietdiv">
-          <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
-            <img src="images/<?php echo($row['greyImage']); ?>" class="image" alt="image" />
+          ?>
+          <div class="dietdiv">
+            <label for="<?php echo ($row['type']); ?><?php echo ($row['code']); ?>">
+              <img src="images/<?php echo ($row['greyImage']); ?>" class="image" alt="image" />
             </label>
-            <input type="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo($row['code']); ?>" /><?php echo($row['value']); ?>
+            <input type="checkbox" id="<?php echo ($row['type']); ?><?php echo ($row['code']); ?>" name="dietaryRestrictions[]" value="<?php echo ($row['code']); ?>" /><?php echo ($row['value']); ?>
           </div>
-         <?php } ?>
-       </div>
-      </p>
-      <p>
-        <label class="dietLabel">Allergies</label>
-        <br />
-        <div class="allergy">
+        <?php } ?>
+      </div>
+      <p class="dietLabel">Allergies</p>
+      <div class="allergy">
         <?php
         while ($row = $stmt2->fetch()) {
-        ?>
-        <div class="allergydiv">
-          <label for="<?php echo($row['type']); ?><?php echo($row['code']); ?>">
-            <img class="image img" src="images/<?php echo($row['greyImage']); ?>" alt="image" />
+          ?>
+          <div class="allergydiv">
+            <label for="<?php echo ($row['type']); ?><?php echo ($row['code']); ?>">
+              <img class="image" src="images/<?php echo ($row['greyImage']); ?>" alt="image" />
             </label>
-            <input type="checkbox" id="<?php echo($row['type']); ?><?php echo($row['code']); ?>" name="allergies[]" value="<?php echo($row['code']); ?>"/><?php echo($row['value']); ?>
-        </div>
-       <?php } ?>
-     </div>
-      </p>
+            <input type="checkbox" id="<?php echo ($row['type']); ?><?php echo ($row['code']); ?>" name="allergies[]" value="<?php echo ($row['code']); ?>" /><?php echo ($row['value']); ?>
+          </div>
+        <?php } ?>
+      </div>
       <input type="submit" class="button" value="Submit" />
   </form>
-</div>
- <script src="js/main.js"></script>
+  </div>
+  <script src="js/main.js"></script>
 </body>
 <footer>
-    <a href="mailto:info@plentyfull.com" class="email">info@plentyfull.com</a>
-    <br />
-    <a href="https://www.twitter.com/"><img src="images/twitter.png" width="30px" alt="twitter" /></a>
-    <a href="https://www.facebook.com/"><img src="images/facebook.png" width="30px" alt="facebook" /></a>
-    <a href="https://www.instagram.com/"><img src="images/ig.png" width="30px" alt="ins" /></a>
+  <a href="mailto:info@plentyfull.com" class="email">info@plentyfull.com</a>
+  <br />
+  <a href="https://www.twitter.com/"><img src="images/twitter.png" width="30px" alt="twitter" /></a>
+  <a href="https://www.facebook.com/"><img src="images/facebook.png" width="30px" alt="facebook" /></a>
+  <a href="https://www.instagram.com/"><img src="images/ig.png" width="30px" alt="ins" /></a>
 
 
 
 </footer>
+
 </html>

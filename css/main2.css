@@ -1,13 +1,13 @@
 
 *{
     margin:0;
-
 }
 
 body {
 /*font-family: 'Roboto', sans-serif;*/
 font-family: 'Nunito', sans-serif;
 color:#424241;
+font-size: 1.25em;
 };
 
 /*.at{
@@ -166,16 +166,29 @@ a:hover#menu-icon {
 
 }
 
-label{
-
+.container > label {
     display: inline-block;
+    width: 140px;
+    text-align: right; 
     line-height: 1.5;
     vertical-align: middle;
-
-    margin-bottom: 8px;
+    /* margin-bottom: 8px; */
 }
 
-form{
+form > label {
+    display: inline-block;
+    width: 140px;
+    text-align: right; 
+    line-height: 1.5;
+    vertical-align: middle;
+    /* margin-bottom: 8px; */
+} 
+
+.diet, .allergy {
+    display: block;
+}
+
+form {
     text-align: center;
 }
 
@@ -183,26 +196,26 @@ form{
 /*//////////////////////////////////////*/
 
 .surveyinputtext{
+    appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    box-shadow: none; 
     width: 30%;
     padding:12px 20px;
-    margin: 8px 0;
+    margin: 8px 13px;
     box-sizing: border-box;
     background-color: #fff7ed;
     border:none;
+    outline: none;
     display: inline-block;
     border-bottom: 1px solid #bababa;
 
   }
 
-.surveyinputemail{
-    width: 30%;
-    padding:12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    background-color: #fff7ed;
-    border:none;
-    border-bottom: 1px solid #bababa;
-}
+  #date {
+      width: 24%; 
+      text-align: left;
+  }
 
 input[type=date]{
     color:black;
@@ -213,6 +226,7 @@ input[type=date]{
     width:170px;
     height:5px;
     margin-left: 10px;
+    margin-bottom: 22px;
 }
 
 input[type=checkbox]{
@@ -225,9 +239,10 @@ input[type=checkbox]{
 
 .dietLabel{
     margin-top: 2%;
+    font-weight: bold;
 }
 
-.diet, .img{
+.diet {
     display: block;
     align-content: center;
 }
@@ -235,6 +250,7 @@ input[type=checkbox]{
 .diet{
     display:block;
     width:100%;
+    text-align: center;
 
 }
 
@@ -243,7 +259,6 @@ input[type=checkbox]{
     margin:5%;
     width: 0.1%;
     margin-top: 0%;
-
 }
 
 .allergyName {
@@ -253,6 +268,7 @@ input[type=checkbox]{
 .allergy{
     text-align: center;
     display: block;
+    margin-top: 2%;
 }
 
 .allergydiv{
@@ -263,21 +279,33 @@ input[type=checkbox]{
 
 }
 
+button, input[type=submit] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #fff7ed;
+}
+
 .button{
     background-color: #fa7d58;
-    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     color: #fff7ed;
-    padding-right: 80px;
-    padding-left:80px;
+    border: none;
+    padding-right: 34px;
+    padding-left:34px;
     padding-top: 15px;
     padding-bottom: 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    /* position: absolute;  */
+    left: 14%;
     font-size: 32px;
     cursor: pointer;
     border-radius: 12px;
-    border: 1px solid #fa7d58;
+    /* border: 1px solid #fa7d58; */
     margin-bottom: 20px;
     margin-top: 20px;
     font-weight: 700;
@@ -434,6 +462,9 @@ FOR LOG IN PAGE AND REGISTER */
 
 textarea, input {
     outline: none;
+    appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
 }
 
 /*.logininput{
@@ -527,6 +558,9 @@ textarea, input {
 .code-button{
       background-color: #fa7d58;
     border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     color: #fff7ed;
     padding-right: 45px;
     padding-left:45px;
@@ -549,7 +583,7 @@ textarea, input {
     padding-top: 15px;
 }
 
-input[type=radio]{
+input[type="radio"]{
       color:#fff7ed;
     border-radius: 12px;
     border: 1px solid #fff7ed;
@@ -557,15 +591,43 @@ input[type=radio]{
     padding:5px;
     width:20px;
   /*  height:5px;*/
-    margin-left: 10px;
+    margin: 10px;
    }
 
+   input[type="radio"]::after {
+       content: '';
+        border-color: #fa7d58
+   }
+
+   input[type="radio"]:checked::after {
+       content: ''; 
+       background-color: #fa7d58; 
+   }
 
 /*SUMMARY RESULTS ////////////*/
 
+table {
+    border-collapse: collapse;
+    width: 100%; 
+    padding: 0;
+    line-height: 1;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 0;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
 .results-button{
     background-color: #fa7d58;
     border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     color: #fff7ed;
     padding-right: 80px;
     padding-left:80px;
@@ -596,7 +658,12 @@ input[type=radio]{
 
 /*RECOMMENDATIONS*/
 
-.dietdiv-recommendations {
+
+.recommend-diet {
+    text-align: center;
+}
+
+.dietdiv-recommendations, .allergydiv-recommendations {
     display:inline-block;
     /*margin-top: 5%;*/
     margin:3%;
@@ -606,21 +673,36 @@ input[type=radio]{
 
 }
 
-.allergydiv-recommendations {
+/* .allergydiv-recommendations {
     display:inline-block;
-    /*margin-top: 5%;*/
+    /*margin-top: 5%;
     margin:3%;
     width: 0.1%;
     margin-top: 0%;
     font-size:12px;
 
-}
+} */
 
 .caterers {
-    column-count:2;
-    margin-left: 30px;
-    margin-bottom: 15px;
+    /* column-count:2; */
+    margin: 0 15px 0 15px;
+    display: grid; 
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-content: space-evenly; 
+    grid-gap: 2px;
+    grid-auto-flow: column;
 }
+
+/* .caterers div:first-of-type {
+    grid-column: 1;
+    grid-row: 2;
+} */
+
+/* .caterers div:last-of-type {
+    grid-column: 1;
+    grid-row: 4;
+} */
 
 .restaurantDescription {
     max-width: calc(30em*0.5);
@@ -632,12 +714,15 @@ input[type=radio]{
 }
 
 .restaurantLink{
-    font-size:12px;
-     max-width: calc(30em*0.5);
+    /* font-size:12px;
+     max-width: calc(30em*0.5); */
      color:#bababa;
 }
+
 .catererImage{
     padding-top:5%;
+    width: 181px;
+    height: 147px;
     /*padding-left: 5%;*/
 }
 
@@ -646,6 +731,14 @@ input[type=radio]{
     padding-left: 5%;
     display: inline-block;
 
+}
+
+.caterers div span, p {
+    font-size: 0.8em;
+}
+
+.caterers img[alt='image'] {
+    width: 25px;
 }
 
 /*SUMMARY RESULTS /////////////*/
@@ -708,14 +801,20 @@ margin-top: 5%;
 FULL RESULTS PAGE*/
 
 .survey-people{
-    column-count: 2;
+    /* column-count: 2; */
     margin-left: 15%;
     margin-top: 5%;
     margin-bottom:5%;
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
 }
 
 .edit-delete{
     color:#fa7d58;
+}
+
+.survey-people div {
+    width: 83%;
 }
 
 /*fULL RESULTS ENDS*/
