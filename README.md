@@ -10,8 +10,8 @@ $ cd plentyfull
 # How it works
 The event planner shares a code with all of the attendees that allows them to answer a survey about their dietary and allergy restrictions. Based on the survey results, we give the planner a list of catering businesses that match the different dietary and allergy needs.
 
-![alt text](https://github.com/converyj/plentyfull/tree/dev/docs/images/plentyfull-inputcode-sm.png "Input Code")                   ![alt text](https://github.com/converyj/plentyfull/tree/dev/docs/images/plentyfull-results-sm.png "Survey Results")
-![alt text](https://github.com/converyj/plentyfull/tree/dev/docs/images/plentyfull-restaurants-sm.png "Restaurant Results")
+![alt text](https://github.com/converyj/plentyfull/blob/dev/docs/images/plentyfull-inputcode-sm.png "Input Code")                   ![alt text](https://github.com/converyj/plentyfull/blob/dev/docs/images/plentyfull-results-sm.png "Survey Results")
+![alt text](https://github.com/converyj/plentyfull/blob/dev/docs/images/plentyfull-restaurants-sm.png "Restaurant Results")
 
 For more information, visit http://jaimeconvery.com/project.php?id=1
 
